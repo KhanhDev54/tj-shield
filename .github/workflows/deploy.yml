@@ -1,0 +1,118 @@
+name: Deploy
+
+on:
+  push:
+    tags:
+      - 'v*'
+      - 'beta-*'
+      - 'pre-*'
+      - 'nightly*'
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Build & Deploy to Github Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      # Forks set a repository variable TUNNEL_REPO pointing at their own
+      # releases; unset resolves from upstream (see settings.gradle.kts).
+      TUNNEL_REPO: ${{ vars.TUNNEL_REPO }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set Version Name
+        run: echo "VERSION_NAME=${{ github.ref_name }}" >> $GITHUB_ENV
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          # 21 for the unit-test toolchain (Robolectric's SDK 36 runtime); 17, listed last, stays the default.
+          java-version: |
+            21
+            17
+          distribution: 'temurin'
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      # Signing
+      - name: Decode keystore
+        run: echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > blockads-release.jks
+
+      - name: Create key.properties
+        run: |
+          cat > key.properties <<EOF
+          storeFile=blockads-release.jks
+          storePassword=${{ secrets.STORE_PASSWORD }}
+          keyAlias=${{ secrets.KEY_ALIAS }}
+          keyPassword=${{ secrets.KEY_PASSWORD }}
+          EOF
+
+      - name: Create Sentry properties file
+        run: |
+          echo "auth.token=${{ secrets.SENTRY_AUTH_TOKEN }}" > sentry.properties    
+
+      # Build & Deploy
+      - name: Grant execute permission
+        run: chmod +x gradlew
+
+      - name: Unit tests
+        run: |
+          ./gradlew :app:testFdroidDebugUnitTest
+          ./gradlew :app:testStoreDebugUnitTest
+          ./gradlew :app:testGithubDebugUnitTest
+
+      - name: Lint
+        run: ./gradlew :app:lintFdroidRelease :app:lintStoreRelease :app:lintGithubRelease
+
+      - name: Build APK
+        run: bundle exec fastlane build_release
+
+      - name: Build Store AAB
+        run: ./gradlew :app:bundleStoreRelease :blockadstv:bundleStoreRelease
+
+      # Artifacts
+      - name: Upload release artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-build
+          path: |
+            app/build/outputs/apk/release/*.apk
+            app/build/outputs/apk/github/release/*.apk
+            blockadstv/build/outputs/apk/release/*.apk
+            blockadstv/build/outputs/apk/github/release/*.apk
+            app/build/outputs/bundle/storeRelease/*.aab
+            blockadstv/build/outputs/bundle/storeRelease/*.aab
+          retention-days: 30
+
+      # Upload assets to existing GitHub Release (or create if missing).
+      # Tags without a leading 'v' (beta-*, pre-*) are marked as pre-release so
+      # F-Droid's ^v.* tag check and GitHub /releases/latest ignore them.
+      - name: Create GitHub Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: ${{ env.VERSION_NAME }}
+          draft: false
+          prerelease: ${{ !startsWith(github.ref_name, 'v') }}
+          files: |
+            app/build/outputs/apk/release/*.apk
+            app/build/outputs/apk/github/release/*.apk
+            blockadstv/build/outputs/apk/release/*.apk
+            blockadstv/build/outputs/apk/github/release/*.apk
+            app/build/outputs/bundle/storeRelease/*.aab
+            blockadstv/build/outputs/bundle/storeRelease/*.aab
+          token: ${{ secrets.GITHUB_TOKEN }}

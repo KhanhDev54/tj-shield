@@ -1,0 +1,395 @@
+package app.pwhs.blockads.ui.logs
+
+import android.app.Application
+import androidx.core.content.FileProvider.getUriForFile
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.viewModelScope
+import app.pwhs.blockads.R
+import app.pwhs.blockads.data.dao.CustomDnsRuleDao
+import app.pwhs.blockads.data.dao.DnsLogDao
+import app.pwhs.blockads.data.dao.FilterListDao
+import app.pwhs.blockads.data.entities.DnsLogEntry
+import app.pwhs.blockads.data.repository.FilterListRepository
+import app.pwhs.blockads.data.entities.WhitelistDomain
+import app.pwhs.blockads.data.dao.WhitelistDomainDao
+import app.pwhs.blockads.ui.event.UiEvent
+import app.pwhs.blockads.ui.event.toast
+import app.pwhs.blockads.ui.logs.data.LogFilterStatus
+import app.pwhs.blockads.ui.logs.data.TimeRange
+import app.pwhs.blockads.utils.CustomRuleParser
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.firstOrNull
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.Locale
+import app.pwhs.blockads.data.dao.FirewallRuleDao
+import app.pwhs.blockads.data.datastore.AppPreferences
+import app.pwhs.blockads.data.entities.FirewallRule
+import app.pwhs.blockads.service.ServiceController
+
+sealed interface LogUndoEvent {
+    data class Whitelisted(val domain: String) : LogUndoEvent
+    data class Blocked(val domain: String) : LogUndoEvent
+}
+
+class LogViewModel(
+    private val dnsLogDao: DnsLogDao,
+    private val filterListDao: FilterListDao,
+    private val whitelistDomainDao: WhitelistDomainDao,
+    private val customDnsRuleDao: CustomDnsRuleDao,
+    private val filterListRepository: FilterListRepository,
+    private val appPrefs: AppPreferences,
+    private val application: Application,
+    private val firewallRuleDao: FirewallRuleDao? = null,
+    private val clock: () -> Long = System::currentTimeMillis,
+) : AndroidViewModel(application) {
+
+    private val _filterStatus = MutableStateFlow(LogFilterStatus.ALL)
+    val filterStatus: StateFlow<LogFilterStatus> = _filterStatus.asStateFlow()
+
+    val showBlockedOnly: StateFlow<Boolean> = _filterStatus
+        .map { it == LogFilterStatus.BLOCKED }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), false)
+
+    private val _searchQuery = MutableStateFlow("")
+    val searchQuery: StateFlow<String> = _searchQuery.asStateFlow()
+
+    private val _events = MutableSharedFlow<UiEvent>(extraBufferCapacity = 1)
+    val events: SharedFlow<UiEvent> = _events.asSharedFlow()
+
+    private val _timeRange = MutableStateFlow(TimeRange.ALL)
+    val timeRange: StateFlow<TimeRange> = _timeRange.asStateFlow()
+
+    private val _appFilter = MutableStateFlow("")
+    val appFilter: StateFlow<String> = _appFilter.asStateFlow()
+
+    val recordDnsLogs: StateFlow<Boolean> = appPrefs.recordDnsLogs
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), true)
+
+    val logRetentionDays: StateFlow<Int> = appPrefs.logRetentionDays
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
+
+    init {
+        viewModelScope.launch {
+            val days = appPrefs.logRetentionDays.firstOrNull() ?: 0
+            if (days > 0) {
+                pruneExpiredLogs(days)
+            }
+        }
+    }
+
+    private val _selectionMode = MutableStateFlow(false)
+    val selectionMode: StateFlow<Boolean> = _selectionMode.asStateFlow()
+
+    private val _undoEvents = MutableSharedFlow<LogUndoEvent>(extraBufferCapacity = 1)
+    val undoEvents: SharedFlow<LogUndoEvent> = _undoEvents.asSharedFlow()
+
+    private val _selectedIds = MutableStateFlow<Set<Long>>(emptySet())
+    val selectedIds: StateFlow<Set<Long>> = _selectedIds.asStateFlow()
+
+    val whitelistedDomains: StateFlow<Set<String>> = whitelistDomainDao.getAll()
+        .map { list -> list.filter { it.isEnabled }.map { it.domain.lowercase() }.toSet() }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptySet())
+
+    val filterNames: StateFlow<Map<String, String>> = filterListDao.getAll()
+        .map { list -> list.associate { it.id.toString() to it.name } }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyMap())
+
+    val appNames: StateFlow<List<String>> = dnsLogDao.getDistinctAppNames()
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+
+    val appPackages: StateFlow<Map<String, String>> = dnsLogDao.getDistinctAppPackages()
+        .map { list -> list.associate { it.appName to it.packageName } }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyMap())
+
+    val blockedFirewallPackages: StateFlow<Set<String>> = (firewallRuleDao?.getAll() ?: MutableStateFlow(emptyList()))
+        .map { list -> list.filter { it.isEnabled }.map { it.packageName }.toSet() }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptySet())
+
+    val whitelistedApps: StateFlow<Set<String>> = appPrefs.whitelistedApps
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptySet())
+
+    fun toggleWhitelistApp(packageName: String) {
+        if (packageName.isBlank()) return
+        viewModelScope.launch {
+            appPrefs.toggleWhitelistedApp(packageName)
+            ServiceController.requestRestart(application.applicationContext)
+        }
+    }
+
+    fun toggleAppFirewall(packageName: String) {
+        if (packageName.isBlank() || firewallRuleDao == null) return
+        viewModelScope.launch {
+            val existing = firewallRuleDao.getByPackageName(packageName)
+            when {
+                existing == null -> firewallRuleDao.insert(FirewallRule(packageName = packageName))
+                !existing.isEnabled -> firewallRuleDao.insert(existing.copy(isEnabled = true))
+                else -> firewallRuleDao.deleteByPackageName(packageName)
+            }
+            ServiceController.requestRestart(application.applicationContext)
+        }
+    }
+
+    @OptIn(ExperimentalCoroutinesApi::class)
+    val logs: StateFlow<List<DnsLogEntry>> = combine(
+        _filterStatus,
+        _timeRange
+    ) { status, range -> Pair(status, range) }
+        .flatMapLatest { (status, range) ->
+            val since = if (range == TimeRange.ALL) 0L
+            else clock() - range.millis
+            when (status) {
+                LogFilterStatus.ALL -> if (since > 0) dnsLogDao.getAllSince(since) else dnsLogDao.getAll()
+                LogFilterStatus.BLOCKED -> if (since > 0) dnsLogDao.getBlockedOnlySince(since) else dnsLogDao.getBlockedOnly()
+                LogFilterStatus.ALLOWED -> if (since > 0) dnsLogDao.getAllowedOnlySince(since) else dnsLogDao.getAllowedOnly()
+            }
+        }
+        .combine(_searchQuery) { logs, query ->
+            if (query.isBlank()) logs
+            else logs.filter {
+                it.domain.contains(query.trim(), ignoreCase = true) ||
+                        it.appName.contains(query.trim(), ignoreCase = true)
+            }
+        }
+        .combine(_appFilter) { logs, app ->
+            if (app.isBlank()) logs
+            else logs.filter { it.appName.equals(app, ignoreCase = true) }
+        }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+
+    fun setFilterStatus(status: LogFilterStatus) {
+        _filterStatus.value = status
+    }
+
+    fun toggleFilter() {
+        _filterStatus.value = when (_filterStatus.value) {
+            LogFilterStatus.ALL -> LogFilterStatus.BLOCKED
+            LogFilterStatus.BLOCKED -> LogFilterStatus.ALLOWED
+            LogFilterStatus.ALLOWED -> LogFilterStatus.ALL
+        }
+    }
+
+    fun setSearchQuery(query: String) {
+        _searchQuery.value = query
+    }
+
+    fun setTimeRange(range: TimeRange) {
+        _timeRange.value = range
+    }
+
+    fun setAppFilter(app: String) {
+        _appFilter.value = app
+    }
+
+    fun toggleSelection(id: Long) {
+        val current = _selectedIds.value.toMutableSet()
+        if (current.contains(id)) current.remove(id) else current.add(id)
+        _selectedIds.value = current
+        _selectionMode.value = current.isNotEmpty()
+    }
+
+    fun clearSelection() {
+        _selectedIds.value = emptySet()
+        _selectionMode.value = false
+    }
+
+    fun clearLogs() {
+        viewModelScope.launch {
+            dnsLogDao.clearAll()
+        }
+    }
+
+    fun addToWhitelist(domain: String) {
+        viewModelScope.launch {
+            val cleanDomain = domain.trim().lowercase()
+            val exists = whitelistDomainDao.exists(cleanDomain)
+            if (exists == 0) {
+                whitelistDomainDao.insert(WhitelistDomain(domain = cleanDomain))
+                filterListRepository.loadWhitelist()
+                _undoEvents.tryEmit(LogUndoEvent.Whitelisted(cleanDomain))
+            } else {
+                _events.toast(R.string.log_already_whitelisted)
+            }
+        }
+    }
+
+    fun undoWhitelist(domain: String) {
+        viewModelScope.launch {
+            whitelistDomainDao.deleteByDomain(domain)
+            filterListRepository.loadWhitelist()
+        }
+    }
+
+    fun addToCustomBlockRules(domain: String) {
+        viewModelScope.launch {
+            val cleanDomain = domain.trim().lowercase()
+            val ruleText = CustomRuleParser.formatBlockRule(cleanDomain)
+            val rule = CustomRuleParser.parseRule(ruleText)
+
+            if (rule != null) {
+                if (customDnsRuleDao.exists(rule.rule) == 0) {
+                    customDnsRuleDao.insert(rule)
+                    filterListRepository.loadCustomRules()
+                    _undoEvents.tryEmit(LogUndoEvent.Blocked(cleanDomain))
+                } else {
+                    _events.toast(R.string.rule_added)
+                }
+            }
+        }
+    }
+
+    fun undoBlock(domain: String) {
+        viewModelScope.launch {
+            customDnsRuleDao.deleteBlockRuleByDomain(domain)
+            filterListRepository.loadCustomRules()
+        }
+    }
+
+    fun addDomainRuleForApp(domain: String, packageName: String, isBlock: Boolean) {
+        viewModelScope.launch {
+            val cleanDomain = domain.trim().lowercase()
+            val cleanPackage = packageName.trim()
+            if (cleanDomain.isBlank() || cleanPackage.isBlank()) return@launch
+            val ruleType = if (isBlock) {
+                app.pwhs.blockads.data.entities.RuleType.BLOCK
+            } else {
+                app.pwhs.blockads.data.entities.RuleType.ALLOW
+            }
+            val policy = if (isBlock) "reject" else "direct"
+            val ruleText = "host-suffix, $cleanDomain, $policy"
+            if (customDnsRuleDao.existsForApp(cleanDomain, ruleType.name, cleanPackage) == 0) {
+                customDnsRuleDao.insert(
+                    app.pwhs.blockads.data.entities.CustomDnsRule(
+                        rule = ruleText,
+                        ruleType = ruleType,
+                        domain = cleanDomain,
+                        packageName = cleanPackage
+                    )
+                )
+                filterListRepository.loadCustomRules()
+                val toastRes = if (isBlock) R.string.blocklist_domain_added else R.string.whitelist_domain_added
+                _events.toast(toastRes, listOf(cleanDomain))
+            } else {
+                _events.toast(R.string.blocklist_domain_already_exists)
+            }
+        }
+    }
+
+    fun getBlockingFilterLists(domain: String, onResult: (List<String>) -> Unit) {
+        viewModelScope.launch {
+            val lists = filterListRepository.findBlockingFilterLists(domain)
+            onResult(lists)
+        }
+    }
+
+    fun addWildcardWhitelist(domain: String) {
+        viewModelScope.launch {
+            val cleanDomain = domain.trim().lowercase()
+
+            val domainRuleText = "@@||$cleanDomain^"
+            val wildcardRuleText = "@@||*.$cleanDomain^"
+
+            var addedAny = false
+
+            if (customDnsRuleDao.exists(domainRuleText) == 0) {
+                val domainRule = CustomRuleParser.parseRule(domainRuleText)
+                if (domainRule != null) {
+                    customDnsRuleDao.insert(domainRule)
+                    addedAny = true
+                }
+            }
+
+            if (customDnsRuleDao.exists(wildcardRuleText) == 0) {
+                val wildcardRule = CustomRuleParser.parseRule(wildcardRuleText)
+                if (wildcardRule != null) {
+                    customDnsRuleDao.insert(wildcardRule)
+                    addedAny = true
+                }
+            }
+
+            if (addedAny) {
+                filterListRepository.loadCustomRules()
+                _events.toast(R.string.log_wildcard_whitelisted, listOf(cleanDomain))
+            } else {
+                _events.toast(R.string.log_wildcard_whitelisted, listOf(cleanDomain))
+            }
+        }
+    }
+
+    fun exportLogs() {
+        viewModelScope.launch(Dispatchers.IO) {
+            val context = getApplication<Application>().applicationContext
+            try {
+                val currentLogs = if (_selectionMode.value && _selectedIds.value.isNotEmpty()) {
+                    logs.value.filter { it.id in _selectedIds.value }
+                } else {
+                    logs.value
+                }
+                if (currentLogs.isEmpty()) {
+                    _events.tryEmit(UiEvent.ToastRes(R.string.logs_empty))
+                    return@launch
+                }
+
+                val logsDir = java.io.File(context.cacheDir, "logs")
+                if (!logsDir.exists()) logsDir.mkdirs()
+
+                val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(java.util.Date(clock()))
+                val fileName = "blockads_dns_logs_$timeStamp.csv"
+                val file = java.io.File(logsDir, fileName)
+
+                file.bufferedWriter().use { writer ->
+                    DnsLogExporter.writeCsv(
+                        writer = writer,
+                        logs = currentLogs,
+                        filterNames = filterNames.value
+                    )
+                }
+
+                val authority = "${context.packageName}.fileprovider"
+                val uri = getUriForFile(context, authority, file)
+
+                _events.tryEmit(UiEvent.ShareFile(uri, "text/csv"))
+            } catch (e: Exception) {
+                e.printStackTrace()
+                _events.tryEmit(UiEvent.ToastText("Failed to export logs: ${e.message}"))
+            }
+        }
+    }
+
+    fun setRecordDnsLogs(enabled: Boolean) {
+        viewModelScope.launch {
+            appPrefs.setRecordDnsLogs(enabled)
+        }
+    }
+
+    fun setLogRetentionDays(days: Int) {
+        viewModelScope.launch {
+            appPrefs.setLogRetentionDays(days)
+            app.pwhs.blockads.worker.LogCleanupWorker.syncSchedule(
+                application.applicationContext,
+                days
+            )
+            if (days > 0) {
+                pruneExpiredLogs(days)
+            }
+        }
+    }
+
+    private suspend fun pruneExpiredLogs(days: Int) {
+        val cutoff = clock() - (days.toLong() * app.pwhs.blockads.worker.LogCleanupWorker.MILLIS_PER_DAY)
+        dnsLogDao.deleteLogsOlderThan(cutoff)
+    }
+}
+

@@ -1,0 +1,306 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=1024m"
+  TUNNEL_REPO: ${{ vars.TUNNEL_REPO }}
+
+jobs:
+  changes:
+    name: Detect changes
+    runs-on: ubuntu-latest
+    outputs:
+      tunnel: ${{ steps.filter.outputs.tunnel }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check changed paths
+        id: filter
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            tunnel:
+              - 'tunnel/**'
+
+  go-test:
+    name: Go vet & test
+    needs: changes
+    if: needs.changes.outputs.tunnel == 'true'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tunnel
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.26.1'
+          cache-dependency-path: tunnel/go.sum
+
+      - name: Vet
+        run: go vet ./...
+
+      - name: Test
+        run: go test -race -short -cover ./...
+
+      # Shorter fuzz budget on PRs to keep feedback fast; full 30s on main.
+      - name: Fuzz smoke
+        shell: bash
+        env:
+          FUZZTIME: ${{ github.event_name == 'pull_request' && '10s' || '30s' }}
+        run: |
+          failed=0
+          for pkg in $(go list ./...); do
+            listing=$(go test -list '^Fuzz' "$pkg")
+            for target in $(grep '^Fuzz' <<<"$listing" || true); do
+              echo "::group::$target ($pkg)"
+              go test -run='^$' -fuzz="^${target}\$" -fuzztime="$FUZZTIME" "$pkg" || failed=1
+              echo "::endgroup::"
+            done
+          done
+          exit $failed
+
+      - name: Upload fuzz crashers
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fuzz-crashers
+          path: tunnel/**/testdata/fuzz/
+          retention-days: 7
+
+  build-tunnel:
+    name: Build Go Tunnel
+    needs: changes
+    if: needs.changes.outputs.tunnel == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.26.1'
+          cache-dependency-path: tunnel/go.sum
+
+      - name: Cache gomobile
+        uses: actions/cache@v4
+        with:
+          path: ~/go/bin
+          key: gomobile-${{ runner.os }}-v0.1.12
+
+      - name: Install gomobile
+        run: |
+          if [ ! -x "$HOME/go/bin/gomobile" ] || [ ! -x "$HOME/go/bin/gobind" ]; then
+            go install github.com/sagernet/gomobile/cmd/gomobile@v0.1.12
+            "$HOME/go/bin/gomobile" init
+          fi
+          echo "$HOME/go/bin" >> "$GITHUB_PATH"
+
+      - name: Grant execute permission
+        run: chmod +x gradlew
+
+      - name: Build tunnel.aar
+        run: ./gradlew -Ptunnel.source=local buildGoTunnel
+
+      - name: Upload tunnel.aar
+        uses: actions/upload-artifact@v4
+        with:
+          name: tunnel-aar
+          path: build/tunnel/tunnel.aar
+          retention-days: 1
+
+  unit-test:
+    name: Unit tests
+    needs: [changes, build-tunnel]
+    if: always() && !cancelled() && (needs.build-tunnel.result == 'success' || needs.build-tunnel.result == 'skipped')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17 & 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: |
+            21
+            17
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Download tunnel.aar
+        if: needs.changes.outputs.tunnel == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: tunnel-aar
+          path: build/tunnel
+
+      - name: Run unit tests & coverage
+        run: |
+          TUNNEL_ARG=""
+          if [ "${{ needs.changes.outputs.tunnel }}" = "true" ]; then
+            TUNNEL_ARG="-Ptunnel.source=prebuilt"
+          fi
+          ./gradlew $TUNNEL_ARG :app:testFdroidDebugUnitTest :app:testStoreDebugUnitTest :app:koverXmlReportUnit :app:koverLogUnit
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-unit
+          path: app/build/reports/kover/reportUnit.xml
+          retention-days: 7
+
+      - name: Upload unit test reports
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-test-reports
+          path: |
+            app/build/reports/tests/
+            app/build/test-results/
+          retention-days: 7
+
+  lint:
+    name: Lint
+    needs: [changes, build-tunnel]
+    if: always() && !cancelled() && (needs.build-tunnel.result == 'success' || needs.build-tunnel.result == 'skipped')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17 & 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: |
+            21
+            17
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Download tunnel.aar
+        if: needs.changes.outputs.tunnel == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: tunnel-aar
+          path: build/tunnel
+
+      - name: Run Lint
+        run: |
+          TUNNEL_ARG=""
+          if [ "${{ needs.changes.outputs.tunnel }}" = "true" ]; then
+            TUNNEL_ARG="-Ptunnel.source=prebuilt"
+          fi
+          ./gradlew $TUNNEL_ARG :app:lintFdroidDebug :blockadstv:lintFdroidDebug
+
+  build-apk:
+    name: Build debug APK
+    needs: [changes, build-tunnel]
+    if: always() && !cancelled() && (needs.build-tunnel.result == 'success' || needs.build-tunnel.result == 'skipped')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17 & 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: |
+            21
+            17
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Download tunnel.aar
+        if: needs.changes.outputs.tunnel == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: tunnel-aar
+          path: build/tunnel
+
+      - name: Verify published tunnel.aar
+        if: needs.changes.outputs.tunnel != 'true'
+        run: ./gradlew verifyTunnelAar
+
+      - name: Build debug APK
+        run: |
+          TUNNEL_ARG=""
+          if [ "${{ needs.changes.outputs.tunnel }}" = "true" ]; then
+            TUNNEL_ARG="-Ptunnel.source=prebuilt"
+          fi
+          ./gradlew $TUNNEL_ARG assembleDebug
+
+      - name: Upload arm64-v8a APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: BlockAds-arm64-v8a-debug
+          path: app/build/outputs/apk/**/debug/*arm64-v8a*.apk
+          retention-days: 7
+
+      - name: Upload armeabi-v7a APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: BlockAds-armeabi-v7a-debug
+          path: app/build/outputs/apk/**/debug/*armeabi-v7a*.apk
+          retention-days: 7
+
+      - name: Upload x86_64 APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: BlockAds-x86_64-debug
+          path: app/build/outputs/apk/**/debug/*x86_64*.apk
+          retention-days: 7
+
+      - name: Upload Universal APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: BlockAds-universal-debug
+          path: app/build/outputs/apk/**/debug/*universal*.apk
+          retention-days: 7
+
+      - name: Upload TV arm64-v8a APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: BlockAdsTV-arm64-v8a-debug
+          path: blockadstv/build/outputs/apk/**/debug/*arm64-v8a*.apk
+          retention-days: 7
+
+      - name: Upload TV armeabi-v7a APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: BlockAdsTV-armeabi-v7a-debug
+          path: blockadstv/build/outputs/apk/**/debug/*armeabi-v7a*.apk
+          retention-days: 7
+
+      - name: Upload TV x86_64 APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: BlockAdsTV-x86_64-debug
+          path: blockadstv/build/outputs/apk/**/debug/*x86_64*.apk
+          retention-days: 7
+
+      - name: Upload TV Universal APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: BlockAdsTV-universal-debug
+          path: blockadstv/build/outputs/apk/**/debug/*universal*.apk
+          retention-days: 7
