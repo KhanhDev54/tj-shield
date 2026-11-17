@@ -102,4 +102,23 @@
     <string name="proxy_err_invalid_link">ลิงก์พร็อกซีไม่ถูกต้องหรือโปรโตคอลไม่รองรับ</string>
     <string name="proxy_subscription_success">นำเข้า %1$d โหนดสำเร็จ</string>
     <string name="settings_mode_title">โหมดการป้องกัน</string>
+    <string name="update_section_title">การอัปเดตแอป</string>
+    <string name="update_check_title">ตรวจหาการอัปเดต</string>
+    <string name="update_check_desc">ตรวจสอบว่ามีเวอร์ชันใหม่กว่าหรือไม่</string>
+    <string name="update_checking">กำลังตรวจหาการอัปเดต…</string>
+    <string name="update_up_to_date">คุณใช้เวอร์ชันล่าสุดแล้ว</string>
+    <string name="update_channel_title">ช่องทางการอัปเดต</string>
+    <string name="update_channel_stable">เสถียร</string>
+    <string name="update_channel_beta">เบต้า</string>
+    <string name="update_channel_nightly">ไนท์ลี</string>
+    <string name="update_available_title">มีการอัปเดต (%1$s)</string>
+    <string name="update_available_default_notes">TJ Shield TV เวอร์ชันใหม่พร้อมติดตั้งแล้ว</string>
+    <string name="update_action_now">อัปเดตเลย</string>
+    <string name="update_action_later">ภายหลัง</string>
+    <string name="update_action_skip">ข้ามเวอร์ชันนี้</string>
+    <string name="update_downloading">กำลังดาวน์โหลดการอัปเดต… %1$d%%</string>
+    <string name="update_ready_install">การอัปเดตพร้อมติดตั้ง</string>
+    <string name="update_action_install">ติดตั้ง</string>
+    <string name="update_action_restart">รีสตาร์ทเพื่ออัปเดต</string>
+    <string name="update_error_prefix">ข้อผิดพลาดในการอัปเดต: %1$s</string>
 </resources>
