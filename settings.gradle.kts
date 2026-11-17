@@ -21,7 +21,7 @@ pluginManagement {
 val tunnelRepo: String =
     providers.gradleProperty("tunnel.repo").map { it.trim() }.filter { it.isNotEmpty() }
         .orElse(providers.environmentVariable("TUNNEL_REPO").map { it.trim() }.filter { it.isNotEmpty() })
-        .getOrElse("https://github.com/pass-with-high-score/blockads-android/releases/download")
+        .getOrElse("https://github.com/KhanhDev54/tj-shield/releases/download")
 
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
