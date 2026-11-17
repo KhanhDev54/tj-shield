@@ -139,7 +139,7 @@
     <string name="filter_compile_failed_title">A szűrő fordítása sikertelen</string>
     <string name="filter_compile_channel_name">Szűrőfordítás</string>
     <string name="filter_supported_formats_title">Támogatott formátumok</string>
-    <string name="filter_supported_formats_desc">A BlockAds támogatja az összes szabványos tiltólista- és adblock-szintaxist:</string>
+    <string name="filter_supported_formats_desc">A TJ Shield támogatja az összes szabványos tiltólista- és adblock-szintaxist:</string>
     <string name="filter_format_adblock_title">AdBlock / uBlock</string>
     <string name="filter_format_adblock_desc">||example.com^, ||*.domain.com^, $all, $important</string>
     <string name="filter_format_hosts_title">Hosts fájl</string>
@@ -164,9 +164,9 @@
     <string name="https_wizard_title">Tanúsítvány beállítása</string>
     <string name="https_wizard_step_indicator_format">%1$d./%2$d. lépés: %3$s</string>
     <string name="https_wizard_security_title">Biztonság és adatvédelem</string>
-    <string name="https_wizard_security_desc">A Root CA-tanúsítvány helyben, az eszközén jön létre, és soha nem hagyja el a telefonját. A BlockAds kizárólag a weboldalakon megjelenő kozmetikai reklámok eltávolítására használja. Az érzékeny szolgáltatások, például a banki alkalmazások és a Google-fiókok forgalmát soha nem fogja el.</string>
+    <string name="https_wizard_security_desc">A Root CA-tanúsítvány helyben, az eszközén jön létre, és soha nem hagyja el a telefonját. A TJ Shield kizárólag a weboldalakon megjelenő kozmetikai reklámok eltávolítására használja. Az érzékeny szolgáltatások, például a banki alkalmazások és a Google-fiókok forgalmát soha nem fogja el.</string>
     <string name="https_wizard_explain_title">Miért HTTPS-szűrés?</string>
-    <string name="https_wizard_explain_desc">A legtöbb modern weboldal és reklám titkosított HTTPS-kapcsolatot használ. A vizuális reklámhelyek, szalagok és lebegő felugró ablakok elrejtéséhez a BlockAds-nek egy helyi tanúsítványra van szüksége, hogy biztonságosan, az eszközén vizsgálhassa és szűrhesse a weboldalakat.</string>
+    <string name="https_wizard_explain_desc">A legtöbb modern weboldal és reklám titkosított HTTPS-kapcsolatot használ. A vizuális reklámhelyek, szalagok és lebegő felugró ablakok elrejtéséhez a TJ Shield-nek egy helyi tanúsítványra van szüksége, hogy biztonságosan, az eszközén vizsgálhassa és szűrhesse a weboldalakat.</string>
     <string name="https_wizard_benefits_title">Főbb előnyök</string>
     <string name="https_wizard_benefit_1">Reklámok eltüntetése videóplatformokon és hírportálokon</string>
     <string name="https_wizard_benefit_2">Üres reklámhelyek, szalagok és tolakodó felugró ablakok elrejtése</string>
@@ -185,10 +185,10 @@
     <string name="https_wizard_device_brand_generic">Az Ön Android-eszköze</string>
     <string name="https_wizard_install_instructions_title">Lépésről lépésre</string>
     <string name="https_wizard_checking_title">Tanúsítvány ellenőrzése…</string>
-    <string name="https_wizard_checking_desc">Az Android megbízható tanúsítványtárolójának átvizsgálása a BlockAds CA után…</string>
-    <string name="https_wizard_installed_desc">A BlockAds Root CA ellenőrizve és aktív az eszköz megbízható tanúsítványtárolójában. A fejlett HTTPS-szűrés használatra kész!</string>
+    <string name="https_wizard_checking_desc">Az Android megbízható tanúsítványtárolójának átvizsgálása a TJ Shield CA után…</string>
+    <string name="https_wizard_installed_desc">A TJ Shield Root CA ellenőrizve és aktív az eszköz megbízható tanúsítványtárolójában. A fejlett HTTPS-szűrés használatra kész!</string>
     <string name="https_wizard_not_installed_title">A tanúsítvány nem található</string>
-    <string name="https_wizard_not_installed_desc">A BlockAds még nem találta meg a tanúsítványt a megbízható tárolóban. Ha épp most telepítette a Beállításokban, koppintson lent az újraellenőrzéshez.</string>
+    <string name="https_wizard_not_installed_desc">A TJ Shield még nem találta meg a tanúsítványt a megbízható tárolóban. Ha épp most telepítette a Beállításokban, koppintson lent az újraellenőrzéshez.</string>
     <string name="https_wizard_troubleshooting_title">Hibaelhárítási tippek</string>
     <string name="https_wizard_troubleshooting_tip1">Győződjön meg róla, hogy a Beállításokban a \"CA-tanúsítvány\" lehetőséget választotta (nem a felhasználói tanúsítványt vagy a VPN- és alkalmazás-felhasználói tanúsítványt).</string>
     <string name="https_wizard_troubleshooting_tip2">Magisk/KernelSU modulon keresztüli telepítés esetén az eszköz újraindítása szükséges.</string>

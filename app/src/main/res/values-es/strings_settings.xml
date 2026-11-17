@@ -140,21 +140,21 @@
     <string name="exclude_lan_title">Excluir tráfico LAN</string>
     <string name="exclude_lan_description">Permitir el acceso a dispositivos de red local (impresoras, NAS, servidores locales) mientras WireGuard está activo</string>
     <string name="settings_hide_from_recents_title">Ocultar de apps recientes</string>
-    <string name="settings_hide_from_recents_subtitle">Ocultar BlockAds de la pantalla de aplicaciones recientes</string>
+    <string name="settings_hide_from_recents_subtitle">Ocultar TJ Shield de la pantalla de aplicaciones recientes</string>
     <string name="trusted_networks_title">Redes de confianza</string>
-    <string name="trusted_networks_settings_desc">Pausar BlockAds automáticamente en ciertas redes Wi-Fi</string>
+    <string name="trusted_networks_settings_desc">Pausar TJ Shield automáticamente en ciertas redes Wi-Fi</string>
     <string name="trusted_networks_toggle">Pausar en redes de confianza</string>
-    <string name="trusted_networks_desc">BlockAds se desactiva en estas redes Wi-Fi y se reactiva al salir.</string>
+    <string name="trusted_networks_desc">TJ Shield se desactiva en estas redes Wi-Fi y se reactiva al salir.</string>
     <string name="trusted_networks_add_current">Añadir la red Wi-Fi actual</string>
     <string name="trusted_networks_no_wifi">Sin conexión Wi-Fi (o se necesita permiso de ubicación)</string>
     <string name="trusted_networks_list_header">Redes Wi-Fi de confianza</string>
-    <string name="trusted_networks_empty">Aún no hay redes de confianza. Añade la actual para pausar BlockAds en ella.</string>
+    <string name="trusted_networks_empty">Aún no hay redes de confianza. Añade la actual para pausar TJ Shield en ella.</string>
     <string name="trusted_networks_paused_title">En pausa en red de confianza</string>
-    <string name="trusted_networks_paused_text">BlockAds está en pausa en &quot;%1$s&quot; — se reanuda automáticamente al salir de esta red.</string>
-    <string name="trusted_networks_paused_text_generic">BlockAds está en pausa en una red Wi-Fi de confianza — se reanuda al salir.</string>
+    <string name="trusted_networks_paused_text">TJ Shield está en pausa en &quot;%1$s&quot; — se reanuda automáticamente al salir de esta red.</string>
+    <string name="trusted_networks_paused_text_generic">TJ Shield está en pausa en una red Wi-Fi de confianza — se reanuda al salir.</string>
     <string name="settings_navigation">Navegación</string>
     <string name="milestone_sheet_title">¡Hito de protección alcanzado!</string>
-    <string name="milestone_sheet_subtitle">Has bloqueado con éxito %1$s anuncios y rastreadores con BlockAds.</string>
+    <string name="milestone_sheet_subtitle">Has bloqueado con éxito %1$s anuncios y rastreadores con TJ Shield.</string>
     <string name="milestone_sheet_data_saved">Datos ahorrados estimados</string>
     <string name="milestone_sheet_time_saved">Tiempo ahorrado estimado</string>
     <string name="milestone_sheet_action">¡Genial!</string>
@@ -244,7 +244,7 @@
     <string name="geoip_import_invalid">Archivo de base de datos GeoIP no válido</string>
     <string name="geoip_update_success">Base de datos GeoIP actualizada con éxito</string>
     <string name="routing_mode_sheet_title">Modo de enrutamiento</string>
-    <string name="routing_mode_sheet_desc">Elige cómo BlockAds intercepta y enruta el tráfico en tu dispositivo.</string>
+    <string name="routing_mode_sheet_desc">Elige cómo TJ Shield intercepta y enruta el tráfico en tu dispositivo.</string>
     <string name="routing_mode_local_vpn_title">Modo VPN local</string>
     <string name="routing_mode_local_vpn_desc" formatted="false">Filtra el tráfico directamente en el dispositivo mediante el servicio VPN de Android. No requiere root, 100% privado.</string>
     <string name="routing_mode_root_proxy_title">Modo proxy con root</string>
@@ -374,8 +374,8 @@
     <string name="settings_bottom_nav_tab_auto">Automático (Predeterminado)</string>
     <string name="settings_bottom_nav_tab_filter">Configuración de filtros</string>
     <string name="settings_bottom_nav_tab_vpn">VPN y Proxy</string>
-    <string name="rate_app_title">¿Te gusta BlockAds?</string>
-    <string name="rate_app_desc">BlockAds ha bloqueado más de %1$d anuncios para ti. Si la app te resulta útil, ¡tómate un momento para calificarnos con 5 estrellas en Google Play!</string>
+    <string name="rate_app_title">¿Te gusta TJ Shield?</string>
+    <string name="rate_app_desc">TJ Shield ha bloqueado más de %1$d anuncios para ti. Si la app te resulta útil, ¡tómate un momento para calificarnos con 5 estrellas en Google Play!</string>
     <string name="rate_app_action_rate">Calificar con 5 estrellas</string>
     <string name="rate_app_action_feedback">Enviar comentarios</string>
     <string name="rate_app_action_later">Quizás más tarde</string>
@@ -405,7 +405,7 @@
     <string name="app_management_block_rate">Tasa de bloqueo</string>
     <string name="app_management_top_domains">Dominios principales</string>
     <string name="app_management_no_domains">Aún no se ha registrado actividad de DNS para esta aplicación.</string>
-    <string name="app_management_vpn_protection">Enrutar a través de BlockAds VPN</string>
+    <string name="app_management_vpn_protection">Enrutar a través de TJ Shield VPN</string>
     <string name="settings_home_tips">Consejos de pantalla de inicio</string>
     <string name="settings_home_tips_desc">Muestra sugerencias y consejos útiles en la pantalla de inicio</string>
     <string name="settings_nav_position">Posición de navegación</string>

@@ -140,21 +140,21 @@
     <string name="exclude_lan_title">LANトラフィックを除外</string>
     <string name="exclude_lan_description">WireGuard有効時にローカルネットワークデバイス（プリンター、NAS、ローカルサーバー）へのアクセスを許可</string>
     <string name="settings_hide_from_recents_title">最近のアプリから非表示</string>
-    <string name="settings_hide_from_recents_subtitle">最近のアプリ画面からBlockAdsを非表示にする</string>
+    <string name="settings_hide_from_recents_subtitle">最近のアプリ画面からTJ Shieldを非表示にする</string>
     <string name="trusted_networks_title">信頼するネットワーク</string>
-    <string name="trusted_networks_settings_desc">選んだ Wi-Fi で BlockAds を自動的に一時停止</string>
+    <string name="trusted_networks_settings_desc">選んだ Wi-Fi で TJ Shield を自動的に一時停止</string>
     <string name="trusted_networks_toggle">信頼するネットワークで一時停止</string>
-    <string name="trusted_networks_desc">これらの Wi-Fi では BlockAds がオフになり、離れると再びオンになります。</string>
+    <string name="trusted_networks_desc">これらの Wi-Fi では TJ Shield がオフになり、離れると再びオンになります。</string>
     <string name="trusted_networks_add_current">現在の Wi-Fi を追加</string>
     <string name="trusted_networks_no_wifi">Wi-Fi に未接続（または位置情報の許可が必要）</string>
     <string name="trusted_networks_list_header">信頼する Wi-Fi</string>
-    <string name="trusted_networks_empty">信頼するネットワークはまだありません。現在のものを追加するとそこで BlockAds を一時停止します。</string>
+    <string name="trusted_networks_empty">信頼するネットワークはまだありません。現在のものを追加するとそこで TJ Shield を一時停止します。</string>
     <string name="trusted_networks_paused_title">信頼するネットワークで一時停止中</string>
-    <string name="trusted_networks_paused_text">BlockAds は「%1$s」で一時停止中です。離れると自動的に再開します。</string>
-    <string name="trusted_networks_paused_text_generic">BlockAds は信頼する Wi-Fi で一時停止中です。離れると再開します。</string>
+    <string name="trusted_networks_paused_text">TJ Shield は「%1$s」で一時停止中です。離れると自動的に再開します。</string>
+    <string name="trusted_networks_paused_text_generic">TJ Shield は信頼する Wi-Fi で一時停止中です。離れると再開します。</string>
     <string name="settings_navigation">ナビゲーション</string>
     <string name="milestone_sheet_title">保護マイルストーン達成！</string>
-    <string name="milestone_sheet_subtitle">BlockAdsで %1$s 件の広告とトラッカーをブロックしました。</string>
+    <string name="milestone_sheet_subtitle">TJ Shieldで %1$s 件の広告とトラッカーをブロックしました。</string>
     <string name="milestone_sheet_data_saved">推定データ節約量</string>
     <string name="milestone_sheet_time_saved">推定時間短縮</string>
     <string name="milestone_sheet_action">素晴らしい！</string>
@@ -244,7 +244,7 @@
     <string name="geoip_import_invalid">無効なGeoIPデータベースファイルです</string>
     <string name="geoip_update_success">GeoIPデータベースが正常に更新されました</string>
     <string name="routing_mode_sheet_title">ルーティングモード</string>
-    <string name="routing_mode_sheet_desc">BlockAdsがデバイス上のトラフィックを傍受・ルーティングする方法を選択します。</string>
+    <string name="routing_mode_sheet_desc">TJ Shieldがデバイス上のトラフィックを傍受・ルーティングする方法を選択します。</string>
     <string name="routing_mode_local_vpn_title">ローカルVPNモード</string>
     <string name="routing_mode_local_vpn_desc" formatted="false">Android VPN Serviceを使用してデバイス上で直接トラフィックをフィルタリングします。Root権限不要、100%プライベート。</string>
     <string name="routing_mode_root_proxy_title">Root Proxyモード</string>
@@ -374,8 +374,8 @@
     <string name="settings_bottom_nav_tab_auto">自動（デフォルト）</string>
     <string name="settings_bottom_nav_tab_filter">フィルター設定</string>
     <string name="settings_bottom_nav_tab_vpn">VPN &amp; プロキシ</string>
-    <string name="rate_app_title">BlockAds を気に入っていただけましたか？</string>
-    <string name="rate_app_desc">BlockAds は %1$d 件以上の広告をブロックしました。アプリが役立ちましたら、ぜひ Google Play での 5 つ星評価をお願いします！</string>
+    <string name="rate_app_title">TJ Shield を気に入っていただけましたか？</string>
+    <string name="rate_app_desc">TJ Shield は %1$d 件以上の広告をブロックしました。アプリが役立ちましたら、ぜひ Google Play での 5 つ星評価をお願いします！</string>
     <string name="rate_app_action_rate">5つ星で評価</string>
     <string name="rate_app_action_feedback">フィードバックを送信</string>
     <string name="rate_app_action_later">後で</string>
@@ -405,7 +405,7 @@
     <string name="app_management_block_rate">ブロック率</string>
     <string name="app_management_top_domains">上位ドメイン</string>
     <string name="app_management_no_domains">このアプリのDNSアクティビティはまだ記録されていません。</string>
-    <string name="app_management_vpn_protection">BlockAds VPN経由でルーティング</string>
+    <string name="app_management_vpn_protection">TJ Shield VPN経由でルーティング</string>
     <string name="settings_home_tips">ホーム画面のヒント</string>
     <string name="settings_home_tips_desc">ホーム画面に役立つヒントや機能の提案を表示します</string>
     <string name="settings_nav_position">ナビゲーションの位置</string>

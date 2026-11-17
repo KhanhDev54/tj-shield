@@ -3,7 +3,7 @@
     <!-- Certificate Status Card -->
     <string name="cert_status_installed">CA certificate is installed and trusted. Advanced HTTPS ad-blocking is ready.</string>
     <string name="cert_status_checking">Checking certificate in device secure storage…</string>
-    <string name="cert_status_not_installed">BlockAds CA certificate is required to decrypt and filter ads on HTTPS web connections.</string>
+    <string name="cert_status_not_installed">TJ Shield CA certificate is required to decrypt and filter ads on HTTPS web connections.</string>
     <string name="cert_action_check_again">Check again</string>
     <string name="cert_action_reinstall">Reinstall</string>
     <string name="cert_action_install">Install certificate</string>

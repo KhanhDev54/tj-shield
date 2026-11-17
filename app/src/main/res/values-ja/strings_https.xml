@@ -2,7 +2,7 @@
 <resources>
     <string name="cert_status_installed">CA証明書がインストールされ、信頼されています。高度なHTTPS広告ブロックが利用可能です。</string>
     <string name="cert_status_checking">デバイスの保護されたストレージで証明書を確認中…</string>
-    <string name="cert_status_not_installed">HTTPS接続の広告を復号してブロックするには、BlockAds CA証明書が必要です。</string>
+    <string name="cert_status_not_installed">HTTPS接続の広告を復号してブロックするには、TJ Shield CA証明書が必要です。</string>
     <string name="cert_action_check_again">再確認</string>
     <string name="cert_action_reinstall">再インストール</string>
     <string name="cert_action_install">証明書をインストール</string>

@@ -2,21 +2,21 @@
 <resources>
     <string name="notification_channel_name">Service de blocage des publicités</string>
     <string name="notification_channel_description">Indique lorsque le bloqueur de publicités VPN est actif</string>
-    <string name="vpn_notification_title">BlockAds est actif</string>
+    <string name="vpn_notification_title">TJ Shield est actif</string>
     <string name="vpn_notification_text">Protection de votre appareil contre les publicités</string>
-    <string name="vpn_notification_reconnecting">BlockAds se reconnecte</string>
+    <string name="vpn_notification_reconnecting">TJ Shield se reconnecte</string>
     <string name="vpn_notification_reconnecting_text">Changement de réseau, reconnexion du VPN…</string>
-    <string name="vpn_notification_retrying">BlockAds réessaie</string>
+    <string name="vpn_notification_retrying">TJ Shield réessaie</string>
     <string name="vpn_notification_retry_text">Tentative %1$d sur %2$d</string>
     <string name="vpn_alert_channel_name">Alertes VPN</string>
     <string name="vpn_alert_channel_description">Alertes importantes concernant les changements d\'état du VPN</string>
     <string name="vpn_revoked_title">Blocage des publicités arrêté</string>
-    <string name="vpn_revoked_text">Une autre application VPN a pris le contrôle de la connexion. Appuyez pour réactiver BlockAds.</string>
+    <string name="vpn_revoked_text">Une autre application VPN a pris le contrôle de la connexion. Appuyez pour réactiver TJ Shield.</string>
     <string name="vpn_revoked_card_title">Protection en pause</string>
-    <string name="vpn_revoked_card_desc">Une autre application VPN s\'est connectée. Votre trafic n\'est plus filtré par BlockAds.</string>
+    <string name="vpn_revoked_card_desc">Une autre application VPN s\'est connectée. Votre trafic n\'est plus filtré par TJ Shield.</string>
     <string name="vpn_revoked_action_reconnect">Se reconnecter</string>
     <string name="vpn_revoked_action_dismiss">Ignorer</string>
-    <string name="vpn_stopped_title">BlockAds est en pause</string>
+    <string name="vpn_stopped_title">TJ Shield est en pause</string>
     <string name="vpn_stopped_text">Le blocage des publicités est désactivé. Appuyez sur Activer pour reprendre.</string>
     <string name="vpn_stopped_action_enable">Activer</string>
     <string name="status_protected">Protégé</string>
@@ -31,7 +31,7 @@
     <string name="shortcut_toggle_vpn">Activer/Désactiver le blocage publicitaire</string>
     <string name="shortcut_toggle_vpn_short">Bascule VPN</string>
     <string name="vpn_conflict_title">Connexion bloquée</string>
-    <string name="vpn_conflict_desc">Android n\'autorise qu\'une seule connexion VPN à la fois. Un autre VPN est actuellement actif sur votre appareil.\n\nVeuillez d\'abord déconnecter l\'autre VPN ou désactiver \&quot;VPN toujours actif\&quot; dans les Paramètres avant de connecter BlockAds.</string>
+    <string name="vpn_conflict_desc">Android n\'autorise qu\'une seule connexion VPN à la fois. Un autre VPN est actuellement actif sur votre appareil.\n\nVeuillez d\'abord déconnecter l\'autre VPN ou désactiver \&quot;VPN toujours actif\&quot; dans les Paramètres avant de connecter TJ Shield.</string>
     <string name="vpn_phase_loading_filters">Chargement des listes de filtres…</string>
     <string name="vpn_phase_preparing_dns">Préparation du DNS…</string>
     <string name="vpn_phase_establishing">Établissement du VPN…</string>
@@ -39,7 +39,7 @@
     <string name="vpn_notification_stats_today">%1$d pubs bloquées aujourd\'hui | Actif depuis %2$s</string>
     <string name="vpn_notification_action_pause">Pause 1h</string>
     <string name="vpn_notification_action_stop">Arrêter</string>
-    <string name="vpn_paused_title">BlockAds en pause</string>
+    <string name="vpn_paused_title">TJ Shield en pause</string>
     <string name="vpn_paused_text">Blocage des publicités mis en pause pendant 1 heure. Reprendra automatiquement.</string>
     <string name="accessibility_toggle_vpn">Bascule de la protection VPN</string>
     <string name="accessibility_vpn_active">La protection VPN est active</string>
@@ -71,17 +71,17 @@
     <string name="wireguard_issue_malformed_allowed_ips">IP autorisées (Allowed IPs) non valides : %1$s</string>
     <string name="wireguard_issue_fix_first">Corrigez d\'abord « %1$s » : %2$s</string>
     <string name="wireguard_config_invalid_title">Le profil WireGuard doit être corrigé</string>
-    <string name="wireguard_config_invalid_text">%1$s. BlockAds s\'est arrêté au lieu de s\'exécuter sans le tunnel.</string>
+    <string name="wireguard_config_invalid_text">%1$s. TJ Shield s\'est arrêté au lieu de s\'exécuter sans le tunnel.</string>
     <string name="wireguard_split_dns_placeholder" translatable="false">internal,local,lan,corp</string>
     <string name="wireguard_rename_dialog_title">Renommer le profil</string>
     <string name="root_not_available">Accès root non disponible. Veuillez accorder l\'autorisation dans votre gestionnaire root (ex. Magisk/KernelSU).</string>
     <string name="root_proxy_notification_text">Mode Proxy Root actif — Trafic DNS redirigé via iptables</string>
-    <string name="root_proxy_start_failed_title">Échec du démarrage de BlockAds</string>
+    <string name="root_proxy_start_failed_title">Échec du démarrage de TJ Shield</string>
     <string name="root_proxy_start_failed_text">Impossible d\'obtenir l\'accès root pour démarrer la protection. Appuyez sur Activer pour réessayer.</string>
     <string name="private_dns_warning_title">Le DNS privé est actif</string>
-    <string name="private_dns_warning_text">Le DNS privé d\'Android contourne BlockAds, le filtrage peut donc ne pas s\'appliquer. Réglez le DNS privé sur Désactivé ou Automatique dans les paramètres système.</string>
+    <string name="private_dns_warning_text">Le DNS privé d\'Android contourne TJ Shield, le filtrage peut donc ne pas s\'appliquer. Réglez le DNS privé sur Désactivé ou Automatique dans les paramètres système.</string>
     <string name="status_disconnecting">Déconnexion en cours</string>
-    <string name="vpn_notification_stopping">BlockAds s\'arrête</string>
+    <string name="vpn_notification_stopping">TJ Shield s\'arrête</string>
     <string name="vpn_notification_stopping_text">Fermeture du tunnel VPN…</string>
     <string name="vpn_notification_action_retry">Réessayer</string>
     <string name="vpn_notification_no_internet_title">Aucune connexion Internet</string>
@@ -108,12 +108,12 @@
     <string name="home_tip_feature_https_desc">Bloquer en profondeur les publicités web et fenêtres intempestives</string>
     <string name="home_tip_feature_https_action">Explorer</string>
     <string name="home_tip_feature_wireguard_title">VPN WireGuard</string>
-    <string name="home_tip_feature_wireguard_desc">Utiliser votre propre serveur VPN conjointement avec BlockAds</string>
+    <string name="home_tip_feature_wireguard_desc">Utiliser votre propre serveur VPN conjointement avec TJ Shield</string>
     <string name="home_tip_feature_wireguard_action">Essayer maintenant</string>
 
     <!-- Tailscale -->
     <string name="tailscale_title">Tailscale</string>
-    <string name="tailscale_subtitle">Connectez-vous à votre Tailnet tout en utilisant BlockAds</string>
+    <string name="tailscale_subtitle">Connectez-vous à votre Tailnet tout en utilisant TJ Shield</string>
     <string name="tailscale_desc">Rejoignez votre réseau privé Tailscale ou Headscale tout en conservant le blocage des publicités et le filtrage HTTPS sur l\'appareil.</string>
     <string name="tailscale_sign_in_browser">Se connecter avec Tailscale</string>
     <string name="tailscale_waiting_auth">En attente de connexion dans le navigateur…</string>
@@ -163,7 +163,7 @@
     <string name="tailscale_ping_self">Impossible d\'envoyer un ping à cet appareil</string>
     <string name="tailscale_vpn_not_running">Le VPN est déconnecté</string>
     <string name="tailscale_vpn_required_title">VPN requis</string>
-    <string name="tailscale_vpn_required_desc">BlockAds VPN doit être actif pour acheminer le trafic Tailscale.</string>
+    <string name="tailscale_vpn_required_desc">TJ Shield VPN doit être actif pour acheminer le trafic Tailscale.</string>
     <string name="tailscale_start_vpn">Démarrer le VPN</string>
     <string name="tailscale_notification_channel_name">Réseau Tailscale</string>
     <string name="tailscale_notification_channel_desc">Notifications de connexion des appareils Tailscale</string>
@@ -187,6 +187,6 @@
     <string name="tailscale_settings_title">Paramètres de Tailscale</string>
     <string name="tailscale_advertise_exit_node">Exécuter en tant que nœud de sortie</string>
     <string name="tailscale_advertise_exit_node_desc">Autoriser les autres appareils de votre Tailnet à acheminer le trafic Internet via cet appareil. À activer également dans la console d\'administration Tailscale.</string>
-    <string name="tailscale_adblock_title">BlockAds Tailscale</string>
-    <string name="tailscale_adblock_desc">Filtrer les publicités et les traceurs pour les appareils utilisant ce nœud de sortie. Utilise dans tous les cas le DNS configuré de BlockAds.</string>
+    <string name="tailscale_adblock_title">TJ Shield Tailscale</string>
+    <string name="tailscale_adblock_desc">Filtrer les publicités et les traceurs pour les appareils utilisant ce nœud de sortie. Utilise dans tous les cas le DNS configuré de TJ Shield.</string>
 </resources>

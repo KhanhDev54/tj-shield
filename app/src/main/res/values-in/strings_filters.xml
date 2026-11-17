@@ -118,9 +118,9 @@
     <string name="https_wizard_title">Pengaturan Sertifikat</string>
     <string name="https_wizard_step_indicator_format">Langkah %1$d dari %2$d: %3$s</string>
     <string name="https_wizard_security_title">Keamanan &amp; Privasi</string>
-    <string name="https_wizard_security_desc">Sertifikat Root CA dibuat secara lokal di perangkat Anda dan tidak pernah meninggalkan ponsel Anda. BlockAds menggunakannya secara ketat untuk menghapus iklan di situs web. Layanan sensitif seperti aplikasi perbankan dan akun Google tidak pernah dicegat.</string>
+    <string name="https_wizard_security_desc">Sertifikat Root CA dibuat secara lokal di perangkat Anda dan tidak pernah meninggalkan ponsel Anda. TJ Shield menggunakannya secara ketat untuk menghapus iklan di situs web. Layanan sensitif seperti aplikasi perbankan dan akun Google tidak pernah dicegat.</string>
     <string name="https_wizard_explain_title">Mengapa Pemfilteran HTTPS?</string>
-    <string name="https_wizard_explain_desc">Sebagian besar situs web dan iklan modern menggunakan koneksi HTTPS terenkripsi. Untuk menyembunyikan placeholder iklan, banner, dan pop-up, BlockAds memerlukan sertifikat lokal untuk memeriksa dan memfilter halaman web dengan aman di perangkat Anda.</string>
+    <string name="https_wizard_explain_desc">Sebagian besar situs web dan iklan modern menggunakan koneksi HTTPS terenkripsi. Untuk menyembunyikan placeholder iklan, banner, dan pop-up, TJ Shield memerlukan sertifikat lokal untuk memeriksa dan memfilter halaman web dengan aman di perangkat Anda.</string>
     <string name="https_wizard_benefits_title">Manfaat Utama</string>
     <string name="https_wizard_benefit_1">Hilangkan iklan di platform video &amp; situs berita</string>
     <string name="https_wizard_benefit_2">Sembunyikan placeholder kosong, banner, dan pop-up yang mengganggu</string>
@@ -139,10 +139,10 @@
     <string name="https_wizard_device_brand_generic">Perangkat Android Anda</string>
     <string name="https_wizard_install_instructions_title">Panduan Langkah demi Langkah</string>
     <string name="https_wizard_checking_title">Memverifikasi Sertifikat…</string>
-    <string name="https_wizard_checking_desc">Memindai penyimpanan tepercaya Android untuk BlockAds CA…</string>
-    <string name="https_wizard_installed_desc">BlockAds Root CA telah diverifikasi dan aktif di penyimpanan tepercaya perangkat Anda. Pemfilteran HTTPS tingkat lanjut siap digunakan!</string>
+    <string name="https_wizard_checking_desc">Memindai penyimpanan tepercaya Android untuk TJ Shield CA…</string>
+    <string name="https_wizard_installed_desc">TJ Shield Root CA telah diverifikasi dan aktif di penyimpanan tepercaya perangkat Anda. Pemfilteran HTTPS tingkat lanjut siap digunakan!</string>
     <string name="https_wizard_not_installed_title">Sertifikat Tidak Terdeteksi</string>
-    <string name="https_wizard_not_installed_desc">BlockAds belum menemukan sertifikat di penyimpanan tepercaya Anda. Jika Anda baru saja selesai menginstalnya di Pengaturan, ketuk di bawah untuk memeriksa lagi.</string>
+    <string name="https_wizard_not_installed_desc">TJ Shield belum menemukan sertifikat di penyimpanan tepercaya Anda. Jika Anda baru saja selesai menginstalnya di Pengaturan, ketuk di bawah untuk memeriksa lagi.</string>
     <string name="https_wizard_troubleshooting_title">Tips Pemecahan Masalah</string>
     <string name="https_wizard_troubleshooting_tip1">Pastikan Anda memilih \"Sertifikat CA\" di Pengaturan (bukan Sertifikat Pengguna atau Sertifikat Pengguna VPN &amp; aplikasi).</string>
     <string name="https_wizard_troubleshooting_tip2">Jika menginstal melalui modul Magisk/KernelSU, perangkat perlu dimulai ulang.</string>
@@ -176,7 +176,7 @@
     <string name="filter_category_starred">Berbintang</string>
     <string name="filter_starred_empty">Belum ada filter berbintang. Ketuk ikon bintang pada filter mana pun untuk menyematkannya di sini agar mudah diakses.</string>
     <string name="filter_supported_formats_title">Format yang Didukung</string>
-    <string name="filter_supported_formats_desc">BlockAds mendukung semua sintaks daftar blokir dan adblock standar:</string>
+    <string name="filter_supported_formats_desc">TJ Shield mendukung semua sintaks daftar blokir dan adblock standar:</string>
     <string name="filter_format_adblock_title">AdBlock / uBlock</string>
     <string name="filter_format_adblock_desc">||example.com^, ||*.domain.com^, $all, $important</string>
     <string name="filter_format_hosts_title">File Hosts</string>

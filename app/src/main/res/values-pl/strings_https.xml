@@ -2,7 +2,7 @@
 <resources>
     <string name="cert_status_installed">Certyfikat CA zainstalowany i zaufany. Zaawansowane blokowanie HTTPS gotowe.</string>
     <string name="cert_status_checking">Sprawdzanie certyfikatu w bezpiecznej pamięci urządzenia…</string>
-    <string name="cert_status_not_installed">Certyfikat BlockAds CA jest wymagany do odszyfrowywania i filtrowania reklam HTTPS.</string>
+    <string name="cert_status_not_installed">Certyfikat TJ Shield CA jest wymagany do odszyfrowywania i filtrowania reklam HTTPS.</string>
     <string name="cert_action_check_again">Sprawdź ponownie</string>
     <string name="cert_action_reinstall">Zainstaluj ponownie</string>
     <string name="cert_action_install">Zainstaluj certyfikat</string>

@@ -118,9 +118,9 @@
     <string name="https_wizard_title">הגדרת תעודה</string>
     <string name="https_wizard_step_indicator_format">שלב %1$d מתוך %2$d: %3$s</string>
     <string name="https_wizard_security_title">אבטחה ופרטיות</string>
-    <string name="https_wizard_security_desc">תעודת ה-Root CA נוצרת מקומית במכשיר שלך ולעולם אינה עוזבת את הטלפון שלך. BlockAds משתמשת בה אך ורק כדי להסיר מודעות באתרי אינטרנט. שירותים רגישים כגון אפליקציות בנקאיות וחשבונות Google אינם מיורטים לעולם.</string>
+    <string name="https_wizard_security_desc">תעודת ה-Root CA נוצרת מקומית במכשיר שלך ולעולם אינה עוזבת את הטלפון שלך. TJ Shield משתמשת בה אך ורק כדי להסיר מודעות באתרי אינטרנט. שירותים רגישים כגון אפליקציות בנקאיות וחשבונות Google אינם מיורטים לעולם.</string>
     <string name="https_wizard_explain_title">למה סינון HTTPS?</string>
-    <string name="https_wizard_explain_desc">רוב האתרים והמודעות המודרניים משתמשים בחיבורי HTTPS מוצפנים. כדי להסתיר שומרי מקום של מודעות, באנרים וחלונות קופצים, BlockAds דורשת תעודה מקומית כדי לבדוק ולסנן דפי אינטרנט בבטחה במכשיר שלך.</string>
+    <string name="https_wizard_explain_desc">רוב האתרים והמודעות המודרניים משתמשים בחיבורי HTTPS מוצפנים. כדי להסתיר שומרי מקום של מודעות, באנרים וחלונות קופצים, TJ Shield דורשת תעודה מקומית כדי לבדוק ולסנן דפי אינטרנט בבטחה במכשיר שלך.</string>
     <string name="https_wizard_benefits_title">יתרונות מרכזיים</string>
     <string name="https_wizard_benefit_1">הסרת מודעות בפלטפורמות וידאו ובאתרי חדשות</string>
     <string name="https_wizard_benefit_2">הסתרת שומרי מקום ריקים, באנרים וחלונות קופצים פולשניים</string>
@@ -139,10 +139,10 @@
     <string name="https_wizard_device_brand_generic">מכשיר ה-Android שלך</string>
     <string name="https_wizard_install_instructions_title">מדריך שלב אחר שלב</string>
     <string name="https_wizard_checking_title">מאמת תעודה…</string>
-    <string name="https_wizard_checking_desc">סורק את מאגר האמון של Android עבור BlockAds CA…</string>
-    <string name="https_wizard_installed_desc">BlockAds Root CA מאומת ופעיל במאגר האמון של המכשיר שלך. סינון HTTPS מתקדם מוכן לפעולה!</string>
+    <string name="https_wizard_checking_desc">סורק את מאגר האמון של Android עבור TJ Shield CA…</string>
+    <string name="https_wizard_installed_desc">TJ Shield Root CA מאומת ופעיל במאגר האמון של המכשיר שלך. סינון HTTPS מתקדם מוכן לפעולה!</string>
     <string name="https_wizard_not_installed_title">התעודה לא זוהתה</string>
-    <string name="https_wizard_not_installed_desc">BlockAds עדיין לא מצאה את התעודה במאגר האמון שלך. אם זה עתה סיימת להתקין אותה בהגדרות, הקש למטה כדי לבדוק שוב.</string>
+    <string name="https_wizard_not_installed_desc">TJ Shield עדיין לא מצאה את התעודה במאגר האמון שלך. אם זה עתה סיימת להתקין אותה בהגדרות, הקש למטה כדי לבדוק שוב.</string>
     <string name="https_wizard_troubleshooting_title">טיפים לפתרון בעיות</string>
     <string name="https_wizard_troubleshooting_tip1">ודא שבחרת ב-\"תעודת CA\" בהגדרות (לא תעודת משתמש או תעודת משתמש של VPN ואפליקציות).</string>
     <string name="https_wizard_troubleshooting_tip2">אם ההתקנה בוצעה באמצעות מודול Magisk/KernelSU, נדרש אתחול מחדש של המכשיר.</string>
@@ -176,7 +176,7 @@
     <string name="filter_category_starred">מסומנים בכוכב</string>
     <string name="filter_starred_empty">אין עדיין מסננים מסומנים בכוכב. הקש על סמל הכוכב בכל מסנן כדי להצמיד אותו לכאן לגישה מהירה.</string>
     <string name="filter_supported_formats_title">פורמטים נתמכים</string>
-    <string name="filter_supported_formats_desc">BlockAds תומך בכל התחביר הסטנדרטי של רשימות חסימה ו-adblock:</string>
+    <string name="filter_supported_formats_desc">TJ Shield תומך בכל התחביר הסטנדרטי של רשימות חסימה ו-adblock:</string>
     <string name="filter_format_adblock_title">AdBlock / uBlock</string>
     <string name="filter_format_adblock_desc">||example.com^, ||*.domain.com^, $all, $important</string>
     <string name="filter_format_hosts_title">קובץ Hosts</string>

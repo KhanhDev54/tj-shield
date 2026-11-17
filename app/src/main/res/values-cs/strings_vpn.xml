@@ -2,17 +2,17 @@
 <resources>
     <string name="notification_channel_name">Služba blokování reklam</string>
     <string name="notification_channel_description">Zobrazuje se, když je aktivní blokování reklam VPN</string>
-    <string name="vpn_notification_title">BlockAds je aktivní</string>
+    <string name="vpn_notification_title">TJ Shield je aktivní</string>
     <string name="vpn_notification_text">Chráníme vaše zařízení před reklamami</string>
-    <string name="vpn_notification_reconnecting">BlockAds se znovu připojuje</string>
+    <string name="vpn_notification_reconnecting">TJ Shield se znovu připojuje</string>
     <string name="vpn_notification_reconnecting_text">Síť se změnila, probíhá opětovné připojení VPN…</string>
-    <string name="vpn_notification_retrying">BlockAds opakuje pokus</string>
+    <string name="vpn_notification_retrying">TJ Shield opakuje pokus</string>
     <string name="vpn_notification_retry_text">Pokus o připojení %1$d z %2$d</string>
     <string name="vpn_alert_channel_name">Upozornění VPN</string>
     <string name="vpn_alert_channel_description">Důležitá upozornění o změnách stavu VPN</string>
     <string name="vpn_revoked_title">Blokování reklam zastaveno</string>
-    <string name="vpn_revoked_text">Jiná aplikace VPN převzala připojení. Klepnutím znovu aktivujete BlockAds.</string>
-    <string name="vpn_stopped_title">BlockAds je pozastaveno</string>
+    <string name="vpn_revoked_text">Jiná aplikace VPN převzala připojení. Klepnutím znovu aktivujete TJ Shield.</string>
+    <string name="vpn_stopped_title">TJ Shield je pozastaveno</string>
     <string name="vpn_stopped_text">Blokování reklam je vypnuto. Klepnutím na Povolit pokračujte.</string>
     <string name="vpn_stopped_action_enable">Povolit</string>
     <string name="status_protected">Chráněno</string>
@@ -24,7 +24,7 @@
     <string name="widget_unprotected">Vypnuto</string>
     <string name="shortcut_toggle_vpn">Přepnout blokování reklam</string>
     <string name="vpn_conflict_title">Připojení zablokováno</string>
-    <string name="vpn_conflict_desc">Android umožňuje pouze jedno aktivní připojení VPN současně. Ve vašem zařízení je již aktivní jiná VPN.\n\nNež se připojíte k BlockAds, odpojte prosím jinou VPN nebo v Nastavení vypněte funkci „Vždy zapnutá VPN“.</string>
+    <string name="vpn_conflict_desc">Android umožňuje pouze jedno aktivní připojení VPN současně. Ve vašem zařízení je již aktivní jiná VPN.\n\nNež se připojíte k TJ Shield, odpojte prosím jinou VPN nebo v Nastavení vypněte funkci „Vždy zapnutá VPN“.</string>
     <string name="vpn_phase_loading_filters">Načítání seznamů filtrů…</string>
     <string name="vpn_phase_preparing_dns">Příprava DNS…</string>
     <string name="vpn_phase_establishing">Navazování VPN…</string>
@@ -32,7 +32,7 @@
     <string name="vpn_notification_stats_today">Dnes zablokováno %1$d reklam | Provoz %2$s</string>
     <string name="vpn_notification_action_pause">Pauza 1h</string>
     <string name="vpn_notification_action_stop">Zastavit</string>
-    <string name="vpn_paused_title">BlockAds pozastaveno</string>
+    <string name="vpn_paused_title">TJ Shield pozastaveno</string>
     <string name="vpn_paused_text">Blokování reklam je na 1 hodinu pozastaveno. Poté se automaticky obnoví.</string>
     <string name="accessibility_toggle_vpn">Přepnout ochranu VPN</string>
     <string name="accessibility_vpn_active">Ochrana VPN je aktivní</string>
@@ -49,7 +49,7 @@
     <string name="root_not_available">Přístup Root není k dispozici. Udělte prosím oprávnění ve správci root (např. Magisk/KernelSU).</string>
     <string name="root_proxy_notification_text">Režim Root Proxy je aktivní — provoz DNS je přesměrován přes iptables</string>
     <string name="status_disconnecting">Odpojování</string>
-    <string name="vpn_notification_stopping">BlockAds se zastavuje</string>
+    <string name="vpn_notification_stopping">TJ Shield se zastavuje</string>
     <string name="vpn_notification_stopping_text">Zavírání VPN tunelu…</string>
     <string name="wireguard_https_filtering_disabled">HTTPS filtrování deaktivováno (nekompatibilní s WireGuard)</string>
     <string name="wireguard_imported">\'%1$s\' importován</string>
@@ -71,18 +71,18 @@
     <string name="wireguard_issue_malformed_allowed_ips">Neplatné Allowed IPs: %1$s</string>
     <string name="wireguard_issue_fix_first">Nejprve opravte \'%1$s\': %2$s</string>
     <string name="wireguard_config_invalid_title">Profil WireGuard je potřeba opravit</string>
-    <string name="wireguard_config_invalid_text">%1$s. BlockAds se zastavil, místo aby běžel bez tunelu.</string>
+    <string name="wireguard_config_invalid_text">%1$s. TJ Shield se zastavil, místo aby běžel bez tunelu.</string>
     <string name="wireguard_rename_dialog_title">Přejmenovat profil</string>
-    <string name="root_proxy_start_failed_title">BlockAds se nepodařilo spustit</string>
+    <string name="root_proxy_start_failed_title">TJ Shield se nepodařilo spustit</string>
     <string name="root_proxy_start_failed_text">Nepodařilo se získat root oprávnění ke spuštění ochrany. Klepnutím na Povolit to zkuste znovu.</string>
     <string name="private_dns_warning_title">Soukromé DNS je zapnuté</string>
-    <string name="private_dns_warning_text">Soukromé DNS systému Android obchází BlockAds, takže filtrování nemusí fungovat. Nastavte soukromé DNS na Vypnuto nebo Automaticky v nastavení systému.</string>
+    <string name="private_dns_warning_text">Soukromé DNS systému Android obchází TJ Shield, takže filtrování nemusí fungovat. Nastavte soukromé DNS na Vypnuto nebo Automaticky v nastavení systému.</string>
     <string name="status_paused">Pozastaveno</string>
     <string name="vpn_notification_action_retry">Opakovat</string>
     <string name="vpn_notification_no_internet_title">Žádné připojení k internetu</string>
     <string name="vpn_notification_no_internet_text">Čekání na síťové připojení...</string>
     <string name="vpn_revoked_card_title">Ochrana pozastavena</string>
-    <string name="vpn_revoked_card_desc">Připojila se jiná aplikace VPN. Váš provoz již není filtrován aplikací BlockAds.</string>
+    <string name="vpn_revoked_card_desc">Připojila se jiná aplikace VPN. Váš provoz již není filtrován aplikací TJ Shield.</string>
     <string name="vpn_revoked_action_reconnect">Znovu připojit</string>
     <string name="vpn_revoked_action_dismiss">Zavřít</string>
     <string name="home_tip_battery_title">Aktivita na pozadí</string>
@@ -105,10 +105,10 @@
     <string name="home_tip_feature_https_desc">Důkladně blokovat obtěžující webové a vyskakovací reklamy</string>
     <string name="home_tip_feature_https_action">Prozkoumat</string>
     <string name="home_tip_feature_wireguard_title">WireGuard VPN</string>
-    <string name="home_tip_feature_wireguard_desc">Používejte svůj osobní server VPN společně s BlockAds</string>
+    <string name="home_tip_feature_wireguard_desc">Používejte svůj osobní server VPN společně s TJ Shield</string>
     <string name="home_tip_feature_wireguard_action">Vyzkoušet</string>
     <string name="tailscale_title">Tailscale</string>
-    <string name="tailscale_subtitle">Připojte se ke svému Tailnetu společně s BlockAds</string>
+    <string name="tailscale_subtitle">Připojte se ke svému Tailnetu společně s TJ Shield</string>
     <string name="tailscale_desc">Připojte se ke své soukromé síti Tailscale nebo Headscale při zachování veškerého lokálního blokování reklam a filtrování HTTPS.</string>
     <string name="tailscale_sign_in_browser">Přihlásit se pomocí Tailscale</string>
     <string name="tailscale_waiting_auth">Čekání na přihlášení v prohlížeči...</string>
@@ -158,7 +158,7 @@
     <string name="tailscale_ping_self">Na toto zařízení nelze odeslat ping</string>
     <string name="tailscale_vpn_not_running">VPN je odpojena</string>
     <string name="tailscale_vpn_required_title">Vyžadována VPN</string>
-    <string name="tailscale_vpn_required_desc">Pro směrování provozu Tailscale musí být spuštěna BlockAds VPN.</string>
+    <string name="tailscale_vpn_required_desc">Pro směrování provozu Tailscale musí být spuštěna TJ Shield VPN.</string>
     <string name="tailscale_start_vpn">Spustit VPN</string>
     <string name="tailscale_notification_channel_name">Síť Tailscale</string>
     <string name="tailscale_notification_channel_desc">Oznámení o připojení zařízení Tailscale</string>
@@ -182,6 +182,6 @@
     <string name="tailscale_settings_title">Nastavení Tailscale</string>
     <string name="tailscale_advertise_exit_node">Spustit jako výstupní uzel</string>
     <string name="tailscale_advertise_exit_node_desc">Umožňuje ostatním zařízením v síti Tailnet směrovat internetový provoz přes toto zařízení. Povolte také v administrační konzoli Tailscale.</string>
-    <string name="tailscale_adblock_title">BlockAds Tailscale</string>
-    <string name="tailscale_adblock_desc">Filtruje reklamy a sledovače pro zařízení používající tento výstupní uzel. V obou případech používá nakonfigurovaný DNS aplikace BlockAds.</string>
+    <string name="tailscale_adblock_title">TJ Shield Tailscale</string>
+    <string name="tailscale_adblock_desc">Filtruje reklamy a sledovače pro zařízení používající tento výstupní uzel. V obou případech používá nakonfigurovaný DNS aplikace TJ Shield.</string>
 </resources>

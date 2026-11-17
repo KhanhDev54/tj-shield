@@ -2,7 +2,7 @@
 <resources>
     <string name="cert_status_installed">CA-Zertifikat ist installiert und vertrauenswürdig. HTTPS-Werbeblockierung ist bereit.</string>
     <string name="cert_status_checking">Zertifikat im sicheren Speicher des Geräts wird geprüft…</string>
-    <string name="cert_status_not_installed">Das BlockAds CA-Zertifikat wird benötigt, um Werbung über HTTPS zu filtern.</string>
+    <string name="cert_status_not_installed">Das TJ Shield CA-Zertifikat wird benötigt, um Werbung über HTTPS zu filtern.</string>
     <string name="cert_action_check_again">Erneut prüfen</string>
     <string name="cert_action_reinstall">Neu installieren</string>
     <string name="cert_action_install">Zertifikat installieren</string>

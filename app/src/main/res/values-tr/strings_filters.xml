@@ -118,9 +118,9 @@
     <string name="https_wizard_title">Sertifika Kurulumu</string>
     <string name="https_wizard_step_indicator_format">Adım %1$d / %2$d: %3$s</string>
     <string name="https_wizard_security_title">Güvenlik ve Gizlilik</string>
-    <string name="https_wizard_security_desc">Kök CA sertifikası cihazınızda yerel olarak oluşturulur ve asla telefonunuzdan dışarı çıkmaz. BlockAds bunu yalnızca web sitelerindeki reklamları kaldırmak için kullanır. Bankacılık uygulamaları ve Google hesapları gibi hassas hizmetler asla dinlenmez.</string>
+    <string name="https_wizard_security_desc">Kök CA sertifikası cihazınızda yerel olarak oluşturulur ve asla telefonunuzdan dışarı çıkmaz. TJ Shield bunu yalnızca web sitelerindeki reklamları kaldırmak için kullanır. Bankacılık uygulamaları ve Google hesapları gibi hassas hizmetler asla dinlenmez.</string>
     <string name="https_wizard_explain_title">Neden HTTPS Filtreleme?</string>
-    <string name="https_wizard_explain_desc">Çoğu modern web sitesi ve reklam, şifreli HTTPS bağlantıları kullanır. Reklam alanlarını, afişleri ve açılır pencereleri gizlemek için BlockAds, cihazınızdaki web sayfalarını güvenli bir şekilde incelemek ve filtrelemek için yerel bir sertifikaya ihtiyaç duyar.</string>
+    <string name="https_wizard_explain_desc">Çoğu modern web sitesi ve reklam, şifreli HTTPS bağlantıları kullanır. Reklam alanlarını, afişleri ve açılır pencereleri gizlemek için TJ Shield, cihazınızdaki web sayfalarını güvenli bir şekilde incelemek ve filtrelemek için yerel bir sertifikaya ihtiyaç duyar.</string>
     <string name="https_wizard_benefits_title">Temel Avantajlar</string>
     <string name="https_wizard_benefit_1">Video platformlarındaki ve haber sitelerindeki reklamları ortadan kaldırın</string>
     <string name="https_wizard_benefit_2">Boş yer tutucuları, afişleri ve rahatsız edici açılır pencereleri gizleyin</string>
@@ -139,10 +139,10 @@
     <string name="https_wizard_device_brand_generic">Android Cihazınız</string>
     <string name="https_wizard_install_instructions_title">Adım Adım Kılavuz</string>
     <string name="https_wizard_checking_title">Sertifika doğrulanıyor…</string>
-    <string name="https_wizard_checking_desc">Android güven deposunda BlockAds CA taranıyor…</string>
-    <string name="https_wizard_installed_desc">BlockAds Root CA doğrulandı ve cihazınızın güven deposunda etkin. Gelişmiş HTTPS filtrelemesi kullanıma hazır!</string>
+    <string name="https_wizard_checking_desc">Android güven deposunda TJ Shield CA taranıyor…</string>
+    <string name="https_wizard_installed_desc">TJ Shield Root CA doğrulandı ve cihazınızın güven deposunda etkin. Gelişmiş HTTPS filtrelemesi kullanıma hazır!</string>
     <string name="https_wizard_not_installed_title">Sertifika Algılanamadı</string>
-    <string name="https_wizard_not_installed_desc">BlockAds henüz güven deponuzda sertifikayı bulamadı. Ayarlar\'da yüklemeyi yeni tamamladıysanız, tekrar kontrol etmek için aşağıya dokunun.</string>
+    <string name="https_wizard_not_installed_desc">TJ Shield henüz güven deponuzda sertifikayı bulamadı. Ayarlar\'da yüklemeyi yeni tamamladıysanız, tekrar kontrol etmek için aşağıya dokunun.</string>
     <string name="https_wizard_troubleshooting_title">Sorun Giderme İpuçları</string>
     <string name="https_wizard_troubleshooting_tip1">Ayarlar\'da \"CA Sertifikası\"nı seçtiğinizden emin olun (Kullanıcı Sertifikası veya VPN ve uygulama kullanıcı sertifikası değil).</string>
     <string name="https_wizard_troubleshooting_tip2">Magisk/KernelSU modülü aracılığıyla yükleniyorsa, cihazın yeniden başlatılması gerekir.</string>
@@ -176,7 +176,7 @@
     <string name="filter_category_starred">Yıldızlı</string>
     <string name="filter_starred_empty">Henüz yıldızlı filtre yok. Hızlı erişim için buraya sabitlemek üzere herhangi bir filtredeki yıldız simgesine dokunun.</string>
     <string name="filter_supported_formats_title">Desteklenen Formatlar</string>
-    <string name="filter_supported_formats_desc">BlockAds, tüm standart engelleme listesi ve adblock sözdizimlerini destekler:</string>
+    <string name="filter_supported_formats_desc">TJ Shield, tüm standart engelleme listesi ve adblock sözdizimlerini destekler:</string>
     <string name="filter_format_adblock_title">AdBlock / uBlock</string>
     <string name="filter_format_adblock_desc">||example.com^, ||*.domain.com^, $all, $important</string>
     <string name="filter_format_hosts_title">Hosts Dosyası</string>

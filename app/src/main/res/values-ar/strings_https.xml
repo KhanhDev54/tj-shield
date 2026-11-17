@@ -2,7 +2,7 @@
 <resources>
     <string name="cert_status_installed">شهادة CA مثبتة وموثوقة. حظر إعلانات HTTPS المتقدم جاهز.</string>
     <string name="cert_status_checking">جارٍ التحقق من الشهادة في التخزين الآمن…</string>
-    <string name="cert_status_not_installed">شهادة BlockAds CA مطلوبة لفك تشفير وتصفية إعلانات HTTPS.</string>
+    <string name="cert_status_not_installed">شهادة TJ Shield CA مطلوبة لفك تشفير وتصفية إعلانات HTTPS.</string>
     <string name="cert_action_check_again">تحقق مجدداً</string>
     <string name="cert_action_reinstall">إعادة التثبيت</string>
     <string name="cert_action_install">تثبيت الشهادة</string>

@@ -3,7 +3,7 @@
     <!-- Certificate Status Card -->
     <string name="cert_status_installed">Le certificat CA est installé et approuvé. Le blocage publicitaire HTTPS avancé est prêt.</string>
     <string name="cert_status_checking">Vérification du certificat dans le stockage sécurisé de l\'appareil…</string>
-    <string name="cert_status_not_installed">Le certificat CA de BlockAds est requis pour déchiffrer et filtrer les publicités sur les connexions Web HTTPS.</string>
+    <string name="cert_status_not_installed">Le certificat CA de TJ Shield est requis pour déchiffrer et filtrer les publicités sur les connexions Web HTTPS.</string>
     <string name="cert_action_check_again">Vérifier à nouveau</string>
     <string name="cert_action_reinstall">Réinstaller</string>
     <string name="cert_action_install">Installer le certificat</string>

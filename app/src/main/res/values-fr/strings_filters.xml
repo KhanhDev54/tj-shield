@@ -140,7 +140,7 @@
     <string name="filter_compile_failed_title">Échec de la compilation du filtre</string>
     <string name="filter_compile_channel_name">Compilation des filtres</string>
     <string name="filter_supported_formats_title">Formats pris en charge</string>
-    <string name="filter_supported_formats_desc">BlockAds prend en charge toutes les syntaxes standard de listes de blocage et d\'Adblock :</string>
+    <string name="filter_supported_formats_desc">TJ Shield prend en charge toutes les syntaxes standard de listes de blocage et d\'Adblock :</string>
     <string name="filter_format_adblock_title">AdBlock / uBlock</string>
     <string name="filter_format_adblock_desc">||exemple.com^, ||*.domaine.com^, $all, $important</string>
     <string name="filter_format_hosts_title">Fichier Hosts</string>
@@ -165,9 +165,9 @@
     <string name="https_wizard_title">Configuration du certificat</string>
     <string name="https_wizard_step_indicator_format">Étape %1$d sur %2$d : %3$s</string>
     <string name="https_wizard_security_title">Sécurité &amp; Confidentialité</string>
-    <string name="https_wizard_security_desc">Le certificat racine CA est généré localement sur votre appareil et ne quitte jamais votre téléphone. BlockAds l\'utilise strictement pour supprimer les publicités esthétiques sur les sites web. Les services sensibles tels que les applications bancaires et les comptes Google ne sont jamais interceptés.</string>
+    <string name="https_wizard_security_desc">Le certificat racine CA est généré localement sur votre appareil et ne quitte jamais votre téléphone. TJ Shield l\'utilise strictement pour supprimer les publicités esthétiques sur les sites web. Les services sensibles tels que les applications bancaires et les comptes Google ne sont jamais interceptés.</string>
     <string name="https_wizard_explain_title">Pourquoi le filtrage HTTPS ?</string>
-    <string name="https_wizard_explain_desc">La plupart des sites web et publicités modernes utilisent des connexions chiffrées HTTPS. Pour masquer les emplacements réservés aux pubs, les bannières et les popups flottantes, BlockAds nécessite un certificat local afin d\'inspecter et filtrer les pages web en toute sécurité sur votre appareil.</string>
+    <string name="https_wizard_explain_desc">La plupart des sites web et publicités modernes utilisent des connexions chiffrées HTTPS. Pour masquer les emplacements réservés aux pubs, les bannières et les popups flottantes, TJ Shield nécessite un certificat local afin d\'inspecter et filtrer les pages web en toute sécurité sur votre appareil.</string>
     <string name="https_wizard_benefits_title">Principaux avantages</string>
     <string name="https_wizard_benefit_1">Éliminer les publicités sur les plateformes vidéo &amp; sites d\'actualités</string>
     <string name="https_wizard_benefit_2">Masquer les espaces vides, les bannières et les popups intrusives</string>
@@ -186,10 +186,10 @@
     <string name="https_wizard_device_brand_generic">Votre appareil Android</string>
     <string name="https_wizard_install_instructions_title">Guide étape par étape</string>
     <string name="https_wizard_checking_title">Vérification du certificat…</string>
-    <string name="https_wizard_checking_desc">Analyse du magasin de confiance Android pour BlockAds CA…</string>
-    <string name="https_wizard_installed_desc">BlockAds Root CA est vérifié et actif dans le magasin de confiance de votre appareil. Le filtrage HTTPS avancé est prêt à l\'emploi !</string>
+    <string name="https_wizard_checking_desc">Analyse du magasin de confiance Android pour TJ Shield CA…</string>
+    <string name="https_wizard_installed_desc">TJ Shield Root CA est vérifié et actif dans le magasin de confiance de votre appareil. Le filtrage HTTPS avancé est prêt à l\'emploi !</string>
     <string name="https_wizard_not_installed_title">Certificat non détecté</string>
-    <string name="https_wizard_not_installed_desc">BlockAds n\'a pas encore trouvé le certificat dans votre magasin de confiance. Si vous venez de terminer son installation dans les Paramètres, appuyez ci-dessous pour vérifier à nouveau.</string>
+    <string name="https_wizard_not_installed_desc">TJ Shield n\'a pas encore trouvé le certificat dans votre magasin de confiance. Si vous venez de terminer son installation dans les Paramètres, appuyez ci-dessous pour vérifier à nouveau.</string>
     <string name="https_wizard_troubleshooting_title">Conseils de dépannage</string>
     <string name="https_wizard_troubleshooting_tip1">Assurez-vous d\'avoir sélectionné « Certificat CA » dans les Paramètres (et non Certificat utilisateur ou VPN et certificat utilisateur d\'application).</string>
     <string name="https_wizard_troubleshooting_tip2">En cas d\'installation via un module Magisk/KernelSU, un redémarrage de l\'appareil est nécessaire.</string>

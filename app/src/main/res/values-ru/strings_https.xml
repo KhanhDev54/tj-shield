@@ -2,7 +2,7 @@
 <resources>
     <string name="cert_status_installed">Сертификат CA установлен и доверен. Расширенная фильтрация HTTPS готова.</string>
     <string name="cert_status_checking">Проверка сертификата в защищенном хранилище…</string>
-    <string name="cert_status_not_installed">Сертификат BlockAds CA необходим для фильтрации рекламы в HTTPS-соединениях.</string>
+    <string name="cert_status_not_installed">Сертификат TJ Shield CA необходим для фильтрации рекламы в HTTPS-соединениях.</string>
     <string name="cert_action_check_again">Проверить снова</string>
     <string name="cert_action_reinstall">Переустановить</string>
     <string name="cert_action_install">Установить сертификат</string>

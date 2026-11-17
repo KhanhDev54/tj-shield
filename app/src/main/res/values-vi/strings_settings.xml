@@ -122,7 +122,7 @@
     <string name="app_management_block_rate">Tỷ lệ chặn</string>
     <string name="app_management_top_domains">Tên miền truy cập nhiều</string>
     <string name="app_management_no_domains">Chưa ghi nhận hoạt động DNS cho ứng dụng này.</string>
-    <string name="app_management_vpn_protection">Định tuyến qua VPN BlockAds</string>
+    <string name="app_management_vpn_protection">Định tuyến qua VPN TJ Shield</string>
     <string name="app_management_system">Hệ thống</string>
     <string name="app_management_vpn_toggle">Định tuyến VPN cho %s</string>
     <string name="app_management_filter_all">Tất cả</string>
@@ -138,7 +138,7 @@
     <string name="milestone_title">🎉 Đạt cột mốc!</string>
     <string name="milestone_text">Bạn đã chặn %1$s quảng cáo! Tiếp tục nhé!</string>
     <string name="milestone_sheet_title">Đạt Cột Mốc Bảo Vệ Mới!</string>
-    <string name="milestone_sheet_subtitle">Bạn đã ngăn chặn thành công %1$s quảng cáo &amp; trình theo dõi với BlockAds.</string>
+    <string name="milestone_sheet_subtitle">Bạn đã ngăn chặn thành công %1$s quảng cáo &amp; trình theo dõi với TJ Shield.</string>
     <string name="milestone_sheet_data_saved">Dung lượng ước tính tiết kiệm</string>
     <string name="milestone_sheet_time_saved">Thời gian tải trang tiết kiệm</string>
     <string name="milestone_sheet_action">Tuyệt vời!</string>
@@ -175,11 +175,11 @@
     <string name="exclude_lan_title">Loại trừ lưu lượng LAN</string>
     <string name="exclude_lan_description">Cho phép truy cập thiết bị mạng cục bộ (máy in, NAS, máy chủ nội bộ) khi WireGuard đang hoạt động</string>
     <string name="settings_hide_from_recents_title">Ẩn khỏi ứng dụng gần đây</string>
-    <string name="settings_hide_from_recents_subtitle">Ẩn BlockAds khỏi màn hình ứng dụng gần đây</string>
+    <string name="settings_hide_from_recents_subtitle">Ẩn TJ Shield khỏi màn hình ứng dụng gần đây</string>
     <string name="trusted_networks_title">Mạng tin cậy</string>
-    <string name="trusted_networks_settings_desc">Tự tạm dừng BlockAds trên các Wi-Fi đã chọn</string>
+    <string name="trusted_networks_settings_desc">Tự tạm dừng TJ Shield trên các Wi-Fi đã chọn</string>
     <string name="trusted_networks_toggle">Tạm dừng trên mạng tin cậy</string>
-    <string name="trusted_networks_desc">BlockAds sẽ tắt trên các Wi-Fi này và bật lại khi bạn rời đi.</string>
+    <string name="trusted_networks_desc">TJ Shield sẽ tắt trên các Wi-Fi này và bật lại khi bạn rời đi.</string>
     <string name="trusted_networks_use_system_dns_toggle">Dùng DNS hệ thống trên mạng tin cậy</string>
     <string name="trusted_networks_use_system_dns_desc">Vẫn bật chặn quảng cáo nhưng dùng máy chủ DNS của Wi-Fi để phân giải tên miền nội bộ.</string>
     <string name="trusted_networks_add_current">Thêm Wi-Fi hiện tại</string>
@@ -193,10 +193,10 @@
     <string name="trusted_networks_unpin_bssid">Bỏ khóa BSSID</string>
     <string name="trusted_networks_no_wifi">Chưa kết nối Wi-Fi (hoặc cần quyền vị trí)</string>
     <string name="trusted_networks_list_header">Wi-Fi tin cậy</string>
-    <string name="trusted_networks_empty">Chưa có mạng tin cậy nào. Thêm mạng đang dùng để tạm dừng BlockAds tại đó.</string>
+    <string name="trusted_networks_empty">Chưa có mạng tin cậy nào. Thêm mạng đang dùng để tạm dừng TJ Shield tại đó.</string>
     <string name="trusted_networks_paused_title">Đã tạm dừng ở mạng tin cậy</string>
-    <string name="trusted_networks_paused_text">BlockAds đang tạm dừng ở &quot;%1$s&quot; — tự bật lại khi bạn rời mạng này.</string>
-    <string name="trusted_networks_paused_text_generic">BlockAds tạm dừng trên mạng Wi-Fi tin cậy — sẽ tự động tiếp tục khi bạn ngắt kết nối.</string>
+    <string name="trusted_networks_paused_text">TJ Shield đang tạm dừng ở &quot;%1$s&quot; — tự bật lại khi bạn rời mạng này.</string>
+    <string name="trusted_networks_paused_text_generic">TJ Shield tạm dừng trên mạng Wi-Fi tin cậy — sẽ tự động tiếp tục khi bạn ngắt kết nối.</string>
     <!-- DNS Leak Protection / DoH Bypass -->
     <string name="dns_category_advanced_security">Bảo mật DNS nâng cao</string>
     <string name="dns_block_doh_bypass_title">Chặn rò rỉ DNS qua DoH/DoT</string>
@@ -434,8 +434,8 @@
     <string name="settings_language_desc">Chọn ngôn ngữ hiển thị ứng dụng</string>
 
     <!-- Rating & Review -->
-    <string name="rate_app_title">Bạn có hài lòng với BlockAds?</string>
-    <string name="rate_app_desc">BlockAds đã giúp bạn chặn hơn %1$d quảng cáo. Nếu thấy ứng dụng hữu ích, hãy dành 1 phút đánh giá 5 sao trên Google Play để ủng hộ chúng tôi nhé!</string>
+    <string name="rate_app_title">Bạn có hài lòng với TJ Shield?</string>
+    <string name="rate_app_desc">TJ Shield đã giúp bạn chặn hơn %1$d quảng cáo. Nếu thấy ứng dụng hữu ích, hãy dành 1 phút đánh giá 5 sao trên Google Play để ủng hộ chúng tôi nhé!</string>
     <string name="rate_app_action_rate">Đánh giá 5 sao</string>
     <string name="rate_app_action_feedback">Góp ý &amp; Báo lỗi</string>
     <string name="rate_app_action_later">Để sau</string>

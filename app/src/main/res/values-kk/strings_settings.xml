@@ -40,16 +40,16 @@
     <string name="settings_updating">Жаңартылуда…</string>
     <string name="settings_update_all">Барлық сүзгілерді жаңарту</string>
     <string name="trusted_networks_title">Сенімді желілер</string>
-    <string name="trusted_networks_settings_desc">Таңдалған Wi-Fi желілерінде BlockAds-ты автоматты кідірту</string>
+    <string name="trusted_networks_settings_desc">Таңдалған Wi-Fi желілерінде TJ Shield-ты автоматты кідірту</string>
     <string name="trusted_networks_toggle">Сенімді желілерде кідірту</string>
-    <string name="trusted_networks_desc">BlockAds осы Wi-Fi желілерінде өшеді және сіз одан шыққанда қайта қосылады.</string>
+    <string name="trusted_networks_desc">TJ Shield осы Wi-Fi желілерінде өшеді және сіз одан шыққанда қайта қосылады.</string>
     <string name="trusted_networks_add_current">Ағымдағы Wi-Fi желісін қосу</string>
     <string name="trusted_networks_no_wifi">Wi-Fi-ға қосылмаған (немесе орналасу рұқсаты қажет)</string>
     <string name="trusted_networks_list_header">Сенімді Wi-Fi желілері</string>
-    <string name="trusted_networks_empty">Әзірге сенімді желілер жоқ. BlockAds-ты сол жерде кідірту үшін қазіргі желіні қосыңыз.</string>
+    <string name="trusted_networks_empty">Әзірге сенімді желілер жоқ. TJ Shield-ты сол жерде кідірту үшін қазіргі желіні қосыңыз.</string>
     <string name="trusted_networks_paused_title">Сенімді желіде кідіртілді</string>
-    <string name="trusted_networks_paused_text">BlockAds «%1$s» желісінде кідіртілді — бұл желіден шыққанда автоматты түрде жалғасады.</string>
-    <string name="trusted_networks_paused_text_generic">BlockAds сенімді Wi-Fi желісінде кідіртілді — одан шыққанда автоматты түрде жалғасады.</string>
+    <string name="trusted_networks_paused_text">TJ Shield «%1$s» желісінде кідіртілді — бұл желіден шыққанда автоматты түрде жалғасады.</string>
+    <string name="trusted_networks_paused_text_generic">TJ Shield сенімді Wi-Fi желісінде кідіртілді — одан шыққанда автоматты түрде жалғасады.</string>
     <string name="settings_whitelist_domains">Ақ тізімдегі домендер</string>
     <string name="settings_export">Экспорт</string>
     <string name="settings_import">Импорт</string>
@@ -151,10 +151,10 @@
     <string name="exclude_lan_title">LAN трафигін алып тастау</string>
     <string name="exclude_lan_description">WireGuard белсенді кезде жергілікті желі құрылғыларына (принтерлер, NAS, жергілікті серверлер) қатынауға рұқсат ету</string>
     <string name="settings_hide_from_recents_title">Соңғы қолданбалардан жасыру</string>
-    <string name="settings_hide_from_recents_subtitle">BlockAds-ты соңғы қолданбалар экранынан жасыру</string>
+    <string name="settings_hide_from_recents_subtitle">TJ Shield-ты соңғы қолданбалар экранынан жасыру</string>
     <string name="settings_navigation">Навигация</string>
     <string name="milestone_sheet_title">Қорғаудың жаңа кезеңіне қол жеткізілді!</string>
-    <string name="milestone_sheet_subtitle">BlockAds арқылы %1$s жарнама мен трекерді сәтті бұғаттадыңыз.</string>
+    <string name="milestone_sheet_subtitle">TJ Shield арқылы %1$s жарнама мен трекерді сәтті бұғаттадыңыз.</string>
     <string name="milestone_sheet_data_saved">Үнемделген деректер көлемі</string>
     <string name="milestone_sheet_time_saved">Үнемделген уақыт</string>
     <string name="milestone_sheet_action">Керемет!</string>
@@ -244,7 +244,7 @@
     <string name="geoip_import_invalid">Жарамсыз GeoIP дерекқор файлы</string>
     <string name="geoip_update_success">GeoIP дерекқоры сәтті жаңартылды</string>
     <string name="routing_mode_sheet_title">Бағыттау режимі</string>
-    <string name="routing_mode_sheet_desc">BlockAds құрылғыңыздағы трафикті қалай ұстап, бағыттайтынын таңдаңыз.</string>
+    <string name="routing_mode_sheet_desc">TJ Shield құрылғыңыздағы трафикті қалай ұстап, бағыттайтынын таңдаңыз.</string>
     <string name="routing_mode_local_vpn_title">Жергілікті VPN режимі</string>
     <string name="routing_mode_local_vpn_desc" formatted="false">Android VPN қызметін пайдаланып трафикті тікелей құрылғыда сүзеді. Root қажет емес, 100% құпия.</string>
     <string name="routing_mode_root_proxy_title">Root Proxy режимі</string>
@@ -374,8 +374,8 @@
     <string name="settings_bottom_nav_tab_auto">Автоматты (Әдепкі)</string>
     <string name="settings_bottom_nav_tab_filter">Сүзгіні баптау</string>
     <string name="settings_bottom_nav_tab_vpn">VPN және прокси</string>
-    <string name="rate_app_title">BlockAds ұнады ма?</string>
-    <string name="rate_app_desc">BlockAds сіз үшін %1$d астам жарнаманы бұғаттады. Егер қолданба пайдалы болса, Google Play-де 5 жұлдызды бағалауға уақыт бөліңізші!</string>
+    <string name="rate_app_title">TJ Shield ұнады ма?</string>
+    <string name="rate_app_desc">TJ Shield сіз үшін %1$d астам жарнаманы бұғаттады. Егер қолданба пайдалы болса, Google Play-де 5 жұлдызды бағалауға уақыт бөліңізші!</string>
     <string name="rate_app_action_rate">5 жұлдыз қою</string>
     <string name="rate_app_action_feedback">Пікір жіберу</string>
     <string name="rate_app_action_later">Кейінірек</string>
@@ -405,7 +405,7 @@
     <string name="app_management_block_rate">Бұғаттау үлесі</string>
     <string name="app_management_top_domains">Үздік домендер</string>
     <string name="app_management_no_domains">Бұл қолданба үшін әзірге DNS белсенділігі тіркелмеген.</string>
-    <string name="app_management_vpn_protection">BlockAds VPN арқылы бағыттау</string>
+    <string name="app_management_vpn_protection">TJ Shield VPN арқылы бағыттау</string>
     <string name="settings_home_tips">Басты экран бойынша кеңестер</string>
     <string name="settings_home_tips_desc">Басты экранда пайдалы кеңестер мен мүмкіндіктер ұсыныстарын көрсету</string>
     <string name="settings_nav_position">Шарлау орны</string>

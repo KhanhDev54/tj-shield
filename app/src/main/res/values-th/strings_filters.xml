@@ -118,9 +118,9 @@
     <string name="https_wizard_title">การตั้งค่าใบรับรอง</string>
     <string name="https_wizard_step_indicator_format">ขั้นตอนที่ %1$d จาก %2$d: %3$s</string>
     <string name="https_wizard_security_title">ความปลอดภัยและความเป็นส่วนตัว</string>
-    <string name="https_wizard_security_desc">ใบรับรอง Root CA ถูกสร้างขึ้นภายในอุปกรณ์ของคุณและไม่เคยออกจากโทรศัพท์ของคุณ BlockAds ใช้ใบรับรองนี้เพื่อลบโฆษณาบนเว็บไซต์เท่านั้น บริการที่ละเอียดอ่อน เช่น แอปธนาคารและบัญชี Google จะไม่ถูกดักจับข้อมูลโดยเด็ดขาด</string>
+    <string name="https_wizard_security_desc">ใบรับรอง Root CA ถูกสร้างขึ้นภายในอุปกรณ์ของคุณและไม่เคยออกจากโทรศัพท์ของคุณ TJ Shield ใช้ใบรับรองนี้เพื่อลบโฆษณาบนเว็บไซต์เท่านั้น บริการที่ละเอียดอ่อน เช่น แอปธนาคารและบัญชี Google จะไม่ถูกดักจับข้อมูลโดยเด็ดขาด</string>
     <string name="https_wizard_explain_title">ทำไมต้องกรอง HTTPS?</string>
-    <string name="https_wizard_explain_desc">เว็บไซต์และโฆษณาสมัยใหม่ส่วนใหญ่ใช้การเชื่อมต่อ HTTPS ที่เข้ารหัส ในการซ่อนพื้นที่โฆษณา แบนเนอร์ และป๊อปอัป BlockAds จำเป็นต้องมีใบรับรองภายในเครื่องเพื่อตรวจสอบและกรองหน้าเว็บอย่างปลอดภัยบนอุปกรณ์ของคุณ</string>
+    <string name="https_wizard_explain_desc">เว็บไซต์และโฆษณาสมัยใหม่ส่วนใหญ่ใช้การเชื่อมต่อ HTTPS ที่เข้ารหัส ในการซ่อนพื้นที่โฆษณา แบนเนอร์ และป๊อปอัป TJ Shield จำเป็นต้องมีใบรับรองภายในเครื่องเพื่อตรวจสอบและกรองหน้าเว็บอย่างปลอดภัยบนอุปกรณ์ของคุณ</string>
     <string name="https_wizard_benefits_title">ประโยชน์หลัก</string>
     <string name="https_wizard_benefit_1">กำจัดโฆษณาบนแพลตฟอร์มวิดีโอและเว็บไซต์ข่าว</string>
     <string name="https_wizard_benefit_2">ซ่อนพื้นที่ว่าง แบนเนอร์ และป๊อปอัปที่รบกวน</string>
@@ -139,10 +139,10 @@
     <string name="https_wizard_device_brand_generic">อุปกรณ์ Android ของคุณ</string>
     <string name="https_wizard_install_instructions_title">คำแนะนำทีละขั้นตอน</string>
     <string name="https_wizard_checking_title">กำลังตรวจสอบใบรับรอง…</string>
-    <string name="https_wizard_checking_desc">กำลังสแกนที่เก็บที่เชื่อถือได้ของ Android สำหรับ BlockAds CA…</string>
-    <string name="https_wizard_installed_desc">BlockAds Root CA ได้รับการยืนยันและเปิดใช้งานในที่เก็บที่เชื่อถือได้ของอุปกรณ์แล้ว การกรอง HTTPS ขั้นสูงพร้อมใช้งานแล้ว!</string>
+    <string name="https_wizard_checking_desc">กำลังสแกนที่เก็บที่เชื่อถือได้ของ Android สำหรับ TJ Shield CA…</string>
+    <string name="https_wizard_installed_desc">TJ Shield Root CA ได้รับการยืนยันและเปิดใช้งานในที่เก็บที่เชื่อถือได้ของอุปกรณ์แล้ว การกรอง HTTPS ขั้นสูงพร้อมใช้งานแล้ว!</string>
     <string name="https_wizard_not_installed_title">ตรวจไม่พบใบรับรอง</string>
-    <string name="https_wizard_not_installed_desc">BlockAds ยังไม่พบใบรับรองในที่เก็บที่เชื่อถือได้ หากคุณเพิ่งติดตั้งเสร็จในการตั้งค่า ให้แตะด้านล่างเพื่อตรวจสอบอีกครั้ง</string>
+    <string name="https_wizard_not_installed_desc">TJ Shield ยังไม่พบใบรับรองในที่เก็บที่เชื่อถือได้ หากคุณเพิ่งติดตั้งเสร็จในการตั้งค่า ให้แตะด้านล่างเพื่อตรวจสอบอีกครั้ง</string>
     <string name="https_wizard_troubleshooting_title">เคล็ดลับการแก้ปัญหา</string>
     <string name="https_wizard_troubleshooting_tip1">ตรวจสอบให้แน่ใจว่าคุณได้เลือก \"ใบรับรอง CA\" ในการตั้งค่า (ไม่ใช่ใบรับรองผู้ใช้หรือใบรับรอง VPN และแอป)</string>
     <string name="https_wizard_troubleshooting_tip2">หากติดตั้งผ่านโมดูล Magisk/KernelSU จำเป็นต้องรีสตาร์ทอุปกรณ์</string>
@@ -176,7 +176,7 @@
     <string name="filter_category_starred">ติดดาว</string>
     <string name="filter_starred_empty">ยังไม่มีตัวกรองที่ติดดาว แตะไอคอนรูปดาวบนตัวกรองใดก็ได้เพื่อปักหมุดไว้ที่นี่เพื่อให้เข้าถึงได้อย่างรวดเร็ว</string>
     <string name="filter_supported_formats_title">รูปแบบที่รองรับ</string>
-    <string name="filter_supported_formats_desc">BlockAds รองรับไวยากรณ์รายการบล็อกและ adblock มาตรฐานทั้งหมด:</string>
+    <string name="filter_supported_formats_desc">TJ Shield รองรับไวยากรณ์รายการบล็อกและ adblock มาตรฐานทั้งหมด:</string>
     <string name="filter_format_adblock_title">AdBlock / uBlock</string>
     <string name="filter_format_adblock_desc">||example.com^, ||*.domain.com^, $all, $important</string>
     <string name="filter_format_hosts_title">ไฟล์ Hosts</string>

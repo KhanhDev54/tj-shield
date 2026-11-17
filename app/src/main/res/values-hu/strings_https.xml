@@ -3,7 +3,7 @@
     <!-- Certificate Status Card -->
     <string name="cert_status_installed">A CA-tanúsítvány telepítve van és megbízható. A fejlett HTTPS-reklámblokkolás használatra kész.</string>
     <string name="cert_status_checking">Tanúsítvány ellenőrzése az eszköz biztonságos tárolójában…</string>
-    <string name="cert_status_not_installed">A BlockAds CA-tanúsítvány szükséges a HTTPS-kapcsolatokon megjelenő reklámok visszafejtéséhez és szűréséhez.</string>
+    <string name="cert_status_not_installed">A TJ Shield CA-tanúsítvány szükséges a HTTPS-kapcsolatokon megjelenő reklámok visszafejtéséhez és szűréséhez.</string>
     <string name="cert_action_check_again">Újraellenőrzés</string>
     <string name="cert_action_reinstall">Újratelepítés</string>
     <string name="cert_action_install">Tanúsítvány telepítése</string>

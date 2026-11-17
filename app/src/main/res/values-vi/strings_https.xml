@@ -3,7 +3,7 @@
     <!-- Certificate Status Card -->
     <string name="cert_status_installed">Chứng chỉ CA đã được cài đặt và tin cậy. Lọc quảng cáo nâng cao HTTPS đã sẵn sàng.</string>
     <string name="cert_status_checking">Đang kiểm tra chứng chỉ trong kho lưu trữ an toàn của thiết bị…</string>
-    <string name="cert_status_not_installed">Cần cài đặt chứng chỉ CA BlockAds để giải mã và loại bỏ quảng cáo trên các kết nối web HTTPS.</string>
+    <string name="cert_status_not_installed">Cần cài đặt chứng chỉ CA TJ Shield để giải mã và loại bỏ quảng cáo trên các kết nối web HTTPS.</string>
     <string name="cert_action_check_again">Kiểm tra lại</string>
     <string name="cert_action_reinstall">Cài đặt lại</string>
     <string name="cert_action_install">Cài đặt chứng chỉ</string>

@@ -140,21 +140,21 @@
     <string name="exclude_lan_title">Виключити трафік LAN</string>
     <string name="exclude_lan_description">Дозволити доступ до пристроїв локальної мережі (принтери, NAS, локальні сервери) при активному WireGuard</string>
     <string name="settings_hide_from_recents_title">Сховати з останніх додатків</string>
-    <string name="settings_hide_from_recents_subtitle">Сховати BlockAds з екрана останніх додатків</string>
+    <string name="settings_hide_from_recents_subtitle">Сховати TJ Shield з екрана останніх додатків</string>
     <string name="trusted_networks_title">Довірені мережі</string>
-    <string name="trusted_networks_settings_desc">Автопауза BlockAds у вибраних мережах Wi-Fi</string>
+    <string name="trusted_networks_settings_desc">Автопауза TJ Shield у вибраних мережах Wi-Fi</string>
     <string name="trusted_networks_toggle">Пауза в довірених мережах</string>
-    <string name="trusted_networks_desc">BlockAds вимикається в цих мережах Wi-Fi і вмикається, коли ви їх залишаєте.</string>
+    <string name="trusted_networks_desc">TJ Shield вимикається в цих мережах Wi-Fi і вмикається, коли ви їх залишаєте.</string>
     <string name="trusted_networks_add_current">Додати поточну мережу Wi-Fi</string>
     <string name="trusted_networks_no_wifi">Немає підключення до Wi-Fi (або потрібен дозвіл на місцезнаходження)</string>
     <string name="trusted_networks_list_header">Довірені мережі Wi-Fi</string>
-    <string name="trusted_networks_empty">Поки немає довірених мереж. Додайте поточну, щоб призупиняти BlockAds у ній.</string>
+    <string name="trusted_networks_empty">Поки немає довірених мереж. Додайте поточну, щоб призупиняти TJ Shield у ній.</string>
     <string name="trusted_networks_paused_title">Призупинено в довіреній мережі</string>
-    <string name="trusted_networks_paused_text">BlockAds призупинено в «%1$s» — відновиться автоматично, коли ви залишите мережу.</string>
-    <string name="trusted_networks_paused_text_generic">BlockAds призупинено в довіреній мережі Wi-Fi — відновиться, коли ви вийдете.</string>
+    <string name="trusted_networks_paused_text">TJ Shield призупинено в «%1$s» — відновиться автоматично, коли ви залишите мережу.</string>
+    <string name="trusted_networks_paused_text_generic">TJ Shield призупинено в довіреній мережі Wi-Fi — відновиться, коли ви вийдете.</string>
     <string name="settings_navigation">Навігація</string>
     <string name="milestone_sheet_title">Досягнуто новий рубіж захисту!</string>
-    <string name="milestone_sheet_subtitle">Ви успішно заблокували %1$s реклами та трекерів за допомогою BlockAds.</string>
+    <string name="milestone_sheet_subtitle">Ви успішно заблокували %1$s реклами та трекерів за допомогою TJ Shield.</string>
     <string name="milestone_sheet_data_saved">Орієнтовно зекономлено трафіку</string>
     <string name="milestone_sheet_time_saved">Орієнтовно зекономлено часу</string>
     <string name="milestone_sheet_action">Чудово!</string>
@@ -244,7 +244,7 @@
     <string name="geoip_import_invalid">Недійсний файл бази даних GeoIP</string>
     <string name="geoip_update_success">Базу даних GeoIP успішно оновлено</string>
     <string name="routing_mode_sheet_title">Режим маршрутизації</string>
-    <string name="routing_mode_sheet_desc">Виберіть, як BlockAds перехоплює та маршрутизує трафік на вашому пристрої.</string>
+    <string name="routing_mode_sheet_desc">Виберіть, як TJ Shield перехоплює та маршрутизує трафік на вашому пристрої.</string>
     <string name="routing_mode_local_vpn_title">Режим локального VPN</string>
     <string name="routing_mode_local_vpn_desc" formatted="false">Фільтрує трафік безпосередньо на пристрої за допомогою служби Android VPN. Не потребує root, 100% конфіденційно.</string>
     <string name="routing_mode_root_proxy_title">Режим Root Proxy</string>
@@ -374,8 +374,8 @@
     <string name="settings_bottom_nav_tab_auto">Авто (За замовчуванням)</string>
     <string name="settings_bottom_nav_tab_filter">Налаштування фільтрів</string>
     <string name="settings_bottom_nav_tab_vpn">VPN та проксі</string>
-    <string name="rate_app_title">Подобається BlockAds?</string>
-    <string name="rate_app_desc">BlockAds заблокував для вас понад %1$d оголошень. Якщо додаток для вас корисний, знайдіть хвилинку, щоб оцінити нас на 5 зірок у Google Play!</string>
+    <string name="rate_app_title">Подобається TJ Shield?</string>
+    <string name="rate_app_desc">TJ Shield заблокував для вас понад %1$d оголошень. Якщо додаток для вас корисний, знайдіть хвилинку, щоб оцінити нас на 5 зірок у Google Play!</string>
     <string name="rate_app_action_rate">Оцінити на 5 зірок</string>
     <string name="rate_app_action_feedback">Надіслати відгук</string>
     <string name="rate_app_action_later">Можливо, пізніше</string>
@@ -405,7 +405,7 @@
     <string name="app_management_block_rate">Частка блокувань</string>
     <string name="app_management_top_domains">Популярні домени</string>
     <string name="app_management_no_domains">Для цього додатка ще не зафіксовано активності DNS.</string>
-    <string name="app_management_vpn_protection">Маршрутизувати через BlockAds VPN</string>
+    <string name="app_management_vpn_protection">Маршрутизувати через TJ Shield VPN</string>
     <string name="settings_home_tips">Поради на головному екрані</string>
     <string name="settings_home_tips_desc">Показувати корисні поради та пропозиції функцій на головному екрані</string>
     <string name="settings_nav_position">Позиція навігації</string>
