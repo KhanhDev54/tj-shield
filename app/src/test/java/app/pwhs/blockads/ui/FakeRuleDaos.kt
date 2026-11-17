@@ -45,6 +45,17 @@ class FakeCustomDnsRuleDao(initial: List<CustomDnsRule> = emptyList()) : CustomD
         rules.value.count { it.domain == domain && it.ruleType == RuleType.BLOCK && it.packageName.isEmpty() }
     override suspend fun existsForApp(domain: String, ruleType: String, packageName: String) =
         rules.value.count { it.domain == domain && it.ruleType.name == ruleType && it.packageName == packageName }
+    override suspend fun deleteExpired(nowMs: Long): Int {
+        val before = rules.value.size
+        rules.value = rules.value.filterNot { (it.expiresAt ?: Long.MAX_VALUE) <= nowMs }
+        return before - rules.value.size
+    }
+    override suspend fun deleteTemporaryForApp(packageName: String, domain: String) {
+        rules.value = rules.value.filterNot { it.packageName == packageName && it.domain == domain && it.expiresAt != null }
+    }
+    override suspend fun deleteAllTemporaryForApp(packageName: String) {
+        rules.value = rules.value.filterNot { it.packageName == packageName && it.expiresAt != null }
+    }
 }
 
 class FakeWhitelistDomainDao(initial: List<WhitelistDomain> = emptyList()) : WhitelistDomainDao {

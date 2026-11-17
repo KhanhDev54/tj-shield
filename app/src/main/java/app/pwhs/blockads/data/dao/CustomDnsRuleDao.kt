@@ -59,4 +59,13 @@ interface CustomDnsRuleDao {
 
     @Query("SELECT COUNT(*) FROM custom_dns_rules WHERE domain = :domain AND ruleType = :ruleType AND packageName = :packageName")
     suspend fun existsForApp(domain: String, ruleType: String, packageName: String): Int
+
+    @Query("DELETE FROM custom_dns_rules WHERE expiresAt IS NOT NULL AND expiresAt <= :nowMs")
+    suspend fun deleteExpired(nowMs: Long): Int
+
+    @Query("DELETE FROM custom_dns_rules WHERE packageName = :packageName AND domain = :domain AND expiresAt IS NOT NULL")
+    suspend fun deleteTemporaryForApp(packageName: String, domain: String)
+
+    @Query("DELETE FROM custom_dns_rules WHERE packageName = :packageName AND expiresAt IS NOT NULL")
+    suspend fun deleteAllTemporaryForApp(packageName: String)
 }

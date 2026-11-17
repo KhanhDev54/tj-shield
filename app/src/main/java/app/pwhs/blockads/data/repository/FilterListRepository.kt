@@ -28,7 +28,8 @@ class FilterListRepository(
     private val customDnsRuleDao: CustomDnsRuleDao,
     private val client: HttpClient,
     private val downloadManager: FilterDownloadManager,
-    private val seeder: FilterListSeeder = FilterListSeeder(context, filterListDao, client)
+    private val seeder: FilterListSeeder = FilterListSeeder(context, filterListDao, client),
+    private val temporaryAllows: TemporaryAppAllowManager = TemporaryAppAllowManager(customDnsRuleDao)
 ) {
 
     companion object {
@@ -137,6 +138,7 @@ class FilterListRepository(
 
     fun checkAppRule(domain: String, packageName: String): Long {
         if (packageName.isEmpty()) return -1L
+        if (temporaryAllows.isAllowed(packageName, domain)) return 0L
         val allowSet = appAllowRules[packageName]
         if (allowSet != null && checkDomainAndParents(domain) { allowSet.contains(it) }) return 0L
         val blockSet = appBlockRules[packageName]
@@ -160,9 +162,11 @@ class FilterListRepository(
         customAllowDomains.clear()
         customAllowDomains.addAll(allowDomains.map { it.lowercase() })
 
+        temporaryAllows.reload(perAppRules)
         appBlockRules.clear()
         appAllowRules.clear()
         for (rule in perAppRules) {
+            if (rule.expiresAt != null) continue
             val pkg = rule.packageName.trim()
             val domain = rule.domain.lowercase().trim()
             if (pkg.isEmpty() || domain.isEmpty()) continue
