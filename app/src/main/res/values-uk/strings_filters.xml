@@ -267,4 +267,10 @@
         <item quantity="many">%d правил</item>
         <item quantity="other">%d правил</item>
     </plurals>
+    <string name="log_action_allow_for_app">Дозволити для %1$s</string>
+    <string name="log_action_block_for_app">Блокувати для %1$s</string>
+    <string name="rule_field_target_app">Цільовий застосунок</string>
+    <string name="rule_pick_app_search">Пошук застосунків…</string>
+    <string name="rule_pick_app_title">Виберіть цільовий застосунок</string>
+    <string name="rule_target_app_all">Усі застосунки (глобально)</string>
 </resources>

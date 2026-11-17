@@ -266,4 +266,10 @@
         <item quantity="two">%d כללים</item>
         <item quantity="other">%d כללים</item>
     </plurals>
+    <string name="log_action_allow_for_app">אפשר עבור %1$s</string>
+    <string name="log_action_block_for_app">חסום עבור %1$s</string>
+    <string name="rule_field_target_app">אפליקציית יעד</string>
+    <string name="rule_pick_app_search">חיפוש אפליקציות…</string>
+    <string name="rule_pick_app_title">בחירת אפליקציית יעד</string>
+    <string name="rule_target_app_all">כל האפליקציות (גלובלי)</string>
 </resources>
