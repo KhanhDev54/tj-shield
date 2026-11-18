@@ -201,3 +201,28 @@ func BenchmarkBuildNXDomainResponse(b *testing.B) {
 		BuildNXDomainResponse(info)
 	}
 }
+
+func TestBlockedResponseTTL(t *testing.T) {
+	for _, qtype := range []uint16{dns.TypeA, dns.TypeAAAA} {
+		q := dnsQuery(t, "ads.example.com", qtype)
+		info := ParseTUNPacket(BuildIPv4UDPPacket(clientV4, serverV4, 1, 53, q), IPv4HeaderSize+UDPHeaderSize+len(q))
+		if info == nil {
+			t.Fatal("parse failed")
+		}
+		for _, c := range []struct {
+			pkt  []byte
+			want uint32
+		}{
+			{BuildBlockedResponse(info), DefaultBlockedTTL},
+			{BuildBlockedResponseTTL(info, 7), 7},
+		} {
+			var m dns.Msg
+			if err := m.Unpack(c.pkt[IPv4HeaderSize+UDPHeaderSize:]); err != nil {
+				t.Fatalf("unpack: %v", err)
+			}
+			if len(m.Answer) != 1 || m.Answer[0].Header().Ttl != c.want {
+				t.Errorf("%s answer = %v, want one record with TTL %d", dns.TypeToString[qtype], m.Answer, c.want)
+			}
+		}
+	}
+}

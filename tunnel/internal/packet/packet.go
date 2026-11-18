@@ -166,8 +166,17 @@ func parseIPv6Packet(packet []byte, length int) *DNSQueryInfo {
 	}
 }
 
+// DefaultBlockedTTL is the TTL, in seconds, of the 0.0.0.0 / :: answers sent for blocked domains.
+const DefaultBlockedTTL uint32 = 300
+
 // BuildBlockedResponse builds a DNS response that returns 0.0.0.0 for a blocked domain.
 func BuildBlockedResponse(queryInfo *DNSQueryInfo) []byte {
+	return BuildBlockedResponseTTL(queryInfo, DefaultBlockedTTL)
+}
+
+// BuildBlockedResponseTTL is BuildBlockedResponse with a caller-chosen answer TTL.
+// A short TTL makes clients ask again soon, so an unblock takes effect quickly.
+func BuildBlockedResponseTTL(queryInfo *DNSQueryInfo, ttl uint32) []byte {
 	var msg dns.Msg
 	msg.Unpack(queryInfo.RawDNSPayload)
 
@@ -180,12 +189,12 @@ func BuildBlockedResponse(queryInfo *DNSQueryInfo) []byte {
 		switch q.Qtype {
 		case dns.TypeA:
 			resp.Answer = append(resp.Answer, &dns.A{
-				Hdr: dns.RR_Header{Name: q.Name, Rrtype: dns.TypeA, Class: dns.ClassINET, Ttl: 300},
+				Hdr: dns.RR_Header{Name: q.Name, Rrtype: dns.TypeA, Class: dns.ClassINET, Ttl: ttl},
 				A:   net.IPv4zero,
 			})
 		case dns.TypeAAAA:
 			resp.Answer = append(resp.Answer, &dns.AAAA{
-				Hdr:  dns.RR_Header{Name: q.Name, Rrtype: dns.TypeAAAA, Class: dns.ClassINET, Ttl: 300},
+				Hdr:  dns.RR_Header{Name: q.Name, Rrtype: dns.TypeAAAA, Class: dns.ClassINET, Ttl: ttl},
 				AAAA: net.IPv6zero,
 			})
 		}

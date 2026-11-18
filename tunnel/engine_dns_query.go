@@ -282,7 +282,7 @@ func (e *Engine) handleFirewallBlock(queryInfo *DNSQueryInfo, appName string, st
 	case ResponseRefused:
 		response = BuildRefusedResponse(queryInfo)
 	default:
-		response = BuildBlockedResponse(queryInfo)
+		response = buildBlockedResponseTTL(queryInfo, e.blockedTTL(appName))
 	}
 
 	e.writeToTUN(response)
@@ -303,7 +303,7 @@ func (e *Engine) handleBlockedDomain(queryInfo *DNSQueryInfo, blockedBy, appName
 	case ResponseRefused:
 		response = BuildRefusedResponse(queryInfo)
 	default:
-		response = BuildBlockedResponse(queryInfo)
+		response = buildBlockedResponseTTL(queryInfo, e.blockedTTL(appName))
 	}
 
 	e.writeToTUN(response)
