@@ -46,6 +46,7 @@ type DNSQueryInfo = internal/packet.DNSQueryInfo
 	field DNSQueryInfo.Domain string
 	field DNSQueryInfo.QueryType uint16
 	field DNSQueryInfo.IsIPv6 bool
+const DefaultGameBlockedTTL untyped int = 10
 type DirectOutbound struct
 	method DirectOutbound.HandlePacket(packet []byte, length int)
 	method DirectOutbound.Name() string
@@ -113,6 +114,8 @@ type Engine struct
 	method Engine.SetFilterHttp3(enabled bool)
 	method Engine.SetFirewallChecker(checker FirewallChecker)
 	method Engine.SetFirewallEnabled(enabled bool)
+	method Engine.SetGameAppChecker(checker GameAppChecker)
+	method Engine.SetGameBlockedTTL(seconds int)
 	method Engine.SetGeoIPDatabaseBytes(data []byte) error
 	method Engine.SetGeoIPDatabaseFromFd(fd int, offset int64, length int64) error
 	method Engine.SetLogCallback(cb LogCallback)
@@ -154,6 +157,8 @@ type Engine struct
 	method Engine.TestWireGuardDelay(configJSON string, timeoutMs int) (int64, error)
 type FirewallChecker interface
 	method FirewallChecker.ShouldBlock(appName string) bool
+type GameAppChecker interface
+	method GameAppChecker.IsGameApp(appName string) bool
 type GeoIPDatabase = internal/geoip.Database
 	method GeoIPDatabase.Lookup(ip net.IP) string
 	method GeoIPDatabase.RecordCount() int

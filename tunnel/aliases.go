@@ -178,3 +178,8 @@ func ParseHysteria2URI(rawURI string) (string, error) {
 func SetModulesConfigJSON(jsonStr string) error {
 	return mitm.SetModulesConfigJSON(jsonStr)
 }
+
+// Unexported so gomobile does not try to bind the uint32 TTL.
+const defaultBlockedTTL = packet.DefaultBlockedTTL
+
+var buildBlockedResponseTTL = packet.BuildBlockedResponseTTL

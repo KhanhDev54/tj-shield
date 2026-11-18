@@ -49,6 +49,20 @@ type AppDomainChecker interface {
 	CheckAppRule(domain string, appName string) int
 }
 
+// GameAppChecker tells whether an app is in Game Mode. Blocked answers sent to
+// such apps get a short TTL, so a temporary unblock reaches the game within
+// seconds instead of after the usual 5 minute cache time.
+type GameAppChecker interface {
+	IsGameApp(appName string) bool
+}
+
+// Bounds and default for SetGameBlockedTTL, in seconds.
+const (
+	DefaultGameBlockedTTL = 10
+	minGameBlockedTTL     = 1
+	maxGameBlockedTTL     = 300
+)
+
 // FirewallChecker checks if a DNS query from a specific app should be blocked.
 // The implementation lives in Kotlin and uses UID resolution + FirewallManager.
 type FirewallChecker interface {
@@ -96,6 +110,8 @@ type Engine struct {
 	domainChecker    DomainChecker
 	appDomainChecker AppDomainChecker
 	firewallChecker  FirewallChecker
+	gameAppChecker   GameAppChecker
+	gameBlockedTTL   atomic.Uint32
 	appResolver     AppResolver
 	appUidResolver  AppUidResolver
 
@@ -226,6 +242,7 @@ func NewEngine() *Engine {
 		responseType: ResponseCustomIP,
 		router:       router,
 	}
+	e.gameBlockedTTL.Store(DefaultGameBlockedTTL)
 	e.interceptor = NewDnsInterceptor(e, router)
 	return e
 }
@@ -250,6 +267,31 @@ func (e *Engine) SetDomainChecker(checker DomainChecker) {
 // SetAppDomainChecker sets the Kotlin-side per-app domain rule checker.
 func (e *Engine) SetAppDomainChecker(checker AppDomainChecker) {
 	e.appDomainChecker = checker
+}
+
+// SetGameAppChecker sets the Kotlin-side check for apps in Game Mode.
+func (e *Engine) SetGameAppChecker(checker GameAppChecker) {
+	e.gameAppChecker = checker
+}
+
+// SetGameBlockedTTL sets the TTL, in seconds, of blocked answers sent to apps
+// in Game Mode. Values are clamped to 1..300.
+func (e *Engine) SetGameBlockedTTL(seconds int) {
+	if seconds < minGameBlockedTTL {
+		seconds = minGameBlockedTTL
+	}
+	if seconds > maxGameBlockedTTL {
+		seconds = maxGameBlockedTTL
+	}
+	e.gameBlockedTTL.Store(uint32(seconds))
+}
+
+// blockedTTL returns the TTL for a blocked answer sent to appName.
+func (e *Engine) blockedTTL(appName string) uint32 {
+	if appName != "" && e.gameAppChecker != nil && e.gameAppChecker.IsGameApp(appName) {
+		return e.gameBlockedTTL.Load()
+	}
+	return defaultBlockedTTL
 }
 
 // SetTries loads the native memory-mapped domain tries and bloom filters for blazing-fast lookups in Go.
