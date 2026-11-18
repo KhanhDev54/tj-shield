@@ -118,9 +118,9 @@
     <string name="https_wizard_title">Configuración del certificado</string>
     <string name="https_wizard_step_indicator_format">Paso %1$d de %2$d: %3$s</string>
     <string name="https_wizard_security_title">Seguridad y privacidad</string>
-    <string name="https_wizard_security_desc">El certificado Root CA se genera localmente en tu dispositivo y nunca sale de tu teléfono. BlockAds lo usa estrictamente para eliminar anuncios en sitios web. Los servicios confidenciales, como aplicaciones bancarias y cuentas de Google, nunca se interceptan.</string>
+    <string name="https_wizard_security_desc">El certificado Root CA se genera localmente en tu dispositivo y nunca sale de tu teléfono. TJ Shield lo usa estrictamente para eliminar anuncios en sitios web. Los servicios confidenciales, como aplicaciones bancarias y cuentas de Google, nunca se interceptan.</string>
     <string name="https_wizard_explain_title">¿Por qué el filtrado HTTPS?</string>
-    <string name="https_wizard_explain_desc">La mayoría de los sitios web y anuncios modernos utilizan conexiones HTTPS cifradas. Para ocultar marcadores de anuncios, banners y ventanas emergentes, BlockAds requiere un certificado local para inspeccionar y filtrar páginas web de forma segura en tu dispositivo.</string>
+    <string name="https_wizard_explain_desc">La mayoría de los sitios web y anuncios modernos utilizan conexiones HTTPS cifradas. Para ocultar marcadores de anuncios, banners y ventanas emergentes, TJ Shield requiere un certificado local para inspeccionar y filtrar páginas web de forma segura en tu dispositivo.</string>
     <string name="https_wizard_benefits_title">Beneficios clave</string>
     <string name="https_wizard_benefit_1">Elimina anuncios en plataformas de video y sitios de noticias</string>
     <string name="https_wizard_benefit_2">Oculta marcadores en blanco, banners y ventanas emergentes intrusivas</string>
@@ -139,10 +139,10 @@
     <string name="https_wizard_device_brand_generic">Tu dispositivo Android</string>
     <string name="https_wizard_install_instructions_title">Guía paso a paso</string>
     <string name="https_wizard_checking_title">Verificando certificado…</string>
-    <string name="https_wizard_checking_desc">Buscando BlockAds CA en el almacén de confianza de Android…</string>
-    <string name="https_wizard_installed_desc">BlockAds Root CA está verificado y activo en el almacén de confianza de tu dispositivo. ¡El filtrado HTTPS avanzado está listo para funcionar!</string>
+    <string name="https_wizard_checking_desc">Buscando TJ Shield CA en el almacén de confianza de Android…</string>
+    <string name="https_wizard_installed_desc">TJ Shield Root CA está verificado y activo en el almacén de confianza de tu dispositivo. ¡El filtrado HTTPS avanzado está listo para funcionar!</string>
     <string name="https_wizard_not_installed_title">Certificado no detectado</string>
-    <string name="https_wizard_not_installed_desc">BlockAds aún no ha encontrado el certificado en tu almacén de confianza. Si acabas de instalarlo en Ajustes, toca a continuación para comprobar de nuevo.</string>
+    <string name="https_wizard_not_installed_desc">TJ Shield aún no ha encontrado el certificado en tu almacén de confianza. Si acabas de instalarlo en Ajustes, toca a continuación para comprobar de nuevo.</string>
     <string name="https_wizard_troubleshooting_title">Consejos para solucionar problemas</string>
     <string name="https_wizard_troubleshooting_tip1">Asegúrate de haber seleccionado \"Certificado CA\" en Ajustes (no Certificado de usuario ni Certificado de VPN y aplicaciones).</string>
     <string name="https_wizard_troubleshooting_tip2">Si se instala mediante un módulo de Magisk/KernelSU, es necesario reiniciar el dispositivo.</string>
@@ -176,7 +176,7 @@
     <string name="filter_category_starred">Destacados</string>
     <string name="filter_starred_empty">Aún no hay filtros destacados. Toca el icono de estrella en cualquier filtro para fijarlo aquí y acceder rápidamente.</string>
     <string name="filter_supported_formats_title">Formatos compatibles</string>
-    <string name="filter_supported_formats_desc">BlockAds es compatible con todas las sintaxis estándar de listas de bloqueo y adblock:</string>
+    <string name="filter_supported_formats_desc">TJ Shield es compatible con todas las sintaxis estándar de listas de bloqueo y adblock:</string>
     <string name="filter_format_adblock_title">AdBlock / uBlock</string>
     <string name="filter_format_adblock_desc">||example.com^, ||*.domain.com^, $all, $important</string>
     <string name="filter_format_hosts_title">Archivo Hosts</string>

@@ -140,21 +140,21 @@
     <string name="exclude_lan_title">Vyloučit provoz LAN</string>
     <string name="exclude_lan_description">Povolit přístup k zařízením v místní síti (tiskárny, NAS, lokální servery) při aktivním WireGuard</string>
     <string name="settings_hide_from_recents_title">Skrýt z posledních aplikací</string>
-    <string name="settings_hide_from_recents_subtitle">Skrýt BlockAds z obrazovky posledních aplikací</string>
+    <string name="settings_hide_from_recents_subtitle">Skrýt TJ Shield z obrazovky posledních aplikací</string>
     <string name="trusted_networks_title">Důvěryhodné sítě</string>
-    <string name="trusted_networks_settings_desc">Automaticky pozastavit BlockAds ve vybraných Wi-Fi</string>
+    <string name="trusted_networks_settings_desc">Automaticky pozastavit TJ Shield ve vybraných Wi-Fi</string>
     <string name="trusted_networks_toggle">Pozastavit v důvěryhodných sítích</string>
-    <string name="trusted_networks_desc">V těchto Wi-Fi se BlockAds vypne a po odchodu zase zapne.</string>
+    <string name="trusted_networks_desc">V těchto Wi-Fi se TJ Shield vypne a po odchodu zase zapne.</string>
     <string name="trusted_networks_add_current">Přidat aktuální Wi-Fi</string>
     <string name="trusted_networks_no_wifi">Nepřipojeno k Wi-Fi (nebo je třeba oprávnění k poloze)</string>
     <string name="trusted_networks_list_header">Důvěryhodné Wi-Fi sítě</string>
-    <string name="trusted_networks_empty">Zatím žádné důvěryhodné sítě. Přidejte aktuální a BlockAds se v ní pozastaví.</string>
+    <string name="trusted_networks_empty">Zatím žádné důvěryhodné sítě. Přidejte aktuální a TJ Shield se v ní pozastaví.</string>
     <string name="trusted_networks_paused_title">Pozastaveno v důvěryhodné síti</string>
-    <string name="trusted_networks_paused_text">BlockAds je pozastaven v síti &quot;%1$s&quot; — po odchodu se automaticky obnoví.</string>
-    <string name="trusted_networks_paused_text_generic">BlockAds je pozastaven v důvěryhodné Wi-Fi — po odchodu se obnoví.</string>
+    <string name="trusted_networks_paused_text">TJ Shield je pozastaven v síti &quot;%1$s&quot; — po odchodu se automaticky obnoví.</string>
+    <string name="trusted_networks_paused_text_generic">TJ Shield je pozastaven v důvěryhodné Wi-Fi — po odchodu se obnoví.</string>
     <string name="settings_navigation">Navigace</string>
     <string name="milestone_sheet_title">Dosažen milník ochrany!</string>
-    <string name="milestone_sheet_subtitle">Pomocí BlockAds jste úspěšně zablokovali %1$s reklam a sledovačů.</string>
+    <string name="milestone_sheet_subtitle">Pomocí TJ Shield jste úspěšně zablokovali %1$s reklam a sledovačů.</string>
     <string name="milestone_sheet_data_saved">Odhadovaná úspora dat</string>
     <string name="milestone_sheet_time_saved">Odhadovaná úspora času</string>
     <string name="milestone_sheet_action">Skvělé!</string>
@@ -244,7 +244,7 @@
     <string name="geoip_import_invalid">Neplatný soubor databáze GeoIP</string>
     <string name="geoip_update_success">Databáze GeoIP byla úspěšně aktualizována</string>
     <string name="routing_mode_sheet_title">Režim směrování</string>
-    <string name="routing_mode_sheet_desc">Vyberte, jak BlockAds zachycuje a směruje provoz na vašem zařízení.</string>
+    <string name="routing_mode_sheet_desc">Vyberte, jak TJ Shield zachycuje a směruje provoz na vašem zařízení.</string>
     <string name="routing_mode_local_vpn_title">Režim místní VPN</string>
     <string name="routing_mode_local_vpn_desc" formatted="false">Filtruje provoz přímo v zařízení pomocí služby Android VPN. Nevyžaduje root, 100% soukromé.</string>
     <string name="routing_mode_root_proxy_title">Režim Root Proxy</string>
@@ -374,8 +374,8 @@
     <string name="settings_bottom_nav_tab_auto">Automaticky (výchozí)</string>
     <string name="settings_bottom_nav_tab_filter">Nastavení filtrů</string>
     <string name="settings_bottom_nav_tab_vpn">VPN &amp; Proxy</string>
-    <string name="rate_app_title">Líbí se vám BlockAds?</string>
-    <string name="rate_app_desc">BlockAds pro vás zablokoval více než %1$d reklam. Pokud je pro vás aplikace užitečná, věnujte chvilku jejímu hodnocení 5 hvězdičkami na Google Play!</string>
+    <string name="rate_app_title">Líbí se vám TJ Shield?</string>
+    <string name="rate_app_desc">TJ Shield pro vás zablokoval více než %1$d reklam. Pokud je pro vás aplikace užitečná, věnujte chvilku jejímu hodnocení 5 hvězdičkami na Google Play!</string>
     <string name="rate_app_action_rate">Ohodnotit 5 hvězdičkami</string>
     <string name="rate_app_action_feedback">Odeslat zpětnou vazbu</string>
     <string name="rate_app_action_later">Možná později</string>
@@ -405,7 +405,7 @@
     <string name="app_management_block_rate">Míra blokování</string>
     <string name="app_management_top_domains">Nejčastější domény</string>
     <string name="app_management_no_domains">Pro tuto aplikaci zatím nebyla zaznamenána žádná aktivita DNS.</string>
-    <string name="app_management_vpn_protection">Směrovat přes BlockAds VPN</string>
+    <string name="app_management_vpn_protection">Směrovat přes TJ Shield VPN</string>
     <string name="settings_home_tips">Tipy na domovské obrazovce</string>
     <string name="settings_home_tips_desc">Zobrazovat užitečné tipy a návrhy funkcí na domovské obrazovce</string>
     <string name="settings_nav_position">Pozice navigace</string>

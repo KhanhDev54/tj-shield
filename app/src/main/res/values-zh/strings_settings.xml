@@ -140,21 +140,21 @@
     <string name="exclude_lan_title">排除 LAN 流量</string>
     <string name="exclude_lan_description">在 WireGuard 启用时允许访问本地网络设备（打印机、NAS、本地服务器）</string>
     <string name="settings_hide_from_recents_title">从最近应用中隐藏</string>
-    <string name="settings_hide_from_recents_subtitle">将 BlockAds 从最近应用屏幕中隐藏</string>
+    <string name="settings_hide_from_recents_subtitle">将 TJ Shield 从最近应用屏幕中隐藏</string>
     <string name="trusted_networks_title">信任的网络</string>
-    <string name="trusted_networks_settings_desc">在所选 Wi-Fi 上自动暂停 BlockAds</string>
+    <string name="trusted_networks_settings_desc">在所选 Wi-Fi 上自动暂停 TJ Shield</string>
     <string name="trusted_networks_toggle">在信任的网络上暂停</string>
-    <string name="trusted_networks_desc">在这些 Wi-Fi 上 BlockAds 会关闭，离开后重新开启。</string>
+    <string name="trusted_networks_desc">在这些 Wi-Fi 上 TJ Shield 会关闭，离开后重新开启。</string>
     <string name="trusted_networks_add_current">添加当前 Wi-Fi</string>
     <string name="trusted_networks_no_wifi">未连接 Wi-Fi（或需要定位权限）</string>
     <string name="trusted_networks_list_header">信任的 Wi-Fi</string>
-    <string name="trusted_networks_empty">暂无信任的网络。添加当前网络以在其上暂停 BlockAds。</string>
+    <string name="trusted_networks_empty">暂无信任的网络。添加当前网络以在其上暂停 TJ Shield。</string>
     <string name="trusted_networks_paused_title">已在信任的网络上暂停</string>
-    <string name="trusted_networks_paused_text">BlockAds 已在“%1$s”上暂停，离开该网络后自动恢复。</string>
-    <string name="trusted_networks_paused_text_generic">BlockAds 已在信任的 Wi-Fi 上暂停，离开后自动恢复。</string>
+    <string name="trusted_networks_paused_text">TJ Shield 已在“%1$s”上暂停，离开该网络后自动恢复。</string>
+    <string name="trusted_networks_paused_text_generic">TJ Shield 已在信任的 Wi-Fi 上暂停，离开后自动恢复。</string>
     <string name="settings_navigation">导航</string>
     <string name="milestone_sheet_title">达成防护里程碑！</string>
-    <string name="milestone_sheet_subtitle">您已使用 BlockAds 成功拦截了 %1$s 个广告和跟踪器。</string>
+    <string name="milestone_sheet_subtitle">您已使用 TJ Shield 成功拦截了 %1$s 个广告和跟踪器。</string>
     <string name="milestone_sheet_data_saved">预估节省流量</string>
     <string name="milestone_sheet_time_saved">预估节省时间</string>
     <string name="milestone_sheet_action">太棒了！</string>
@@ -244,7 +244,7 @@
     <string name="geoip_import_invalid">无效的GeoIP数据库文件</string>
     <string name="geoip_update_success">GeoIP数据库更新成功</string>
     <string name="routing_mode_sheet_title">路由模式</string>
-    <string name="routing_mode_sheet_desc">选择BlockAds在您的设备上拦截和路由流量的方式。</string>
+    <string name="routing_mode_sheet_desc">选择TJ Shield在您的设备上拦截和路由流量的方式。</string>
     <string name="routing_mode_local_vpn_title">本地VPN模式</string>
     <string name="routing_mode_local_vpn_desc" formatted="false">使用Android VPN Service直接在设备上过滤流量。无需Root，100%私密。</string>
     <string name="routing_mode_root_proxy_title">Root Proxy模式</string>
@@ -374,8 +374,8 @@
     <string name="settings_bottom_nav_tab_auto">自动（默认）</string>
     <string name="settings_bottom_nav_tab_filter">规则配置</string>
     <string name="settings_bottom_nav_tab_vpn">VPN 与代理</string>
-    <string name="rate_app_title">觉得 BlockAds 好用吗？</string>
-    <string name="rate_app_desc">BlockAds 已为您拦截超过 %1$d 条广告。如果觉得本应用有帮助，请花一点时间在 Google Play 上为我们打 5 星好评！</string>
+    <string name="rate_app_title">觉得 TJ Shield 好用吗？</string>
+    <string name="rate_app_desc">TJ Shield 已为您拦截超过 %1$d 条广告。如果觉得本应用有帮助，请花一点时间在 Google Play 上为我们打 5 星好评！</string>
     <string name="rate_app_action_rate">给出 5 星好评</string>
     <string name="rate_app_action_feedback">发送反馈</string>
     <string name="rate_app_action_later">稍后再说</string>
@@ -405,7 +405,7 @@
     <string name="app_management_block_rate">拦截率</string>
     <string name="app_management_top_domains">热门域名</string>
     <string name="app_management_no_domains">尚未记录此应用的 DNS 活动。</string>
-    <string name="app_management_vpn_protection">通过 BlockAds VPN 路由</string>
+    <string name="app_management_vpn_protection">通过 TJ Shield VPN 路由</string>
     <string name="settings_home_tips">主屏幕提示</string>
     <string name="settings_home_tips_desc">在主屏幕上显示实用提示和功能建议</string>
     <string name="settings_nav_position">导航栏位置</string>

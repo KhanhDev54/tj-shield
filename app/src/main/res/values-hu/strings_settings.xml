@@ -43,18 +43,18 @@
     <string name="settings_updating">Frissítés…</string>
     <string name="settings_update_all">Összes szűrő frissítése</string>
     <string name="trusted_networks_title">Megbízható hálózatok</string>
-    <string name="trusted_networks_settings_desc">A BlockAds automatikus szüneteltetése a kiválasztott Wi-Fi-hálózatokon</string>
+    <string name="trusted_networks_settings_desc">A TJ Shield automatikus szüneteltetése a kiválasztott Wi-Fi-hálózatokon</string>
     <string name="trusted_networks_toggle">Szüneteltetés megbízható hálózatokon</string>
-    <string name="trusted_networks_desc">A BlockAds kikapcsol ezeken a Wi-Fi-hálózatokon, és újra bekapcsol, amikor elhagyja őket.</string>
+    <string name="trusted_networks_desc">A TJ Shield kikapcsol ezeken a Wi-Fi-hálózatokon, és újra bekapcsol, amikor elhagyja őket.</string>
     <string name="trusted_networks_use_system_dns_toggle">Rendszer-DNS használata megbízható hálózatokon</string>
     <string name="trusted_networks_use_system_dns_desc">A reklámblokkolás aktív marad, de a belső domainek feloldásához a Wi-Fi-hálózat helyi DNS-szerverét használja.</string>
     <string name="trusted_networks_add_current">Jelenlegi Wi-Fi-hálózat hozzáadása</string>
     <string name="trusted_networks_no_wifi">Nincs Wi-Fi-kapcsolat (vagy helymeghatározási engedély szükséges)</string>
     <string name="trusted_networks_list_header">Megbízható Wi-Fi-hálózatok</string>
-    <string name="trusted_networks_empty">Még nincs megbízható hálózat. Adja hozzá a jelenlegit, hogy ott szüneteljen a BlockAds.</string>
+    <string name="trusted_networks_empty">Még nincs megbízható hálózat. Adja hozzá a jelenlegit, hogy ott szüneteljen a TJ Shield.</string>
     <string name="trusted_networks_paused_title">Szüneteltetve megbízható hálózaton</string>
-    <string name="trusted_networks_paused_text">A BlockAds szünetel ezen a hálózaton: \&quot;%1$s\&quot; — automatikusan folytatódik, amikor elhagyja.</string>
-    <string name="trusted_networks_paused_text_generic">A BlockAds szünetel egy megbízható Wi-Fi-hálózaton — automatikusan folytatódik, amikor elhagyja.</string>
+    <string name="trusted_networks_paused_text">A TJ Shield szünetel ezen a hálózaton: \&quot;%1$s\&quot; — automatikusan folytatódik, amikor elhagyja.</string>
+    <string name="trusted_networks_paused_text_generic">A TJ Shield szünetel egy megbízható Wi-Fi-hálózaton — automatikusan folytatódik, amikor elhagyja.</string>
     <string name="settings_whitelist_domains">Engedélyezett domainek</string>
     <string name="settings_export">Exportálás</string>
     <string name="settings_import">Importálás</string>
@@ -156,7 +156,7 @@
     <string name="milestone_title">🎉 Mérföldkő elérve!</string>
     <string name="milestone_text">Már %1$s reklámot blokkolt! Csak így tovább!</string>
     <string name="milestone_sheet_title">Védelmi mérföldkő elérve!</string>
-    <string name="milestone_sheet_subtitle">A BlockAds segítségével már %1$s reklámot és nyomkövetőt blokkolt.</string>
+    <string name="milestone_sheet_subtitle">A TJ Shield segítségével már %1$s reklámot és nyomkövetőt blokkolt.</string>
     <string name="milestone_sheet_data_saved">Becsült megtakarított adat</string>
     <string name="milestone_sheet_time_saved">Becsült megtakarított idő</string>
     <string name="milestone_sheet_action">Szuper!</string>
@@ -189,7 +189,7 @@
     <string name="allow_app_bypass_title">VPN megkerülésének engedélyezése alkalmazásoknak</string>
     <string name="allow_app_bypass_description">Az egy adott hálózathoz kötött kapcsolatot használó alkalmazások (vezeték nélküli Android Auto, képernyőtükrözés, eszközbeállítás) közvetlenül érhessék el azt. Minden más továbbra is az alagúton megy át.</string>
     <string name="settings_hide_from_recents_title">Elrejtés a legutóbbi alkalmazások közül</string>
-    <string name="settings_hide_from_recents_subtitle">A BlockAds elrejtése a legutóbbi alkalmazások képernyőjéről</string>
+    <string name="settings_hide_from_recents_subtitle">A TJ Shield elrejtése a legutóbbi alkalmazások képernyőjéről</string>
 
     <!-- DNS Leak Protection / DoH Bypass -->
     <string name="dns_category_advanced_security">Speciális DNS-biztonság</string>
@@ -396,8 +396,8 @@
     <string name="settings_bottom_nav_tab_vpn">VPN és proxy</string>
 
     <!-- Rating & Review -->
-    <string name="rate_app_title">Tetszik a BlockAds?</string>
-    <string name="rate_app_desc" tools:ignore="PluralsCandidate">A BlockAds már több mint %1$d reklámot blokkolt Önnek. Ha hasznosnak találja az alkalmazást, kérjük, szánjon egy percet arra, hogy 5 csillaggal értékeljen minket a Google Playen!</string>
+    <string name="rate_app_title">Tetszik a TJ Shield?</string>
+    <string name="rate_app_desc" tools:ignore="PluralsCandidate">A TJ Shield már több mint %1$d reklámot blokkolt Önnek. Ha hasznosnak találja az alkalmazást, kérjük, szánjon egy percet arra, hogy 5 csillaggal értékeljen minket a Google Playen!</string>
     <string name="rate_app_action_rate">Értékelés 5 csillaggal</string>
     <string name="rate_app_action_feedback">Visszajelzés küldése</string>
     <string name="rate_app_action_later">Talán később</string>
@@ -427,7 +427,7 @@
     <string name="app_management_block_rate">Blokkolási arány</string>
     <string name="app_management_top_domains">Leggyakoribb tartományok</string>
     <string name="app_management_no_domains">Még nincs rögzített DNS-tevékenység ehhez az alkalmazáshoz.</string>
-    <string name="app_management_vpn_protection">Irányítás a BlockAds VPN-en keresztül</string>
+    <string name="app_management_vpn_protection">Irányítás a TJ Shield VPN-en keresztül</string>
     <string name="settings_home_tips">Kezdőképernyő tippek</string>
     <string name="settings_home_tips_desc">Hasznos tippek és funkciójavaslatok megjelenítése a kezdőképernyőn</string>
     <string name="settings_nav_position">Navigáció pozíciója</string>

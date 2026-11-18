@@ -2,7 +2,7 @@
 <resources>
     <string name="cert_status_installed">CA sertifikası yüklendi ve güvenildi. Gelişmiş HTTPS reklam engelleme hazır.</string>
     <string name="cert_status_checking">Cihaz güvenli deposundaki sertifika kontrol ediliyor…</string>
-    <string name="cert_status_not_installed">HTTPS bağlantılarındaki reklamları filtrelemek için BlockAds CA sertifikası gereklidir.</string>
+    <string name="cert_status_not_installed">HTTPS bağlantılarındaki reklamları filtrelemek için TJ Shield CA sertifikası gereklidir.</string>
     <string name="cert_action_check_again">Tekrar kontrol et</string>
     <string name="cert_action_reinstall">Yeniden yükle</string>
     <string name="cert_action_install">Sertifikayı yükle</string>

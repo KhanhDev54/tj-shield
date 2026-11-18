@@ -2,7 +2,7 @@
 <resources>
     <string name="cert_status_installed">CA сертификаты орнатылды және сенімді. Кеңейтілген HTTPS жарнамасын бұғаттау дайын.</string>
     <string name="cert_status_checking">Құрылғының қауіпсіз қоймасындағы сертификат тексерілуде…</string>
-    <string name="cert_status_not_installed">HTTPS қосылымдарындағы жарнамаларды сүзу үшін BlockAds CA сертификаты қажет.</string>
+    <string name="cert_status_not_installed">HTTPS қосылымдарындағы жарнамаларды сүзу үшін TJ Shield CA сертификаты қажет.</string>
     <string name="cert_action_check_again">Қайта тексеру</string>
     <string name="cert_action_reinstall">Қайта орнату</string>
     <string name="cert_action_install">Сертификатты орнату</string>

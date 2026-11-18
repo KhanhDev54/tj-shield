@@ -118,9 +118,9 @@
     <string name="https_wizard_title">إعداد الشهادة</string>
     <string name="https_wizard_step_indicator_format">الخطوة %1$d من %2$d: %3$s</string>
     <string name="https_wizard_security_title">الأمان والخصوصية</string>
-    <string name="https_wizard_security_desc">يتم إنشاء شهادة Root CA محلياً على جهازك ولا تغادر هاتفك أبداً. يستخدمها BlockAds بدقة لإزالة الإعلانات على مواقع الويب. لا يتم اعتراض الخدمات الحساسة مثل التطبيقات المصرفية وحسابات Google أبداً.</string>
+    <string name="https_wizard_security_desc">يتم إنشاء شهادة Root CA محلياً على جهازك ولا تغادر هاتفك أبداً. يستخدمها TJ Shield بدقة لإزالة الإعلانات على مواقع الويب. لا يتم اعتراض الخدمات الحساسة مثل التطبيقات المصرفية وحسابات Google أبداً.</string>
     <string name="https_wizard_explain_title">لماذا تصفية HTTPS؟</string>
-    <string name="https_wizard_explain_desc">تستخدم معظم مواقع الويب والإعلانات الحديثة اتصالات HTTPS المشفرة. لإخفاء الإعلانات واللافتات والنوافذ المنبثقة، يتطلب BlockAds شهادة محلية لفحص صفحات الويب وتصفيتها بأمان على جهازك.</string>
+    <string name="https_wizard_explain_desc">تستخدم معظم مواقع الويب والإعلانات الحديثة اتصالات HTTPS المشفرة. لإخفاء الإعلانات واللافتات والنوافذ المنبثقة، يتطلب TJ Shield شهادة محلية لفحص صفحات الويب وتصفيتها بأمان على جهازك.</string>
     <string name="https_wizard_benefits_title">الفوائد الرئيسية</string>
     <string name="https_wizard_benefit_1">القضاء على الإعلانات على منصات الفيديو ومواقع الأخبار</string>
     <string name="https_wizard_benefit_2">إخفاء المساحات الإعلانية الفارغة واللافتات والنوافذ المنبثقة المزعجة</string>
@@ -139,10 +139,10 @@
     <string name="https_wizard_device_brand_generic">جهاز Android الخاص بك</string>
     <string name="https_wizard_install_instructions_title">دليل خطوة بخطوة</string>
     <string name="https_wizard_checking_title">جارٍ التحقق من الشهادة…</string>
-    <string name="https_wizard_checking_desc">جارٍ فحص مخزن الثقة في Android بحثاً عن BlockAds CA…</string>
-    <string name="https_wizard_installed_desc">تم التحقق من BlockAds Root CA ونشط في مخزن الثقة بجهازك. تصفية HTTPS المتقدمة جاهزة للاستخدام!</string>
+    <string name="https_wizard_checking_desc">جارٍ فحص مخزن الثقة في Android بحثاً عن TJ Shield CA…</string>
+    <string name="https_wizard_installed_desc">تم التحقق من TJ Shield Root CA ونشط في مخزن الثقة بجهازك. تصفية HTTPS المتقدمة جاهزة للاستخدام!</string>
     <string name="https_wizard_not_installed_title">لم يتم اكتشاف الشهادة</string>
-    <string name="https_wizard_not_installed_desc">لم يعثر BlockAds على الشهادة في مخزن الثقة حتى الآن. إذا انتهيت للتو من تثبيتها في الإعدادات، فانقر أدناه للتحقق مرة أخرى.</string>
+    <string name="https_wizard_not_installed_desc">لم يعثر TJ Shield على الشهادة في مخزن الثقة حتى الآن. إذا انتهيت للتو من تثبيتها في الإعدادات، فانقر أدناه للتحقق مرة أخرى.</string>
     <string name="https_wizard_troubleshooting_title">نصائح استكشاف الأخطاء وإصلاحها</string>
     <string name="https_wizard_troubleshooting_tip1">تأكد من تحديد \"شهادة CA\" في الإعدادات (وليس شهادة المستخدم أو شهادة مستخدم VPN والتطبيق).</string>
     <string name="https_wizard_troubleshooting_tip2">إذا تم التثبيت عبر وحدة Magisk/KernelSU، فيجب إعادة تشغيل الجهاز.</string>
@@ -176,7 +176,7 @@
     <string name="filter_category_starred">المميزة بنجمة</string>
     <string name="filter_starred_empty">لا توجد عوامل تصفية مميزة بنجمة حتى الآن. اضغط على أيقونة النجمة في أي عامل تصفية لتثبيته هنا للوصول السريع.</string>
     <string name="filter_supported_formats_title">التنسيقات المدعومة</string>
-    <string name="filter_supported_formats_desc">يدعم BlockAds جميع صيغ قوائم الحظر وحظر الإعلانات القياسية:</string>
+    <string name="filter_supported_formats_desc">يدعم TJ Shield جميع صيغ قوائم الحظر وحظر الإعلانات القياسية:</string>
     <string name="filter_format_adblock_title">AdBlock / uBlock</string>
     <string name="filter_format_adblock_desc">||example.com^, ||*.domain.com^, $all, $important</string>
     <string name="filter_format_hosts_title">ملف Hosts</string>

@@ -2,21 +2,21 @@
 <resources>
     <string name="notification_channel_name">Reklámblokkoló szolgáltatás</string>
     <string name="notification_channel_description">Megjelenik, amikor a VPN-reklámblokkoló aktív</string>
-    <string name="vpn_notification_title">A BlockAds aktív</string>
+    <string name="vpn_notification_title">A TJ Shield aktív</string>
     <string name="vpn_notification_text">Eszköze védelme a reklámok ellen</string>
-    <string name="vpn_notification_reconnecting">A BlockAds újracsatlakozik</string>
+    <string name="vpn_notification_reconnecting">A TJ Shield újracsatlakozik</string>
     <string name="vpn_notification_reconnecting_text">A hálózat megváltozott, VPN újracsatlakoztatása…</string>
-    <string name="vpn_notification_retrying">A BlockAds újrapróbálkozik</string>
+    <string name="vpn_notification_retrying">A TJ Shield újrapróbálkozik</string>
     <string name="vpn_notification_retry_text">%1$d. próbálkozás a(z) %2$d-ból/-ből</string>
     <string name="vpn_alert_channel_name">VPN-riasztások</string>
     <string name="vpn_alert_channel_description">Fontos riasztások a VPN állapotának változásairól</string>
     <string name="vpn_revoked_title">A reklámblokkolás leállt</string>
-    <string name="vpn_revoked_text">Egy másik VPN-alkalmazás átvette a kapcsolatot. Koppintson a BlockAds újbóli bekapcsolásához.</string>
+    <string name="vpn_revoked_text">Egy másik VPN-alkalmazás átvette a kapcsolatot. Koppintson a TJ Shield újbóli bekapcsolásához.</string>
     <string name="vpn_revoked_card_title">Védelem szüneteltetve</string>
-    <string name="vpn_revoked_card_desc">Egy másik VPN-alkalmazás csatlakozott. A forgalmát már nem szűri a BlockAds.</string>
+    <string name="vpn_revoked_card_desc">Egy másik VPN-alkalmazás csatlakozott. A forgalmát már nem szűri a TJ Shield.</string>
     <string name="vpn_revoked_action_reconnect">Újracsatlakozás</string>
     <string name="vpn_revoked_action_dismiss">Elvetés</string>
-    <string name="vpn_stopped_title">A BlockAds szünetel</string>
+    <string name="vpn_stopped_title">A TJ Shield szünetel</string>
     <string name="vpn_stopped_text">A reklámblokkolás ki van kapcsolva. A folytatáshoz koppintson a Bekapcsolás gombra.</string>
     <string name="vpn_stopped_action_enable">Bekapcsolás</string>
     <string name="status_protected">Védett</string>
@@ -31,7 +31,7 @@
     <string name="shortcut_toggle_vpn">Reklámblokkolás be/ki</string>
     <string name="shortcut_toggle_vpn_short">VPN be/ki</string>
     <string name="vpn_conflict_title">Kapcsolat blokkolva</string>
-    <string name="vpn_conflict_desc">Az Android egyszerre csak egy VPN-kapcsolatot engedélyez. Jelenleg egy másik VPN aktív az eszközén.\n\nA BlockAds csatlakoztatása előtt bontsa a másik VPN-kapcsolatot, vagy kapcsolja ki a \&quot;Mindig bekapcsolt VPN\&quot; opciót a Beállításokban.</string>
+    <string name="vpn_conflict_desc">Az Android egyszerre csak egy VPN-kapcsolatot engedélyez. Jelenleg egy másik VPN aktív az eszközén.\n\nA TJ Shield csatlakoztatása előtt bontsa a másik VPN-kapcsolatot, vagy kapcsolja ki a \&quot;Mindig bekapcsolt VPN\&quot; opciót a Beállításokban.</string>
     <string name="vpn_phase_loading_filters">Szűrőlisták betöltése…</string>
     <string name="vpn_phase_preparing_dns">DNS előkészítése…</string>
     <string name="vpn_phase_establishing">VPN létrehozása…</string>
@@ -39,7 +39,7 @@
     <string name="vpn_notification_stats_today">Ma %1$d reklám blokkolva | Üzemidő: %2$s</string>
     <string name="vpn_notification_action_pause">Szünet 1 órára</string>
     <string name="vpn_notification_action_stop">Leállítás</string>
-    <string name="vpn_paused_title">A BlockAds szünetel</string>
+    <string name="vpn_paused_title">A TJ Shield szünetel</string>
     <string name="vpn_paused_text">A reklámblokkolás 1 órára szünetel. Automatikusan folytatódik.</string>
     <string name="accessibility_toggle_vpn">VPN-védelem be-/kikapcsolása</string>
     <string name="accessibility_vpn_active">A VPN-védelem aktív</string>
@@ -71,16 +71,16 @@
     <string name="wireguard_issue_malformed_allowed_ips">Érvénytelen Allowed IPs: %1$s</string>
     <string name="wireguard_issue_fix_first">Előbb javítsa ezt: \'%1$s\': %2$s</string>
     <string name="wireguard_config_invalid_title">A WireGuard-profil javításra szorul</string>
-    <string name="wireguard_config_invalid_text">%1$s. A BlockAds inkább leállt, mint hogy alagút nélkül fusson.</string>
+    <string name="wireguard_config_invalid_text">%1$s. A TJ Shield inkább leállt, mint hogy alagút nélkül fusson.</string>
     <string name="wireguard_rename_dialog_title">Profil átnevezése</string>
     <string name="root_not_available">A root hozzáférés nem érhető el. Adja meg az engedélyt a root-kezelőben (pl. Magisk/KernelSU).</string>
     <string name="root_proxy_notification_text">Root proxy mód aktív — a DNS-forgalom iptables-szel átirányítva</string>
-    <string name="root_proxy_start_failed_title">A BlockAds indítása sikertelen</string>
+    <string name="root_proxy_start_failed_title">A TJ Shield indítása sikertelen</string>
     <string name="root_proxy_start_failed_text">Nem sikerült root hozzáférést szerezni a védelem indításához. Az újrapróbáláshoz koppintson a Bekapcsolás gombra.</string>
     <string name="private_dns_warning_title">A privát DNS be van kapcsolva</string>
-    <string name="private_dns_warning_text">Az Android privát DNS megkerüli a BlockAds-t, így a szűrés nem feltétlenül érvényesül. A rendszerbeállításokban állítsa a privát DNS-t Ki vagy Automatikus értékre.</string>
+    <string name="private_dns_warning_text">Az Android privát DNS megkerüli a TJ Shield-t, így a szűrés nem feltétlenül érvényesül. A rendszerbeállításokban állítsa a privát DNS-t Ki vagy Automatikus értékre.</string>
     <string name="status_disconnecting">Leválasztás</string>
-    <string name="vpn_notification_stopping">A BlockAds leáll</string>
+    <string name="vpn_notification_stopping">A TJ Shield leáll</string>
     <string name="vpn_notification_stopping_text">VPN-alagút bezárása…</string>
     <string name="vpn_notification_action_retry">Újra</string>
     <string name="vpn_notification_no_internet_title">Nincs internetkapcsolat</string>
@@ -107,12 +107,12 @@
     <string name="home_tip_feature_https_desc">Tolakodó webes és felugró reklámok alapos blokkolása</string>
     <string name="home_tip_feature_https_action">Felfedezés</string>
     <string name="home_tip_feature_wireguard_title">WireGuard VPN</string>
-    <string name="home_tip_feature_wireguard_desc">Saját VPN-szerver használata a BlockAds mellett</string>
+    <string name="home_tip_feature_wireguard_desc">Saját VPN-szerver használata a TJ Shield mellett</string>
     <string name="home_tip_feature_wireguard_action">Kipróbálom</string>
 
     <!-- Tailscale -->
     <string name="tailscale_title">Tailscale</string>
-    <string name="tailscale_subtitle">Csatlakozás a Tailnethez a BlockAds mellett</string>
+    <string name="tailscale_subtitle">Csatlakozás a Tailnethez a TJ Shield mellett</string>
     <string name="tailscale_desc">Csatlakozzon privát Tailscale- vagy Headscale-hálózatához, miközben az eszközön futó reklámblokkolás és HTTPS-szűrés továbbra is működik.</string>
     <string name="tailscale_sign_in_browser">Bejelentkezés Tailscale-lel</string>
     <string name="tailscale_waiting_auth">Várakozás a böngészős bejelentkezésre...</string>
@@ -165,7 +165,7 @@
     <string name="tailscale_ping_self">Ez az eszköz nem pingelhető</string>
     <string name="tailscale_vpn_not_running">A VPN kapcsolat megszakadt</string>
     <string name="tailscale_vpn_required_title">VPN szükséges</string>
-    <string name="tailscale_vpn_required_desc">A Tailscale forgalom irányításához a BlockAds VPN-nek futnia kell.</string>
+    <string name="tailscale_vpn_required_desc">A Tailscale forgalom irányításához a TJ Shield VPN-nek futnia kell.</string>
     <string name="tailscale_start_vpn">VPN indítása</string>
     <string name="tailscale_notification_channel_name">Tailscale hálózat</string>
     <string name="tailscale_notification_channel_desc">Értesítések Tailscale eszközkapcsolatokról</string>
@@ -186,6 +186,6 @@
     <string name="tailscale_settings_title">Tailscale-beállítások</string>
     <string name="tailscale_advertise_exit_node">Futtatás kilépési csomópontként</string>
     <string name="tailscale_advertise_exit_node_desc">Engedélyezi a Tailnet más eszközeinek az internetes forgalom átirányítását ezen az eszközön keresztül. Engedélyezze a Tailscale felügyeleti konzolján is.</string>
-    <string name="tailscale_adblock_title">BlockAds Tailscale</string>
-    <string name="tailscale_adblock_desc">Hirdetések és nyomkövetők szűrése a kilépési csomópontot használó eszközök számára. Mindenképpen a BlockAds beállított DNS-ét használja.</string>
+    <string name="tailscale_adblock_title">TJ Shield Tailscale</string>
+    <string name="tailscale_adblock_desc">Hirdetések és nyomkövetők szűrése a kilépési csomópontot használó eszközök számára. Mindenképpen a TJ Shield beállított DNS-ét használja.</string>
 </resources>

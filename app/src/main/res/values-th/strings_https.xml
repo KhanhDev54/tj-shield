@@ -2,7 +2,7 @@
 <resources>
     <string name="cert_status_installed">ติดตั้งใบรับรอง CA และเชื่อถือแล้ว การบล็อกโฆษณา HTTPS ขั้นสูงพร้อมใช้งาน</string>
     <string name="cert_status_checking">กำลังตรวจสอบใบรับรองในที่จัดเก็บข้อมูลที่ปลอดภัย…</string>
-    <string name="cert_status_not_installed">ต้องใช้ใบรับรอง BlockAds CA เพื่อถอดรหัสและกรองโฆษณาบนการเชื่อมต่อ HTTPS</string>
+    <string name="cert_status_not_installed">ต้องใช้ใบรับรอง TJ Shield CA เพื่อถอดรหัสและกรองโฆษณาบนการเชื่อมต่อ HTTPS</string>
     <string name="cert_action_check_again">ตรวจสอบอีกครั้ง</string>
     <string name="cert_action_reinstall">ติดตั้งใหม่</string>
     <string name="cert_action_install">ติดตั้งใบรับรอง</string>

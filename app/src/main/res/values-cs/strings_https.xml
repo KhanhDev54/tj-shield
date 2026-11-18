@@ -2,7 +2,7 @@
 <resources>
     <string name="cert_status_installed">Certifikát CA je nainstalován a důvěryhodný. Pokročilé blokování HTTPS je připraveno.</string>
     <string name="cert_status_checking">Kontrola certifikátu v zabezpečeném úložišti…</string>
-    <string name="cert_status_not_installed">Certifikát BlockAds CA je vyžadován pro filtrování reklam v HTTPS spojeních.</string>
+    <string name="cert_status_not_installed">Certifikát TJ Shield CA je vyžadován pro filtrování reklam v HTTPS spojeních.</string>
     <string name="cert_action_check_again">Zkontrolovat znovu</string>
     <string name="cert_action_reinstall">Přeinstalovat</string>
     <string name="cert_action_install">Nainstalovat certifikát</string>

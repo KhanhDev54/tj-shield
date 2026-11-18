@@ -118,9 +118,9 @@
     <string name="https_wizard_title">Сертификатты баптау</string>
     <string name="https_wizard_step_indicator_format">Қадам %1$d / %2$d: %3$s</string>
     <string name="https_wizard_security_title">Қауіпсіздік және құпиялылық</string>
-    <string name="https_wizard_security_desc">Root CA сертификаты құрылғыңызда жергілікті түрде жасалады және одан ешқашан шықпайды. BlockAds оны тек веб-сайттардағы жарнамаларды жою үшін пайдаланады. Банк қолданбалары мен Google есептік жазбалары сияқты құпия қызметтер ешқашан бақыланбайды.</string>
+    <string name="https_wizard_security_desc">Root CA сертификаты құрылғыңызда жергілікті түрде жасалады және одан ешқашан шықпайды. TJ Shield оны тек веб-сайттардағы жарнамаларды жою үшін пайдаланады. Банк қолданбалары мен Google есептік жазбалары сияқты құпия қызметтер ешқашан бақыланбайды.</string>
     <string name="https_wizard_explain_title">Неліктен HTTPS сүзгісі қажет?</string>
-    <string name="https_wizard_explain_desc">Көптеген заманауи веб-сайттар мен жарнамалар шифрланған HTTPS байланыстарын пайдаланады. Жарнама орындарын, баннерлерді және қалқымалы терезелерді жасыру үшін BlockAds құрылғыңыздағы веб-беттерді қауіпсіз тексеру және сүзу үшін жергілікті сертификатты қажет етеді.</string>
+    <string name="https_wizard_explain_desc">Көптеген заманауи веб-сайттар мен жарнамалар шифрланған HTTPS байланыстарын пайдаланады. Жарнама орындарын, баннерлерді және қалқымалы терезелерді жасыру үшін TJ Shield құрылғыңыздағы веб-беттерді қауіпсіз тексеру және сүзу үшін жергілікті сертификатты қажет етеді.</string>
     <string name="https_wizard_benefits_title">Негізгі артықшылықтар</string>
     <string name="https_wizard_benefit_1">Бейне платформалар мен жаңалықтар сайттарындағы жарнамаларды жою</string>
     <string name="https_wizard_benefit_2">Бос орындарды, баннерлерді және қалқымалы терезелерді жасыру</string>
@@ -139,10 +139,10 @@
     <string name="https_wizard_device_brand_generic">Android құрылғыңыз</string>
     <string name="https_wizard_install_instructions_title">Қадамдық нұсқаулық</string>
     <string name="https_wizard_checking_title">Сертификат тексерілуде…</string>
-    <string name="https_wizard_checking_desc">BlockAds CA үшін Android сенімді қоймасы сканерленуде…</string>
-    <string name="https_wizard_installed_desc">BlockAds Root CA тексерілді және құрылғыңыздың сенімді қоймасында белсенді. Кеңейтілген HTTPS сүзгісі дайын!</string>
+    <string name="https_wizard_checking_desc">TJ Shield CA үшін Android сенімді қоймасы сканерленуде…</string>
+    <string name="https_wizard_installed_desc">TJ Shield Root CA тексерілді және құрылғыңыздың сенімді қоймасында белсенді. Кеңейтілген HTTPS сүзгісі дайын!</string>
     <string name="https_wizard_not_installed_title">Сертификат анықталмады</string>
-    <string name="https_wizard_not_installed_desc">BlockAds әлі күнге дейін сенімді қоймаңыздан сертификатты таппады. Егер оны Параметрлерде орнатуды жаңа ғана аяқтасаңыз, қайта тексеру үшін төменде түртіңіз.</string>
+    <string name="https_wizard_not_installed_desc">TJ Shield әлі күнге дейін сенімді қоймаңыздан сертификатты таппады. Егер оны Параметрлерде орнатуды жаңа ғана аяқтасаңыз, қайта тексеру үшін төменде түртіңіз.</string>
     <string name="https_wizard_troubleshooting_title">Ақаулықтарды жою бойынша кеңестер</string>
     <string name="https_wizard_troubleshooting_tip1">Параметрлерде \"CA сертификаты\" таңдалғанына көз жеткізіңіз (Пайдаланушы сертификаты немесе VPN және қолданба пайдаланушы сертификаты емес).</string>
     <string name="https_wizard_troubleshooting_tip2">Егер Magisk/KernelSU модулі арқылы орнатылса, құрылғыны қайта іске қосу қажет.</string>
@@ -176,7 +176,7 @@
     <string name="filter_category_starred">Жұлдызшалы</string>
     <string name="filter_starred_empty">Әзірше жұлдызшалы сүзгілер жоқ. Жылдам қол жеткізу үшін осы жерге бекіту мақсатында кез келген сүзгідегі жұлдызша белгішесін түртіңіз.</string>
     <string name="filter_supported_formats_title">Қолдау көрсетілетін пішімдер</string>
-    <string name="filter_supported_formats_desc">BlockAds барлық стандартты бұғаттау тізімдері мен adblock синтаксисін қолдайды:</string>
+    <string name="filter_supported_formats_desc">TJ Shield барлық стандартты бұғаттау тізімдері мен adblock синтаксисін қолдайды:</string>
     <string name="filter_format_adblock_title">AdBlock / uBlock</string>
     <string name="filter_format_adblock_desc">||example.com^, ||*.domain.com^, $all, $important</string>
     <string name="filter_format_hosts_title">Hosts файлы</string>

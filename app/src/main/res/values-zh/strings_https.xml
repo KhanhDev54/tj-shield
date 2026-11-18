@@ -2,7 +2,7 @@
 <resources>
     <string name="cert_status_installed">CA 证书已安装并受信任。高级 HTTPS 广告拦截已就绪。</string>
     <string name="cert_status_checking">正在检查设备安全存储中的证书…</string>
-    <string name="cert_status_not_installed">需要 BlockAds CA 证书来解密和过滤 HTTPS 连接上的广告。</string>
+    <string name="cert_status_not_installed">需要 TJ Shield CA 证书来解密和过滤 HTTPS 连接上的广告。</string>
     <string name="cert_action_check_again">重新检查</string>
     <string name="cert_action_reinstall">重新安装</string>
     <string name="cert_action_install">安装证书</string>

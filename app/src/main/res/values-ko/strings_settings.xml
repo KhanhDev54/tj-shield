@@ -140,21 +140,21 @@
     <string name="exclude_lan_title">LAN 트래픽 제외</string>
     <string name="exclude_lan_description">WireGuard 활성화 중 로컬 네트워크 장치(프린터, NAS, 로컬 서버)에 대한 접근 허용</string>
     <string name="settings_hide_from_recents_title">최근 앱에서 숨기기</string>
-    <string name="settings_hide_from_recents_subtitle">최근 앱 화면에서 BlockAds 숨기기</string>
+    <string name="settings_hide_from_recents_subtitle">최근 앱 화면에서 TJ Shield 숨기기</string>
     <string name="trusted_networks_title">신뢰할 수 있는 네트워크</string>
-    <string name="trusted_networks_settings_desc">선택한 Wi-Fi에서 BlockAds 자동 일시중지</string>
+    <string name="trusted_networks_settings_desc">선택한 Wi-Fi에서 TJ Shield 자동 일시중지</string>
     <string name="trusted_networks_toggle">신뢰할 수 있는 네트워크에서 일시중지</string>
-    <string name="trusted_networks_desc">이 Wi-Fi에서는 BlockAds가 꺼지고, 벗어나면 다시 켜집니다.</string>
+    <string name="trusted_networks_desc">이 Wi-Fi에서는 TJ Shield가 꺼지고, 벗어나면 다시 켜집니다.</string>
     <string name="trusted_networks_add_current">현재 Wi-Fi 추가</string>
     <string name="trusted_networks_no_wifi">Wi-Fi에 연결되어 있지 않음(또는 위치 권한 필요)</string>
     <string name="trusted_networks_list_header">신뢰할 수 있는 Wi-Fi</string>
     <string name="trusted_networks_empty">아직 신뢰할 수 있는 네트워크가 없습니다. 현재 네트워크를 추가하세요.</string>
     <string name="trusted_networks_paused_title">신뢰할 수 있는 네트워크에서 일시중지됨</string>
-    <string name="trusted_networks_paused_text">&quot;%1$s&quot;에서 BlockAds가 일시중지되었습니다. 벗어나면 자동으로 재개됩니다.</string>
-    <string name="trusted_networks_paused_text_generic">신뢰할 수 있는 Wi-Fi에서 BlockAds가 일시중지되었습니다. 벗어나면 재개됩니다.</string>
+    <string name="trusted_networks_paused_text">&quot;%1$s&quot;에서 TJ Shield가 일시중지되었습니다. 벗어나면 자동으로 재개됩니다.</string>
+    <string name="trusted_networks_paused_text_generic">신뢰할 수 있는 Wi-Fi에서 TJ Shield가 일시중지되었습니다. 벗어나면 재개됩니다.</string>
     <string name="settings_navigation">탐색</string>
     <string name="milestone_sheet_title">보호 마일스톤 달성!</string>
-    <string name="milestone_sheet_subtitle">BlockAds로 %1$s개의 광고와 트래커를 성공적으로 차단했습니다.</string>
+    <string name="milestone_sheet_subtitle">TJ Shield로 %1$s개의 광고와 트래커를 성공적으로 차단했습니다.</string>
     <string name="milestone_sheet_data_saved">예상 절약 데이터</string>
     <string name="milestone_sheet_time_saved">예상 절약 시간</string>
     <string name="milestone_sheet_action">멋져요!</string>
@@ -244,7 +244,7 @@
     <string name="geoip_import_invalid">유효하지 않은 GeoIP 데이터베이스 파일입니다</string>
     <string name="geoip_update_success">GeoIP 데이터베이스가 성공적으로 업데이트되었습니다</string>
     <string name="routing_mode_sheet_title">라우팅 모드</string>
-    <string name="routing_mode_sheet_desc">BlockAds가 기기의 트래픽을 가로채고 라우팅하는 방식을 선택하세요.</string>
+    <string name="routing_mode_sheet_desc">TJ Shield가 기기의 트래픽을 가로채고 라우팅하는 방식을 선택하세요.</string>
     <string name="routing_mode_local_vpn_title">로컬 VPN 모드</string>
     <string name="routing_mode_local_vpn_desc" formatted="false">Android VPN Service를 사용하여 기기에서 직접 트래픽을 필터링합니다. 루팅 불필요, 100% 비공개 보호.</string>
     <string name="routing_mode_root_proxy_title">Root Proxy 모드</string>
@@ -374,8 +374,8 @@
     <string name="settings_bottom_nav_tab_auto">자동 (기본값)</string>
     <string name="settings_bottom_nav_tab_filter">필터 설정</string>
     <string name="settings_bottom_nav_tab_vpn">VPN 및 프록시</string>
-    <string name="rate_app_title">BlockAds가 마음에 드시나요?</string>
-    <string name="rate_app_desc">BlockAds가 %1$d개 이상의 광고를 차단했습니다. 앱이 유용하다고 생각되시면 Google Play에서 별점 5점을 남겨주세요!</string>
+    <string name="rate_app_title">TJ Shield가 마음에 드시나요?</string>
+    <string name="rate_app_desc">TJ Shield가 %1$d개 이상의 광고를 차단했습니다. 앱이 유용하다고 생각되시면 Google Play에서 별점 5점을 남겨주세요!</string>
     <string name="rate_app_action_rate">별점 5점 평가</string>
     <string name="rate_app_action_feedback">의견 보내기</string>
     <string name="rate_app_action_later">나중에</string>
@@ -405,7 +405,7 @@
     <string name="app_management_block_rate">차단율</string>
     <string name="app_management_top_domains">상위 도메인</string>
     <string name="app_management_no_domains">이 앱에 기록된 DNS 활동이 아직 없습니다.</string>
-    <string name="app_management_vpn_protection">BlockAds VPN을 통해 라우팅</string>
+    <string name="app_management_vpn_protection">TJ Shield VPN을 통해 라우팅</string>
     <string name="settings_home_tips">홈 화면 팁</string>
     <string name="settings_home_tips_desc">홈 화면에 유용한 팁과 기능 제안 표시</string>
     <string name="settings_nav_position">탐색 모음 위치</string>

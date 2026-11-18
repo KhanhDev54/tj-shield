@@ -2,7 +2,7 @@
 <resources>
     <string name="cert_status_installed">Сертифікат CA встановлено і йому довіряють. Розширене блокування HTTPS готове.</string>
     <string name="cert_status_checking">Перевірка сертифіката у безпечному сховищі…</string>
-    <string name="cert_status_not_installed">Сертифікат BlockAds CA потрібен для розшифрування та фільтрації реклами HTTPS.</string>
+    <string name="cert_status_not_installed">Сертифікат TJ Shield CA потрібен для розшифрування та фільтрації реклами HTTPS.</string>
     <string name="cert_action_check_again">Перевірити знову</string>
     <string name="cert_action_reinstall">Перевстановити</string>
     <string name="cert_action_install">Встановити сертифікат</string>

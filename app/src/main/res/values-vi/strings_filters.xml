@@ -135,7 +135,7 @@
     <string name="filter_compile_failed_title">Biên dịch bộ lọc thất bại</string>
     <string name="filter_compile_channel_name">Biên dịch bộ lọc</string>
     <string name="filter_supported_formats_title">Định dạng hỗ trợ</string>
-    <string name="filter_supported_formats_desc">BlockAds hỗ trợ đầy đủ các định dạng danh sách chặn phổ biến:</string>
+    <string name="filter_supported_formats_desc">TJ Shield hỗ trợ đầy đủ các định dạng danh sách chặn phổ biến:</string>
     <string name="filter_format_adblock_title">AdBlock / uBlock</string>
     <string name="filter_format_adblock_desc">||example.com^, ||*.domain.com^, $all, $important</string>
     <string name="filter_format_hosts_title">Tệp Hosts</string>
@@ -167,9 +167,9 @@
     <string name="https_wizard_title">Cài đặt Chứng chỉ</string>
     <string name="https_wizard_step_indicator_format">Bước %1$d/%2$d: %3$s</string>
     <string name="https_wizard_security_title">Bảo mật &amp; Quyền riêng tư</string>
-    <string name="https_wizard_security_desc">Chứng chỉ Root CA được tạo cục bộ ngay trên thiết bị của bạn và không bao giờ rời khỏi máy. BlockAds sử dụng nó để loại bỏ quảng cáo trên các trang web. Các dịch vụ nhạy cảm như ứng dụng ngân hàng và tài khoản Google hoàn toàn không bị can thiệp.</string>
+    <string name="https_wizard_security_desc">Chứng chỉ Root CA được tạo cục bộ ngay trên thiết bị của bạn và không bao giờ rời khỏi máy. TJ Shield sử dụng nó để loại bỏ quảng cáo trên các trang web. Các dịch vụ nhạy cảm như ứng dụng ngân hàng và tài khoản Google hoàn toàn không bị can thiệp.</string>
     <string name="https_wizard_explain_title">Tại sao cần lọc HTTPS?</string>
-    <string name="https_wizard_explain_desc">Hầu hết các trang web và quảng cáo hiện nay đều sử dụng kết nối HTTPS đã mã hóa. Để ẩn các khung quảng cáo, banner và popup phiền toái, BlockAds cần một chứng chỉ cục bộ để xử lý và lọc các trang web một cách an toàn trên máy bạn.</string>
+    <string name="https_wizard_explain_desc">Hầu hết các trang web và quảng cáo hiện nay đều sử dụng kết nối HTTPS đã mã hóa. Để ẩn các khung quảng cáo, banner và popup phiền toái, TJ Shield cần một chứng chỉ cục bộ để xử lý và lọc các trang web một cách an toàn trên máy bạn.</string>
     <string name="https_wizard_benefits_title">Lợi ích khi kích hoạt</string>
     <string name="https_wizard_benefit_1">Chặn sạch quảng cáo trên các trang video &amp; báo chí</string>
     <string name="https_wizard_benefit_2">Ẩn hoàn toàn khung trống, banner và pop-up phiền toái</string>
@@ -189,9 +189,9 @@
     <string name="https_wizard_install_instructions_title">Các bước thực hiện</string>
     <string name="https_wizard_checking_title">Đang kiểm tra chứng chỉ…</string>
     <string name="https_wizard_checking_desc">Đang quét kho chứng chỉ tin cậy của Android…</string>
-    <string name="https_wizard_installed_desc">Chứng chỉ BlockAds Root CA đã được phát hiện trong kho tin cậy của thiết bị. Lọc HTTPS đã sẵn sàng hoạt động!</string>
+    <string name="https_wizard_installed_desc">Chứng chỉ TJ Shield Root CA đã được phát hiện trong kho tin cậy của thiết bị. Lọc HTTPS đã sẵn sàng hoạt động!</string>
     <string name="https_wizard_not_installed_title">Chưa phát hiện chứng chỉ</string>
-    <string name="https_wizard_not_installed_desc">BlockAds chưa tìm thấy chứng chỉ trong kho chứng chỉ CA của máy. Nếu bạn vừa hoàn tất cài đặt trong Cài đặt, hãy bấm Kiểm tra lại.</string>
+    <string name="https_wizard_not_installed_desc">TJ Shield chưa tìm thấy chứng chỉ trong kho chứng chỉ CA của máy. Nếu bạn vừa hoàn tất cài đặt trong Cài đặt, hãy bấm Kiểm tra lại.</string>
     <string name="https_wizard_troubleshooting_title">Mẹo khắc phục sự cố</string>
     <string name="https_wizard_troubleshooting_tip1">Đảm bảo bạn đã chọn đúng loại \"Chứng chỉ CA\" (không phải Chứng chỉ người dùng hay VPN &amp; ứng dụng).</string>
     <string name="https_wizard_troubleshooting_tip2">Nếu cài đặt qua module Magisk/KernelSU, bạn cần khởi động lại máy để có hiệu lực.</string>

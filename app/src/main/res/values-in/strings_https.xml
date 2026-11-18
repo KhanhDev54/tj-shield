@@ -2,7 +2,7 @@
 <resources>
     <string name="cert_status_installed">Sertifikat CA telah terpasang dan dipercaya. Pemblokiran iklan HTTPS siap digunakan.</string>
     <string name="cert_status_checking">Memeriksa sertifikat di penyimpanan aman perangkat…</string>
-    <string name="cert_status_not_installed">Sertifikat CA BlockAds diperlukan untuk mendekripsi dan menyaring iklan HTTPS.</string>
+    <string name="cert_status_not_installed">Sertifikat CA TJ Shield diperlukan untuk mendekripsi dan menyaring iklan HTTPS.</string>
     <string name="cert_action_check_again">Periksa lagi</string>
     <string name="cert_action_reinstall">Pasang ulang</string>
     <string name="cert_action_install">Pasang sertifikat</string>

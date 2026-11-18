@@ -2,21 +2,21 @@
 <resources>
     <string name="notification_channel_name">Dịch vụ chặn quảng cáo</string>
     <string name="notification_channel_description">Hiển thị khi VPN chặn quảng cáo đang hoạt động</string>
-    <string name="vpn_notification_title">BlockAds đang hoạt động</string>
+    <string name="vpn_notification_title">TJ Shield đang hoạt động</string>
     <string name="vpn_notification_text">Thiết bị của bạn đang được bảo vệ khỏi quảng cáo</string>
-    <string name="vpn_notification_reconnecting">BlockAds đang kết nối lại</string>
+    <string name="vpn_notification_reconnecting">TJ Shield đang kết nối lại</string>
     <string name="vpn_notification_reconnecting_text">Mạng thay đổi, đang kết nối lại VPN…</string>
-    <string name="vpn_notification_retrying">BlockAds đang thử lại</string>
+    <string name="vpn_notification_retrying">TJ Shield đang thử lại</string>
     <string name="vpn_notification_retry_text">Lần thử %1$d / %2$d</string>
     <string name="vpn_alert_channel_name">Cảnh báo VPN</string>
     <string name="vpn_alert_channel_description">Cảnh báo quan trọng về thay đổi trạng thái VPN</string>
     <string name="vpn_revoked_title">Chặn quảng cáo đã dừng</string>
-    <string name="vpn_revoked_text">Ứng dụng VPN khác đã chiếm kết nối. Nhấn để bật lại BlockAds.</string>
+    <string name="vpn_revoked_text">Ứng dụng VPN khác đã chiếm kết nối. Nhấn để bật lại TJ Shield.</string>
     <string name="vpn_revoked_card_title">Bảo vệ đã tạm dừng</string>
-    <string name="vpn_revoked_card_desc">Một ứng dụng VPN khác vừa kết nối. Lưu lượng của bạn hiện không được BlockAds lọc.</string>
+    <string name="vpn_revoked_card_desc">Một ứng dụng VPN khác vừa kết nối. Lưu lượng của bạn hiện không được TJ Shield lọc.</string>
     <string name="vpn_revoked_action_reconnect">Bật lại</string>
     <string name="vpn_revoked_action_dismiss">Bỏ qua</string>
-    <string name="vpn_stopped_title">BlockAds đã tạm dừng</string>
+    <string name="vpn_stopped_title">TJ Shield đã tạm dừng</string>
     <string name="vpn_stopped_text">Chặn quảng cáo đã tắt. Nhấn Bật để tiếp tục.</string>
     <string name="vpn_stopped_action_enable">Bật</string>
     <string name="status_protected">Được bảo vệ</string>
@@ -35,7 +35,7 @@
     <string name="vpn_phase_loading_filters">Đang tải bộ lọc…</string>
     <string name="vpn_phase_preparing_dns">Đang chuẩn bị DNS…</string>
     <string name="vpn_phase_establishing">Đang thiết lập kết nối VPN…</string>
-    <string name="vpn_paused_title">BlockAds đã tạm dừng</string>
+    <string name="vpn_paused_title">TJ Shield đã tạm dừng</string>
     <string name="vpn_paused_text">Chặn quảng cáo tạm dừng 1 giờ. Sẽ tự động tiếp tục.</string>
     <string name="accessibility_toggle_vpn">Bật/tắt bảo vệ VPN</string>
     <string name="accessibility_vpn_active">Bảo vệ VPN đang hoạt động</string>
@@ -52,11 +52,11 @@
     <string name="wireguard_connect">Kết nối đường hầm</string>
     <string name="wireguard_disconnect">Ngắt kết nối đường hầm</string>
     <string name="vpn_conflict_title">Kết nối bị chặn</string>
-    <string name="vpn_conflict_desc">Android chỉ cho phép một kết nối VPN hoạt động cùng lúc. Một VPN khác đang chạy trên thiết bị của bạn.\n\nVui lòng ngắt kết nối VPN kia hoặc tắt \&quot;VPN luôn bật\&quot; trong Cài đặt trước khi kết nối BlockAds.</string>
+    <string name="vpn_conflict_desc">Android chỉ cho phép một kết nối VPN hoạt động cùng lúc. Một VPN khác đang chạy trên thiết bị của bạn.\n\nVui lòng ngắt kết nối VPN kia hoặc tắt \&quot;VPN luôn bật\&quot; trong Cài đặt trước khi kết nối TJ Shield.</string>
     <string name="root_not_available">Không có quyền Root. Vui lòng cấp quyền trong trình quản lý root của bạn (ví dụ: Magisk/KernelSU).</string>
     <string name="root_proxy_notification_text">Chế độ Root Proxy đang hoạt động — lưu lượng DNS được chuyển hướng qua iptables</string>
     <string name="status_disconnecting">Đang ngắt kết nối</string>
-    <string name="vpn_notification_stopping">BlockAds đang dừng</string>
+    <string name="vpn_notification_stopping">TJ Shield đang dừng</string>
     <string name="vpn_notification_stopping_text">Đang đóng đường hầm VPN…</string>
     <string name="wireguard_https_filtering_disabled">Đã tắt lọc HTTPS (không tương thích với WireGuard)</string>
     <string name="wireguard_imported">Đã nhập \'%1$s\'</string>
@@ -78,12 +78,12 @@
     <string name="wireguard_issue_malformed_allowed_ips">Allowed IPs không hợp lệ: %1$s</string>
     <string name="wireguard_issue_fix_first">Hãy sửa \'%1$s\' trước: %2$s</string>
     <string name="wireguard_config_invalid_title">Hồ sơ WireGuard cần được sửa</string>
-    <string name="wireguard_config_invalid_text">%1$s. BlockAds đã dừng thay vì chạy mà không có đường hầm.</string>
+    <string name="wireguard_config_invalid_text">%1$s. TJ Shield đã dừng thay vì chạy mà không có đường hầm.</string>
     <string name="wireguard_rename_dialog_title">Đổi tên hồ sơ</string>
-    <string name="root_proxy_start_failed_title">BlockAds không thể khởi động</string>
+    <string name="root_proxy_start_failed_title">TJ Shield không thể khởi động</string>
     <string name="root_proxy_start_failed_text">Không thể lấy quyền root để bật bảo vệ. Nhấn Bật để thử lại.</string>
     <string name="private_dns_warning_title">DNS riêng tư đang bật</string>
-    <string name="private_dns_warning_text">DNS riêng tư của Android bỏ qua BlockAds nên việc lọc có thể không áp dụng. Hãy đặt DNS riêng tư về Tắt hoặc Tự động trong cài đặt hệ thống.</string>
+    <string name="private_dns_warning_text">DNS riêng tư của Android bỏ qua TJ Shield nên việc lọc có thể không áp dụng. Hãy đặt DNS riêng tư về Tắt hoặc Tự động trong cài đặt hệ thống.</string>
     <string name="status_paused">Đã tạm dừng</string>
     <string name="vpn_notification_action_retry">Thử lại</string>
     <string name="vpn_notification_no_internet_title">Mất kết nối Internet</string>
@@ -110,12 +110,12 @@
     <string name="home_tip_feature_https_desc">Chặn quảng cáo web và mạng xã hội triệt để</string>
     <string name="home_tip_feature_https_action">Khám phá</string>
     <string name="home_tip_feature_wireguard_title">Tích hợp WireGuard</string>
-    <string name="home_tip_feature_wireguard_desc">Dùng server VPN riêng của bạn cùng BlockAds</string>
+    <string name="home_tip_feature_wireguard_desc">Dùng server VPN riêng của bạn cùng TJ Shield</string>
     <string name="home_tip_feature_wireguard_action">Thử ngay</string>
 
     <!-- Tailscale -->
     <string name="tailscale_title">Tailscale</string>
-    <string name="tailscale_subtitle">Kết nối mạng Tailnet song song cùng BlockAds</string>
+    <string name="tailscale_subtitle">Kết nối mạng Tailnet song song cùng TJ Shield</string>
     <string name="tailscale_desc">Tham gia mạng riêng Tailscale hoặc Headscale trong khi vẫn giữ 100%% tính năng chặn quảng cáo và lọc HTTPS trên máy.</string>
     <string name="tailscale_sign_in_browser">Đăng nhập với Tailscale</string>
     <string name="tailscale_waiting_auth">Đang chờ xác thực trong trình duyệt...</string>
@@ -165,7 +165,7 @@
     <string name="tailscale_ping_self">Không thể ping thiết bị này</string>
     <string name="tailscale_vpn_not_running">VPN chưa kết nối</string>
     <string name="tailscale_vpn_required_title">Cần bật VPN</string>
-    <string name="tailscale_vpn_required_desc">BlockAds VPN cần được bật để định tuyến mạng Tailscale.</string>
+    <string name="tailscale_vpn_required_desc">TJ Shield VPN cần được bật để định tuyến mạng Tailscale.</string>
     <string name="tailscale_start_vpn">Bật VPN</string>
     <string name="tailscale_notification_channel_name">Mạng Tailscale</string>
     <string name="tailscale_notification_channel_desc">Thông báo thiết bị kết nối mạng Tailscale</string>
@@ -186,6 +186,6 @@
     <string name="tailscale_settings_title">Cài đặt Tailscale</string>
     <string name="tailscale_advertise_exit_node">Làm Exit Node</string>
     <string name="tailscale_advertise_exit_node_desc">Cho phép các thiết bị khác trong Tailnet đi internet qua thiết bị này. Cần duyệt thêm trên trang quản lý Tailscale.</string>
-    <string name="tailscale_adblock_title">BlockAds Tailscale</string>
-    <string name="tailscale_adblock_desc">Chặn quảng cáo cho các thiết bị dùng máy này làm Exit Node. Dù bật hay tắt vẫn dùng chung DNS của BlockAds.</string>
+    <string name="tailscale_adblock_title">TJ Shield Tailscale</string>
+    <string name="tailscale_adblock_desc">Chặn quảng cáo cho các thiết bị dùng máy này làm Exit Node. Dù bật hay tắt vẫn dùng chung DNS của TJ Shield.</string>
 </resources>

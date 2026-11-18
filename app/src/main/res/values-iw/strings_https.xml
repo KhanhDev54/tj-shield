@@ -2,7 +2,7 @@
 <resources>
     <string name="cert_status_installed">אישור ה-CA מותקן ומהימן. סינון HTTPS מתקדם מוכן.</string>
     <string name="cert_status_checking">בודק אישור באחסון המאובטח של המכשיר…</string>
-    <string name="cert_status_not_installed">אישור BlockAds CA נדרש לפענוח וסינון מודעות בחיבורי HTTPS.</string>
+    <string name="cert_status_not_installed">אישור TJ Shield CA נדרש לפענוח וסינון מודעות בחיבורי HTTPS.</string>
     <string name="cert_action_check_again">בדוק שוב</string>
     <string name="cert_action_reinstall">התקן מחדש</string>
     <string name="cert_action_install">התקן אישור</string>

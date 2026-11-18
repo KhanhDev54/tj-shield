@@ -147,7 +147,7 @@
     <string name="filter_compile_failed_title">Filter compilation failed</string>
     <string name="filter_compile_channel_name">Filter Compilation</string>
     <string name="filter_supported_formats_title">Supported Formats</string>
-    <string name="filter_supported_formats_desc">BlockAds supports all standard blocklist and adblock syntax:</string>
+    <string name="filter_supported_formats_desc">TJ Shield supports all standard blocklist and adblock syntax:</string>
     <string name="filter_format_adblock_title">AdBlock / uBlock</string>
     <string name="filter_format_adblock_desc">||example.com^, ||*.domain.com^, $all, $important</string>
     <string name="filter_format_hosts_title">Hosts File</string>
@@ -172,9 +172,9 @@
     <string name="https_wizard_title">Certificate Setup</string>
     <string name="https_wizard_step_indicator_format">Step %1$d of %2$d: %3$s</string>
     <string name="https_wizard_security_title">Security &amp; Privacy</string>
-    <string name="https_wizard_security_desc">The Root CA certificate is generated locally on your device and never leaves your phone. BlockAds uses it strictly to remove cosmetic ads on websites. Sensitive services such as banking apps and Google accounts are never intercepted.</string>
+    <string name="https_wizard_security_desc">The Root CA certificate is generated locally on your device and never leaves your phone. TJ Shield uses it strictly to remove cosmetic ads on websites. Sensitive services such as banking apps and Google accounts are never intercepted.</string>
     <string name="https_wizard_explain_title">Why HTTPS Filtering?</string>
-    <string name="https_wizard_explain_desc">Most modern websites and ads use encrypted HTTPS connections. To hide visual ad placeholders, banners, and floating popups, BlockAds requires a local certificate to inspect and filter web pages safely on your device.</string>
+    <string name="https_wizard_explain_desc">Most modern websites and ads use encrypted HTTPS connections. To hide visual ad placeholders, banners, and floating popups, TJ Shield requires a local certificate to inspect and filter web pages safely on your device.</string>
     <string name="https_wizard_benefits_title">Key Benefits</string>
     <string name="https_wizard_benefit_1">Eliminate ads on video platforms &amp; news websites</string>
     <string name="https_wizard_benefit_2">Hide blank placeholders, banners, and intrusive popups</string>
@@ -193,10 +193,10 @@
     <string name="https_wizard_device_brand_generic">Your Android Device</string>
     <string name="https_wizard_install_instructions_title">Step-by-step Guide</string>
     <string name="https_wizard_checking_title">Verifying Certificate…</string>
-    <string name="https_wizard_checking_desc">Scanning the Android trust store for BlockAds CA…</string>
-    <string name="https_wizard_installed_desc">BlockAds Root CA is verified and active in your device\'s trust store. Advanced HTTPS filtering is ready to go!</string>
+    <string name="https_wizard_checking_desc">Scanning the Android trust store for TJ Shield CA…</string>
+    <string name="https_wizard_installed_desc">TJ Shield Root CA is verified and active in your device\'s trust store. Advanced HTTPS filtering is ready to go!</string>
     <string name="https_wizard_not_installed_title">Certificate Not Detected</string>
-    <string name="https_wizard_not_installed_desc">BlockAds has not found the certificate in your trust store yet. If you just finished installing it in Settings, tap below to check again.</string>
+    <string name="https_wizard_not_installed_desc">TJ Shield has not found the certificate in your trust store yet. If you just finished installing it in Settings, tap below to check again.</string>
     <string name="https_wizard_troubleshooting_title">Troubleshooting Tips</string>
     <string name="https_wizard_troubleshooting_tip1">Make sure you selected \"CA Certificate\" in Settings (not User Certificate or VPN &amp; app user certificate).</string>
     <string name="https_wizard_troubleshooting_tip2">If installing via Magisk/KernelSU module, a device reboot is required.</string>
