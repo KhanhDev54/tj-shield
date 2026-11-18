@@ -111,6 +111,7 @@ class RootProxyService : Service() {
     private lateinit var firewallRuleDao: FirewallRuleDao
     private lateinit var appNameResolver: AppNameResolver
     private lateinit var goTunnelAdapter: GoTunnelAdapter
+    private lateinit var gameModeState: app.pwhs.blockads.data.repository.GameModeState
     @Volatile
     private var firewallManager: FirewallManager? = null
 
@@ -133,6 +134,8 @@ class RootProxyService : Service() {
         appPrefs = koin.get()
         filterRepo = koin.get()
         dnsLogDao = koin.get()
+        gameModeState = koin.get()
+        gameModeState.bind(serviceScope, appPrefs.gameMode, koin.get())
         firewallRuleDao = koin.get()
 
         serviceScope.launch {
@@ -150,6 +153,7 @@ class RootProxyService : Service() {
             appNameResolver = appNameResolver,
             firewallManagerProvider = { firewallManager },
             recordLogProvider = { isRecordDnsLogsEnabled },
+            isGameApp = gameModeState::isGameApp,
         )
         Timber.d("RootProxyService created")
     }

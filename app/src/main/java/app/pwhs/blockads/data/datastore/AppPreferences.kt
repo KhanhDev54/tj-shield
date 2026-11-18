@@ -10,6 +10,7 @@ import androidx.datastore.preferences.preferencesDataStore
 import app.pwhs.blockads.data.datastore.prefs.AppearancePreferences
 import app.pwhs.blockads.data.datastore.prefs.DnsPreferences
 import app.pwhs.blockads.data.datastore.prefs.FilterPreferences
+import app.pwhs.blockads.data.datastore.prefs.GameModePreferences
 import app.pwhs.blockads.data.datastore.prefs.ShadowsocksPreferences
 import app.pwhs.blockads.data.datastore.prefs.TailscalePreferences
 import app.pwhs.blockads.data.datastore.prefs.VpnSecurityPreferences
@@ -40,6 +41,7 @@ class AppPreferences internal constructor(
     val vpnSecurity = VpnSecurityPreferences(dataStore)
     val shadowsocks = ShadowsocksPreferences(dataStore)
     val tailscale = TailscalePreferences(dataStore)
+    val gameMode = GameModePreferences(dataStore)
 
     companion object {
         const val ROUTING_MODE_DIRECT = WireGuardPreferences.ROUTING_MODE_DIRECT
@@ -386,6 +388,7 @@ class AppPreferences internal constructor(
             FilterPreferences.reset(prefs)
             WireGuardPreferences.reset(prefs)
             VpnSecurityPreferences.reset(prefs)
+            GameModePreferences.reset(prefs)
         }
         directBootPrefs.autoReconnect = true
         directBootPrefs.routingMode = ROUTING_MODE_DIRECT
