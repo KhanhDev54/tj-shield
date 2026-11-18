@@ -10,6 +10,8 @@ import app.pwhs.blockads.data.dao.FirewallRuleDao
 import app.pwhs.blockads.data.datastore.AppPreferences
 import app.pwhs.blockads.data.entities.DnsProtocol
 import app.pwhs.blockads.data.repository.FilterListRepository
+import app.pwhs.blockads.data.repository.GameAppDetector
+import app.pwhs.blockads.data.repository.GameModeState
 import app.pwhs.blockads.testutil.FakeRootShell
 import app.pwhs.blockads.testutil.FakeRootShell.FakeResult
 import app.pwhs.blockads.testutil.ServiceStateHack
@@ -85,8 +87,8 @@ class RootProxyServiceShellTest {
                 single { filterRepo }
                 single<DnsLogDao> { mockk(relaxed = true) }
                 single<FirewallRuleDao> { mockk(relaxed = true) }
-                single { app.pwhs.blockads.data.repository.GameModeState() }
-                single { app.pwhs.blockads.data.repository.GameAppDetector { emptyList() } }
+                single { GameModeState() }
+                single { GameAppDetector { emptyList() } }
             })
         }
         mockkStatic(Tunnel::class)

@@ -14,6 +14,8 @@ import app.pwhs.blockads.data.dao.FirewallRuleDao
 import app.pwhs.blockads.data.datastore.AppPreferences
 import app.pwhs.blockads.data.entities.DnsProtocol
 import app.pwhs.blockads.data.repository.FilterListRepository
+import app.pwhs.blockads.data.repository.GameAppDetector
+import app.pwhs.blockads.data.repository.GameModeState
 import app.pwhs.blockads.service.vpn.VpnNotificationManager
 import app.pwhs.blockads.testutil.ServiceStateHack
 import app.pwhs.blockads.testutil.ShadowGoSeq
@@ -102,8 +104,8 @@ class AdBlockVpnServiceShellTest {
                 single<FirewallRuleDao> { mockk(relaxed = true) }
                 single<ConfigDao> { mockk(relaxed = true) }
                 single<app.pwhs.blockads.data.geoip.GeoIpManager> { mockk(relaxed = true) }
-                single { app.pwhs.blockads.data.repository.GameModeState() }
-                single { app.pwhs.blockads.data.repository.GameAppDetector { emptyList() } }
+                single { GameModeState() }
+                single { GameAppDetector { emptyList() } }
             })
         }
         mockkStatic(Tunnel::class)
