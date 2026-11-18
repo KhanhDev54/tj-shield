@@ -249,58 +249,85 @@ jobs:
           fi
           ./gradlew $TUNNEL_ARG assembleDebug
 
+      # Exposes newly generated Room schemas so they can be committed after a DB version bump.
+      - name: Upload Room schemas
+        uses: actions/upload-artifact@v4
+        with:
+          name: room-schemas
+          path: app/schemas
+          retention-days: 7
+
       - name: Upload arm64-v8a APK
         uses: actions/upload-artifact@v4
         with:
-          name: BlockAds-arm64-v8a-debug
+          name: TJShield-arm64-v8a-debug
           path: app/build/outputs/apk/**/debug/*arm64-v8a*.apk
           retention-days: 7
 
       - name: Upload armeabi-v7a APK
         uses: actions/upload-artifact@v4
         with:
-          name: BlockAds-armeabi-v7a-debug
+          name: TJShield-armeabi-v7a-debug
           path: app/build/outputs/apk/**/debug/*armeabi-v7a*.apk
           retention-days: 7
 
       - name: Upload x86_64 APK
         uses: actions/upload-artifact@v4
         with:
-          name: BlockAds-x86_64-debug
+          name: TJShield-x86_64-debug
           path: app/build/outputs/apk/**/debug/*x86_64*.apk
           retention-days: 7
 
       - name: Upload Universal APK
         uses: actions/upload-artifact@v4
         with:
-          name: BlockAds-universal-debug
+          name: TJShield-universal-debug
           path: app/build/outputs/apk/**/debug/*universal*.apk
           retention-days: 7
 
       - name: Upload TV arm64-v8a APK
         uses: actions/upload-artifact@v4
         with:
-          name: BlockAdsTV-arm64-v8a-debug
+          name: TJShieldTV-arm64-v8a-debug
           path: blockadstv/build/outputs/apk/**/debug/*arm64-v8a*.apk
           retention-days: 7
 
       - name: Upload TV armeabi-v7a APK
         uses: actions/upload-artifact@v4
         with:
-          name: BlockAdsTV-armeabi-v7a-debug
+          name: TJShieldTV-armeabi-v7a-debug
           path: blockadstv/build/outputs/apk/**/debug/*armeabi-v7a*.apk
           retention-days: 7
 
       - name: Upload TV x86_64 APK
         uses: actions/upload-artifact@v4
         with:
-          name: BlockAdsTV-x86_64-debug
+          name: TJShieldTV-x86_64-debug
           path: blockadstv/build/outputs/apk/**/debug/*x86_64*.apk
           retention-days: 7
 
       - name: Upload TV Universal APK
         uses: actions/upload-artifact@v4
         with:
-          name: BlockAdsTV-universal-debug
+          name: TJShieldTV-universal-debug
           path: blockadstv/build/outputs/apk/**/debug/*universal*.apk
           retention-days: 7
+
+      # Fails when the build exported Room schemas that are not committed yet,
+      # and prints them so they can be copied into app/schemas.
+      - name: Check Room schemas are committed
+        run: |
+          changed=$(git status --porcelain --untracked-files=all -- app/schemas)
+          if [ -z "$changed" ]; then
+            echo "Room schemas are up to date."
+            exit 0
+          fi
+          echo "::error::Room schema files are missing or out of date. Commit the files below (also in the room-schemas artifact)."
+          echo "$changed"
+          echo "$changed" | awk '{print $NF}' | while read -r f; do
+            echo "::group::$f"
+            cat "$f"
+            echo
+            echo "::endgroup::"
+          done
+          exit 1

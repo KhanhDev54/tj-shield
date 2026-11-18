@@ -264,4 +264,10 @@
     <plurals name="domain_rules_count">
         <item quantity="other">%d aturan</item>
     </plurals>
+    <string name="log_action_allow_for_app">Izinkan untuk %1$s</string>
+    <string name="log_action_block_for_app">Blokir untuk %1$s</string>
+    <string name="rule_field_target_app">Aplikasi target</string>
+    <string name="rule_pick_app_search">Cari aplikasi…</string>
+    <string name="rule_pick_app_title">Pilih aplikasi target</string>
+    <string name="rule_target_app_all">Semua aplikasi (global)</string>
 </resources>

@@ -11,7 +11,8 @@ data class CustomDnsRule(
     val domain: String, // Parsed domain (empty for comments)
     val packageName: String = "", // Empty = global rule; non-empty = per-app rule
     val isEnabled: Boolean = true,
-    val addedTimestamp: Long = System.currentTimeMillis()
+    val addedTimestamp: Long = System.currentTimeMillis(),
+    val expiresAt: Long? = null // Null = permanent; epoch millis after which the rule stops applying
 )
 
 enum class RuleType {

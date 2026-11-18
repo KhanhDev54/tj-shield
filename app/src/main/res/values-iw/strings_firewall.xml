@@ -13,4 +13,8 @@
     <string name="firewall_prompt_dialog_pending">עוד %1$d אפליקציות ממתינות</string>
     <string name="firewall_prompt_always_allow">אפשר תמיד</string>
     <string name="firewall_prompt_allow_once">אפשר פעם אחת</string>
+    <string name="firewall_prompt_dialog_multi_title">%1$d אפליקציות מבקשות גישה לאינטרנט</string>
+    <string name="firewall_prompt_later">אחר כך</string>
+    <string name="firewall_prompt_pending_banner">%1$d אפליקציות ממתינות להרשאה</string>
+    <string name="firewall_prompt_reopen">סקירה</string>
 </resources>

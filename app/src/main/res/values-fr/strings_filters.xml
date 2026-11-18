@@ -271,4 +271,10 @@
         <item quantity="many">%d règles</item>
         <item quantity="other">%d règles</item>
     </plurals>
+    <string name="log_action_allow_for_app">Autoriser pour %1$s</string>
+    <string name="log_action_block_for_app">Bloquer pour %1$s</string>
+    <string name="rule_field_target_app">Appli cible</string>
+    <string name="rule_pick_app_search">Rechercher des applis…</string>
+    <string name="rule_pick_app_title">Choisir l\'appli cible</string>
+    <string name="rule_target_app_all">Toutes les applis (global)</string>
 </resources>
