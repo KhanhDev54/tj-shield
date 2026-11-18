@@ -93,6 +93,8 @@ val appModule = module {
     // Repository
     single { FilterDownloadManager(androidContext(), get()) }
     single { app.pwhs.blockads.data.repository.TemporaryAppAllowManager(get()) }
+    single { app.pwhs.blockads.data.repository.GameAppDetector(androidContext().packageManager) }
+    single { app.pwhs.blockads.data.repository.AppBlockedDomainsExporter(get()) }
     single {
         FilterListRepository(
             context = androidContext(),

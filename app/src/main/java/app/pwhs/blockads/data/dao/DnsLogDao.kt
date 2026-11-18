@@ -42,6 +42,13 @@ interface DnsLogDao {
     @Query("SELECT * FROM dns_logs WHERE isBlocked = 0 AND timestamp > :since ORDER BY timestamp DESC")
     fun getAllowedOnlySince(since: Long): Flow<List<DnsLogEntry>>
 
+    @Query(
+        "SELECT domain, COUNT(*) AS count FROM dns_logs " +
+            "WHERE packageName = :packageName AND isBlocked = 1 AND timestamp >= :since " +
+            "GROUP BY domain ORDER BY count DESC, domain ASC"
+    )
+    suspend fun getBlockedDomainsForApp(packageName: String, since: Long): List<TopBlockedDomain>
+
     @Query("SELECT DISTINCT appName FROM dns_logs WHERE appName != '' ORDER BY appName ASC")
     fun getDistinctAppNames(): Flow<List<String>>
 
