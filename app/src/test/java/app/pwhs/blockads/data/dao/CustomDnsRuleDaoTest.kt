@@ -86,4 +86,19 @@ class CustomDnsRuleDaoTest {
 
         assertEquals(listOf(RuleType.ALLOW), dao.getAll().map { it.ruleType })
     }
+
+    @Test
+    fun deleteExpiredRemovesOnlyExpiredTemporaryRules() = runTest {
+        fun temp(domain: String, expiresAt: Long?) = CustomDnsRule(
+            rule = "@@||$domain^", ruleType = RuleType.ALLOW, domain = domain,
+            packageName = "com.game", expiresAt = expiresAt,
+        )
+        dao.insertAll(listOf(temp("old.example", 100), temp("new.example", 900), temp("keep.example", null)))
+
+        assertEquals(1, dao.deleteExpired(nowMs = 500))
+        assertEquals(setOf("new.example", "keep.example"), dao.getAll().map { it.domain }.toSet())
+
+        dao.deleteAllTemporaryForApp("com.game")
+        assertEquals(listOf("keep.example"), dao.getAll().map { it.domain })
+    }
 }

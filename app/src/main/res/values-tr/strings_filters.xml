@@ -265,4 +265,10 @@
         <item quantity="one">%d kural</item>
         <item quantity="other">%d kural</item>
     </plurals>
+    <string name="log_action_allow_for_app">%1$s için izin ver</string>
+    <string name="log_action_block_for_app">%1$s için engelle</string>
+    <string name="rule_field_target_app">Hedef uygulama</string>
+    <string name="rule_pick_app_search">Uygulama ara…</string>
+    <string name="rule_pick_app_title">Hedef uygulamayı seç</string>
+    <string name="rule_target_app_all">Tüm uygulamalar (genel)</string>
 </resources>
