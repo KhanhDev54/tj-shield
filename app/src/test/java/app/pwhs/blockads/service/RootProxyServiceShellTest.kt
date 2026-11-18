@@ -66,6 +66,10 @@ class RootProxyServiceShellTest {
         every { youtubeRestrictedMode } returns flowOf(false)
         every { dnsResponseType } returns flowOf("NXDOMAIN")
         every { firewallEnabled } returns flowOf(false)
+        every { gameMode } returns mockk {
+            every { enabled } returns flowOf(false)
+            every { selectedPackages } returns flowOf(null)
+        }
         coEvery { getWhitelistedAppsSnapshot() } answers { whitelist }
     }
     private val filterRepo: FilterListRepository = mockk(relaxed = true) {
@@ -81,6 +85,8 @@ class RootProxyServiceShellTest {
                 single { filterRepo }
                 single<DnsLogDao> { mockk(relaxed = true) }
                 single<FirewallRuleDao> { mockk(relaxed = true) }
+                single { app.pwhs.blockads.data.repository.GameModeState() }
+                single { app.pwhs.blockads.data.repository.GameAppDetector { emptyList() } }
             })
         }
         mockkStatic(Tunnel::class)

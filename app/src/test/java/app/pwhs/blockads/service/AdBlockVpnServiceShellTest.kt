@@ -67,6 +67,10 @@ class AdBlockVpnServiceShellTest {
         every { safeSearchEnabled } returns flowOf(false)
         every { youtubeRestrictedMode } returns flowOf(false)
         every { firewallEnabled } returns flowOf(false)
+        every { gameMode } returns mockk {
+            every { enabled } returns flowOf(false)
+            every { selectedPackages } returns flowOf(null)
+        }
         every { dnsProviderId } returns flowOf("cloudflare")
         every { splitDnsZones } returns flowOf("")
         every { excludeLan } returns flowOf(false)
@@ -98,6 +102,8 @@ class AdBlockVpnServiceShellTest {
                 single<FirewallRuleDao> { mockk(relaxed = true) }
                 single<ConfigDao> { mockk(relaxed = true) }
                 single<app.pwhs.blockads.data.geoip.GeoIpManager> { mockk(relaxed = true) }
+                single { app.pwhs.blockads.data.repository.GameModeState() }
+                single { app.pwhs.blockads.data.repository.GameAppDetector { emptyList() } }
             })
         }
         mockkStatic(Tunnel::class)
