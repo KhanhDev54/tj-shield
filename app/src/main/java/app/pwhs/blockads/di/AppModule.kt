@@ -209,6 +209,12 @@ val appModule = module {
         )
     }
     viewModel {
+        app.pwhs.blockads.ui.gamemode.GameModeViewModel(
+            prefs = get<AppPreferences>().gameMode,
+            application = androidApplication()
+        )
+    }
+    viewModel {
         app.pwhs.blockads.ui.trustednetworks.TrustedNetworksViewModel(
             appPrefs = get(),
             application = androidApplication()

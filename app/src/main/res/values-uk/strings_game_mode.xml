@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mode_title">Ігровий режим</string>
+    <string name="game_mode_settings_desc">Блокувати рекламу в іграх і вибирати, які застосунки вважати іграми</string>
+    <string name="game_mode_enable_title">Увімкнути ігровий режим</string>
+    <string name="game_mode_enable_desc">Відповіді про блокування для ігор спливають за кілька секунд, тому тимчасове розблокування спрацьовує майже одразу.</string>
+    <string name="game_mode_games_header">Ігри</string>
+    <string name="game_mode_games_desc">Позначені застосунки вважаються іграми.</string>
+    <string name="game_mode_show_all_apps">Показати всі застосунки</string>
+    <string name="game_mode_detected_label">Визначено як гру</string>
+    <string name="game_mode_empty">Ігор не знайдено. Увімкніть «Показати всі застосунки», щоб вибрати.</string>
+</resources>

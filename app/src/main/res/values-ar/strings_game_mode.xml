@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mode_title">وضع الألعاب</string>
+    <string name="game_mode_settings_desc">حظر الإعلانات في الألعاب واختيار التطبيقات التي تُعد ألعابًا</string>
+    <string name="game_mode_enable_title">تشغيل وضع الألعاب</string>
+    <string name="game_mode_enable_desc">تنتهي ردود الحظر المرسلة إلى الألعاب بعد ثوانٍ قليلة، لذا يعمل إلغاء الحظر المؤقت فورًا تقريبًا.</string>
+    <string name="game_mode_games_header">الألعاب</string>
+    <string name="game_mode_games_desc">تُعامل التطبيقات المحددة كألعاب.</string>
+    <string name="game_mode_show_all_apps">عرض كل التطبيقات</string>
+    <string name="game_mode_detected_label">تم اكتشافه كلعبة</string>
+    <string name="game_mode_empty">لم يتم العثور على ألعاب. فعّل \"عرض كل التطبيقات\" لاختيار لعبة.</string>
+</resources>

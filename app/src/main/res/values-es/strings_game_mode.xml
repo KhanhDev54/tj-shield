@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mode_title">Modo juego</string>
+    <string name="game_mode_settings_desc">Bloquea anuncios en juegos y elige qué apps cuentan como juegos</string>
+    <string name="game_mode_enable_title">Activar modo juego</string>
+    <string name="game_mode_enable_desc">Las respuestas bloqueadas a los juegos caducan en pocos segundos, así que un desbloqueo temporal funciona casi al instante.</string>
+    <string name="game_mode_games_header">Juegos</string>
+    <string name="game_mode_games_desc">Las apps marcadas se tratan como juegos.</string>
+    <string name="game_mode_show_all_apps">Mostrar todas las apps</string>
+    <string name="game_mode_detected_label">Detectado como juego</string>
+    <string name="game_mode_empty">No se encontraron juegos. Activa \"Mostrar todas las apps\" para elegir uno.</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mode_title">Ойын режимі</string>
+    <string name="game_mode_settings_desc">Ойындардағы жарнаманы бұғаттау және қай қолданбалар ойын екенін таңдау</string>
+    <string name="game_mode_enable_title">Ойын режимін қосу</string>
+    <string name="game_mode_enable_desc">Ойындарға жіберілетін бұғаттау жауаптары бірнеше секундта ескіреді, сондықтан уақытша бұғаттан шығару бірден дерлік іске асады.</string>
+    <string name="game_mode_games_header">Ойындар</string>
+    <string name="game_mode_games_desc">Белгіленген қолданбалар ойын ретінде қарастырылады.</string>
+    <string name="game_mode_show_all_apps">Барлық қолданбаларды көрсету</string>
+    <string name="game_mode_detected_label">Ойын ретінде анықталды</string>
+    <string name="game_mode_empty">Ойындар табылмады. Таңдау үшін «Барлық қолданбаларды көрсету» параметрін қосыңыз.</string>
+</resources>

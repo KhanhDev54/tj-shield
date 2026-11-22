@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mode_title">ゲームモード</string>
+    <string name="game_mode_settings_desc">ゲーム内の広告をブロックし、ゲームとして扱うアプリを選択</string>
+    <string name="game_mode_enable_title">ゲームモードをオンにする</string>
+    <string name="game_mode_enable_desc">ゲームへのブロック応答は数秒で期限切れになるため、一時的な解除がほぼすぐに反映されます。</string>
+    <string name="game_mode_games_header">ゲーム</string>
+    <string name="game_mode_games_desc">チェックしたアプリはゲームとして扱われます。</string>
+    <string name="game_mode_show_all_apps">すべてのアプリを表示</string>
+    <string name="game_mode_detected_label">ゲームとして検出</string>
+    <string name="game_mode_empty">ゲームが見つかりません。「すべてのアプリを表示」をオンにして選択してください。</string>
+</resources>

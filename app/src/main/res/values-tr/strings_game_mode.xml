@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mode_title">Oyun Modu</string>
+    <string name="game_mode_settings_desc">Oyunlardaki reklamları engelle ve hangi uygulamaların oyun sayılacağını seç</string>
+    <string name="game_mode_enable_title">Oyun Modunu aç</string>
+    <string name="game_mode_enable_desc">Oyunlara giden engelleme yanıtları birkaç saniyede sona erer, böylece geçici engel kaldırma neredeyse hemen çalışır.</string>
+    <string name="game_mode_games_header">Oyunlar</string>
+    <string name="game_mode_games_desc">İşaretli uygulamalar oyun olarak kabul edilir.</string>
+    <string name="game_mode_show_all_apps">Tüm uygulamaları göster</string>
+    <string name="game_mode_detected_label">Oyun olarak algılandı</string>
+    <string name="game_mode_empty">Oyun bulunamadı. Seçmek için \"Tüm uygulamaları göster\"i açın.</string>
+</resources>

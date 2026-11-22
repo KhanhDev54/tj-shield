@@ -65,6 +65,7 @@ import app.pwhs.blockads.ui.settings.geoip.GeoIpScreen
 import app.pwhs.blockads.ui.data.LogsKey
 import app.pwhs.blockads.ui.data.SettingsKey
 import app.pwhs.blockads.ui.data.StatisticsKey
+import app.pwhs.blockads.ui.data.GameModeKey
 import app.pwhs.blockads.ui.data.TrustedNetworksKey
 import app.pwhs.blockads.ui.data.WireGuardEditKey
 import app.pwhs.blockads.ui.data.ProxyVpnKey
@@ -187,6 +188,7 @@ fun HomeApp(
                     is AppearanceLanguageKey -> SettingsDetailPane.APPEARANCE_LANGUAGE
                     is AppManagementKey -> SettingsDetailPane.APP_MANAGEMENT
                     is TrustedNetworksKey -> SettingsDetailPane.TRUSTED_NETWORKS
+                    is GameModeKey -> SettingsDetailPane.GAME_MODE
                     is TailscaleKey -> SettingsDetailPane.TAILSCALE
                     is HttpsFilteringKey -> SettingsDetailPane.HTTPS_FILTERING
                     is DnsProviderKey -> SettingsDetailPane.DNS_PROVIDER
@@ -337,6 +339,10 @@ fun HomeApp(
                             showBottomBar = false
                             settingsStack.add(TrustedNetworksKey)
                         },
+                        onNavigateToGameMode = {
+                            showBottomBar = false
+                            settingsStack.add(GameModeKey)
+                        },
                         onNavigateToWireGuardImport = {
                             showBottomBar = false
                             settingsStack.add(WireGuardImportKey)
@@ -443,6 +449,13 @@ fun HomeApp(
                 }
                 entry<DnsProviderKey> {
                     DnsProviderScreen(
+                        onNavigateBack = {
+                            safePop(currentBackStack)
+                        }
+                    )
+                }
+                entry<GameModeKey> {
+                    app.pwhs.blockads.ui.gamemode.GameModeScreen(
                         onNavigateBack = {
                             safePop(currentBackStack)
                         }

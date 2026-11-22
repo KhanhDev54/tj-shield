@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mode_title">โหมดเกม</string>
+    <string name="game_mode_settings_desc">บล็อกโฆษณาในเกมและเลือกว่าแอปใดนับเป็นเกม</string>
+    <string name="game_mode_enable_title">เปิดโหมดเกม</string>
+    <string name="game_mode_enable_desc">คำตอบการบล็อกที่ส่งให้เกมจะหมดอายุในไม่กี่วินาที การปลดบล็อกชั่วคราวจึงมีผลแทบทันที</string>
+    <string name="game_mode_games_header">เกม</string>
+    <string name="game_mode_games_desc">แอปที่เลือกจะถือว่าเป็นเกม</string>
+    <string name="game_mode_show_all_apps">แสดงแอปทั้งหมด</string>
+    <string name="game_mode_detected_label">ตรวจพบว่าเป็นเกม</string>
+    <string name="game_mode_empty">ไม่พบเกม เปิด \"แสดงแอปทั้งหมด\" เพื่อเลือก</string>
+</resources>

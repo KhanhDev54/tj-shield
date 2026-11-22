@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mode_title">Modalità gioco</string>
+    <string name="game_mode_settings_desc">Blocca la pubblicità nei giochi e scegli quali app sono giochi</string>
+    <string name="game_mode_enable_title">Attiva modalità gioco</string>
+    <string name="game_mode_enable_desc">Le risposte bloccate inviate ai giochi scadono dopo pochi secondi, così uno sblocco temporaneo funziona quasi subito.</string>
+    <string name="game_mode_games_header">Giochi</string>
+    <string name="game_mode_games_desc">Le app selezionate sono trattate come giochi.</string>
+    <string name="game_mode_show_all_apps">Mostra tutte le app</string>
+    <string name="game_mode_detected_label">Rilevato come gioco</string>
+    <string name="game_mode_empty">Nessun gioco trovato. Attiva \"Mostra tutte le app\" per sceglierne uno.</string>
+</resources>

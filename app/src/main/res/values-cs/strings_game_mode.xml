@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mode_title">Herní režim</string>
+    <string name="game_mode_settings_desc">Blokovat reklamy ve hrách a vybrat, které aplikace jsou hry</string>
+    <string name="game_mode_enable_title">Zapnout herní režim</string>
+    <string name="game_mode_enable_desc">Blokované odpovědi pro hry vyprší po několika sekundách, takže dočasné odblokování funguje téměř hned.</string>
+    <string name="game_mode_games_header">Hry</string>
+    <string name="game_mode_games_desc">Označené aplikace se považují za hry.</string>
+    <string name="game_mode_show_all_apps">Zobrazit všechny aplikace</string>
+    <string name="game_mode_detected_label">Rozpoznáno jako hra</string>
+    <string name="game_mode_empty">Nebyly nalezeny žádné hry. Zapněte \"Zobrazit všechny aplikace\" a vyberte některou.</string>
+</resources>

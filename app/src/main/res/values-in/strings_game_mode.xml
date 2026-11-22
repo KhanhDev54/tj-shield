@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mode_title">Mode Game</string>
+    <string name="game_mode_settings_desc">Blokir iklan di game dan pilih aplikasi mana yang dianggap game</string>
+    <string name="game_mode_enable_title">Aktifkan Mode Game</string>
+    <string name="game_mode_enable_desc">Jawaban blokir untuk game kedaluwarsa setelah beberapa detik, jadi buka blokir sementara langsung berlaku.</string>
+    <string name="game_mode_games_header">Game</string>
+    <string name="game_mode_games_desc">Aplikasi yang dicentang dianggap sebagai game.</string>
+    <string name="game_mode_show_all_apps">Tampilkan semua aplikasi</string>
+    <string name="game_mode_detected_label">Terdeteksi sebagai game</string>
+    <string name="game_mode_empty">Tidak ada game. Aktifkan \"Tampilkan semua aplikasi\" untuk memilih.</string>
+</resources>
