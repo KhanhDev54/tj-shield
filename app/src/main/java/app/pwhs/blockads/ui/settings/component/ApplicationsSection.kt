@@ -4,6 +4,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.SportsEsports
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -18,6 +20,7 @@ import app.pwhs.blockads.R
 fun ApplicationsSection(
     onNavigateToAppManagement: () -> Unit,
     onNavigateToTrustedNetworks: () -> Unit = {},
+    onNavigateToGameMode: () -> Unit = {},
     excludeLan: Boolean = true,
     onSetExcludeLan: (Boolean) -> Unit = {},
     modifier: Modifier = Modifier
@@ -55,7 +58,18 @@ fun ApplicationsSection(
 
                 HorizontalDivider(modifier = Modifier.padding(horizontal = 16.dp), color = dividerColor)
 
-                // 4. Exclude LAN Traffic (Split Kill Switch)
+                // 4. Game Mode
+                SettingItem(
+                    icon = Icons.Filled.SportsEsports,
+                    iconTint = Color(0xFF7C3AED),
+                    title = stringResource(R.string.game_mode_title),
+                    desc = stringResource(R.string.game_mode_settings_desc),
+                    onClick = onNavigateToGameMode
+                )
+
+                HorizontalDivider(modifier = Modifier.padding(horizontal = 16.dp), color = dividerColor)
+
+                // 5. Exclude LAN Traffic (Split Kill Switch)
                 SettingsToggleItem(
                     iconPainter = painterResource(R.drawable.ic_settings_exclude_lan),
                     iconTint = Color(0xFF059669),

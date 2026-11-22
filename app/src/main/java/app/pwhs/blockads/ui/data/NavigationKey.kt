@@ -53,6 +53,9 @@ data object AppManagementKey : NavKey
 data object TrustedNetworksKey : NavKey
 
 @Serializable
+data object GameModeKey : NavKey
+
+@Serializable
 data object AppearanceThemeKey : NavKey
 
 @Serializable

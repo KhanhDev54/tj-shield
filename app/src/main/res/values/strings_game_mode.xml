@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mode_title">Game Mode</string>
+    <string name="game_mode_settings_desc">Block ads in games and pick which apps count as games</string>
+    <string name="game_mode_enable_title">Turn on Game Mode</string>
+    <string name="game_mode_enable_desc">Blocked answers to games expire after a few seconds, so a temporary unblock works almost at once.</string>
+    <string name="game_mode_games_header">Games</string>
+    <string name="game_mode_games_desc">Checked apps are treated as games.</string>
+    <string name="game_mode_show_all_apps">Show all apps</string>
+    <string name="game_mode_detected_label">Detected as a game</string>
+    <string name="game_mode_empty">No games found. Turn on \"Show all apps\" to pick one.</string>
+</resources>

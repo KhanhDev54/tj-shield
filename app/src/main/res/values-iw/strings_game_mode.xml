@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mode_title">מצב משחק</string>
+    <string name="game_mode_settings_desc">חסימת פרסומות במשחקים ובחירת האפליקציות שנחשבות משחקים</string>
+    <string name="game_mode_enable_title">הפעלת מצב משחק</string>
+    <string name="game_mode_enable_desc">תשובות החסימה למשחקים פגות אחרי שניות ספורות, כך שביטול חסימה זמני פועל כמעט מיד.</string>
+    <string name="game_mode_games_header">משחקים</string>
+    <string name="game_mode_games_desc">אפליקציות מסומנות נחשבות משחקים.</string>
+    <string name="game_mode_show_all_apps">הצגת כל האפליקציות</string>
+    <string name="game_mode_detected_label">זוהה כמשחק</string>
+    <string name="game_mode_empty">לא נמצאו משחקים. הפעילו את \"הצגת כל האפליקציות\" כדי לבחור.</string>
+</resources>

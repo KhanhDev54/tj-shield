@@ -85,6 +85,7 @@ enum class SettingsDetailPane {
     HTTPS_FILTERING,
     APP_MANAGEMENT,
     TRUSTED_NETWORKS,
+    GAME_MODE,
     TAILSCALE,
     GEO_IP,
     APPEARANCE_THEME,
@@ -104,6 +105,7 @@ fun SettingsScreen(
     onNavigateToLanguage: () -> Unit = { },
     onNavigateToAppManagement: () -> Unit = { },
     onNavigateToTrustedNetworks: () -> Unit = { },
+    onNavigateToGameMode: () -> Unit = { },
     onNavigateToWireGuardImport: () -> Unit = { },
     onNavigateToTailscale: () -> Unit = { },
     onNavigateToHttpsFiltering: () -> Unit = { },
@@ -211,6 +213,10 @@ fun SettingsScreen(
                         onNavigateToTrustedNetworks = {
                             if (isListDetail) activeDetailPane = SettingsDetailPane.TRUSTED_NETWORKS
                             else onNavigateToTrustedNetworks()
+                        },
+                        onNavigateToGameMode = {
+                            if (isListDetail) activeDetailPane = SettingsDetailPane.GAME_MODE
+                            else onNavigateToGameMode()
                         },
                         excludeLan = excludeLan,
                         onSetExcludeLan = { viewModel.setExcludeLan(it) }
@@ -421,6 +427,7 @@ fun SettingsScreen(
                             )
                             SettingsDetailPane.APP_MANAGEMENT -> AppManagementScreen(onNavigateBack = {})
                             SettingsDetailPane.TRUSTED_NETWORKS -> TrustedNetworksScreen(onNavigateBack = {})
+                            SettingsDetailPane.GAME_MODE -> app.pwhs.blockads.ui.gamemode.GameModeScreen(onNavigateBack = {})
                             SettingsDetailPane.TAILSCALE -> TailscaleScreen(
                                 showBackButton = false,
                                 onNavigateBack = {}

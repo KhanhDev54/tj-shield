@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mode_title">Tryb gry</string>
+    <string name="game_mode_settings_desc">Blokuj reklamy w grach i wybierz, które aplikacje są grami</string>
+    <string name="game_mode_enable_title">Włącz tryb gry</string>
+    <string name="game_mode_enable_desc">Odpowiedzi blokujące wysyłane do gier wygasają po kilku sekundach, więc tymczasowe odblokowanie działa niemal od razu.</string>
+    <string name="game_mode_games_header">Gry</string>
+    <string name="game_mode_games_desc">Zaznaczone aplikacje są traktowane jak gry.</string>
+    <string name="game_mode_show_all_apps">Pokaż wszystkie aplikacje</string>
+    <string name="game_mode_detected_label">Wykryto jako grę</string>
+    <string name="game_mode_empty">Nie znaleziono gier. Włącz \"Pokaż wszystkie aplikacje\", aby wybrać.</string>
+</resources>

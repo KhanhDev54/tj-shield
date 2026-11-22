@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mode_title">Játék mód</string>
+    <string name="game_mode_settings_desc">Hirdetések letiltása játékokban, és annak kiválasztása, mely alkalmazások számítanak játéknak</string>
+    <string name="game_mode_enable_title">Játék mód bekapcsolása</string>
+    <string name="game_mode_enable_desc">A játékoknak küldött tiltó válaszok néhány másodperc után lejárnak, így az ideiglenes feloldás szinte azonnal hat.</string>
+    <string name="game_mode_games_header">Játékok</string>
+    <string name="game_mode_games_desc">A bejelölt alkalmazások játéknak számítanak.</string>
+    <string name="game_mode_show_all_apps">Összes alkalmazás mutatása</string>
+    <string name="game_mode_detected_label">Játékként felismerve</string>
+    <string name="game_mode_empty">Nem található játék. Kapcsold be az \"Összes alkalmazás mutatása\" opciót a választáshoz.</string>
+</resources>
