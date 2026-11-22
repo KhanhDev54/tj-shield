@@ -21,6 +21,7 @@ import tunnel.AppDomainChecker
 import tunnel.AppResolver
 import tunnel.DomainChecker
 import tunnel.FirewallChecker
+import tunnel.GameAppChecker
 import tunnel.SocketProtector
 import tunnel.UIDResolver
 import java.net.InetAddress
@@ -37,6 +38,7 @@ class GoTunnelAdapter(
     private val appNameResolver: AppNameResolver,
     private val firewallManagerProvider: () -> FirewallManager?,
     private val recordLogProvider: () -> Boolean,
+    private val isGameApp: (packageName: String) -> Boolean = { false },
 ) {
     private val engine = tunnel.Tunnel.newEngine()
 
@@ -170,6 +172,21 @@ class GoTunnelAdapter(
                 fwManager.shouldBlock(appName)
             } catch (e: Exception) {
                 Timber.e(e, "Firewall check failed")
+                false
+            }
+        })
+    }
+
+    /**
+     * Tells the engine which apps are games in Game Mode. Blocked answers to
+     * those apps get a short TTL, so a temporary unblock works within seconds.
+     */
+    private fun setupGameAppChecker() {
+        engine.setGameAppChecker(GameAppChecker { appName ->
+            try {
+                isGameApp(appName)
+            } catch (e: Exception) {
+                Timber.e(e, "Game app check failed")
                 false
             }
         })
@@ -350,6 +367,7 @@ class GoTunnelAdapter(
         setupAppResolver()
         setupDomainChecker()
         setupFirewallChecker()
+        setupGameAppChecker()
         setupLogCallback()
         setupUidResolver()
         setupAppUidResolver()
@@ -400,6 +418,7 @@ class GoTunnelAdapter(
         setupAppResolver()
         setupDomainChecker()
         setupFirewallChecker()
+        setupGameAppChecker()
         setupLogCallback()
         setupUidResolver()
 
