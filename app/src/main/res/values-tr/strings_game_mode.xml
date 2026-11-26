@@ -17,4 +17,6 @@
     <string name="game_mode_notification_unblocked_title">%1$s içinde reklamlara izin verildi</string>
     <string name="game_mode_notification_unblocked_text">Engelleme %1$s itibarıyla geri gelir.</string>
     <string name="game_mode_action_block_again">Yeniden engelle</string>
+    <string name="game_mode_tile_on">Açık</string>
+    <string name="game_mode_tile_off">Kapalı</string>
 </resources>

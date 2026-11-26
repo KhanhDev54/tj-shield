@@ -17,4 +17,6 @@
     <string name="game_mode_notification_unblocked_title">פרסומות מותרות ב-%1$s</string>
     <string name="game_mode_notification_unblocked_text">החסימה תחזור ב-%1$s.</string>
     <string name="game_mode_action_block_again">לחסום שוב</string>
+    <string name="game_mode_tile_on">מופעל</string>
+    <string name="game_mode_tile_off">כבוי</string>
 </resources>

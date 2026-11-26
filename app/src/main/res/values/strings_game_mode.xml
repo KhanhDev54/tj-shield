@@ -17,4 +17,6 @@
     <string name="game_mode_notification_unblocked_title">Ads allowed in %1$s</string>
     <string name="game_mode_notification_unblocked_text">Blocking resumes at %1$s.</string>
     <string name="game_mode_action_block_again">Block again</string>
+    <string name="game_mode_tile_on">On</string>
+    <string name="game_mode_tile_off">Off</string>
 </resources>
