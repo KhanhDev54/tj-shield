@@ -9,4 +9,12 @@
     <string name="game_mode_show_all_apps">Alle Apps anzeigen</string>
     <string name="game_mode_detected_label">Als Spiel erkannt</string>
     <string name="game_mode_empty">Keine Spiele gefunden. Aktiviere \"Alle Apps anzeigen\", um eines auszuwählen.</string>
+    <string name="game_mode_channel_name">Spielmodus</string>
+    <string name="game_mode_channel_desc">Bietet an, ein Spiel kurz freizugeben, wenn seine Werbung blockiert wird</string>
+    <string name="game_mode_notification_blocked_title">Werbung in %1$s blockiert</string>
+    <string name="game_mode_notification_blocked_text">Brauchst du eine Belohnungswerbung? Gib dieses Spiel für 2 Minuten frei.</string>
+    <string name="game_mode_action_unblock_2_min">2 Min. freigeben</string>
+    <string name="game_mode_notification_unblocked_title">Werbung in %1$s erlaubt</string>
+    <string name="game_mode_notification_unblocked_text">Blockierung wieder ab %1$s.</string>
+    <string name="game_mode_action_block_again">Wieder blockieren</string>
 </resources>

@@ -112,6 +112,7 @@ class AdBlockVpnService : VpnService() {
     private lateinit var session: VpnSessionController
     private lateinit var geoIpManager: app.pwhs.blockads.data.geoip.GeoIpManager
     private lateinit var gameModeState: app.pwhs.blockads.data.repository.GameModeState
+    private lateinit var gameModeNotifier: GameModeNotifier
 
     val connectingPhase: String get() = if (::session.isInitialized) session.connectingPhase else ""
 
@@ -141,6 +142,7 @@ class AdBlockVpnService : VpnService() {
         configDao = koin.get()
         geoIpManager = koin.get()
         gameModeState = koin.get()
+        gameModeNotifier = koin.get()
         gameModeState.bind(serviceScope, appPrefs.gameMode, koin.get())
 
         appNameResolver = AppNameResolver(this)
@@ -159,6 +161,8 @@ class AdBlockVpnService : VpnService() {
             firewallManagerProvider = { session.firewallManager },
             recordLogProvider = { isRecordDnsLogsEnabled },
             isGameApp = gameModeState::isGameApp,
+            isGameUnblocked = gameModeState::isUnblocked,
+            onGameAdBlocked = gameModeNotifier::onAdBlocked,
         )
         activeTunnelAdapter = goTunnelAdapter
 

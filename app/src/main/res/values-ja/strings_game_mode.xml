@@ -9,4 +9,12 @@
     <string name="game_mode_show_all_apps">すべてのアプリを表示</string>
     <string name="game_mode_detected_label">ゲームとして検出</string>
     <string name="game_mode_empty">ゲームが見つかりません。「すべてのアプリを表示」をオンにして選択してください。</string>
+    <string name="game_mode_channel_name">ゲームモード</string>
+    <string name="game_mode_channel_desc">ゲームの広告がブロックされたときに一時的な解除を提案します</string>
+    <string name="game_mode_notification_blocked_title">%1$s の広告をブロックしました</string>
+    <string name="game_mode_notification_blocked_text">リワード広告が必要ですか？このゲームのブロックを2分間解除します。</string>
+    <string name="game_mode_action_unblock_2_min">2分間解除</string>
+    <string name="game_mode_notification_unblocked_title">%1$s の広告を許可中</string>
+    <string name="game_mode_notification_unblocked_text">%1$s にブロックを再開します。</string>
+    <string name="game_mode_action_block_again">再びブロック</string>
 </resources>

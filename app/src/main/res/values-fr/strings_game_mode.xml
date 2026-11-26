@@ -9,4 +9,12 @@
     <string name="game_mode_show_all_apps">Afficher toutes les applis</string>
     <string name="game_mode_detected_label">Détecté comme jeu</string>
     <string name="game_mode_empty">Aucun jeu trouvé. Activez « Afficher toutes les applis » pour en choisir un.</string>
+    <string name="game_mode_channel_name">Mode jeu</string>
+    <string name="game_mode_channel_desc">Propose de débloquer un jeu un instant quand ses pubs sont bloquées</string>
+    <string name="game_mode_notification_blocked_title">Pubs bloquées dans %1$s</string>
+    <string name="game_mode_notification_blocked_text">Besoin d\'une pub récompensée ? Débloquez ce jeu pendant 2 minutes.</string>
+    <string name="game_mode_action_unblock_2_min">Débloquer 2 min</string>
+    <string name="game_mode_notification_unblocked_title">Pubs autorisées dans %1$s</string>
+    <string name="game_mode_notification_unblocked_text">Le blocage reprend à %1$s.</string>
+    <string name="game_mode_action_block_again">Bloquer à nouveau</string>
 </resources>

@@ -39,6 +39,8 @@ class GoTunnelAdapter(
     private val firewallManagerProvider: () -> FirewallManager?,
     private val recordLogProvider: () -> Boolean,
     private val isGameApp: (packageName: String) -> Boolean = { false },
+    private val isGameUnblocked: (packageName: String) -> Boolean = { false },
+    private val onGameAdBlocked: (packageName: String) -> Unit = {},
 ) {
     private val engine = tunnel.Tunnel.newEngine()
 
@@ -90,7 +92,10 @@ class GoTunnelAdapter(
             override fun hasCustomRule(domain: String): Long = filterRepo.hasCustomRule(domain)
         })
         engine.setAppDomainChecker(AppDomainChecker { domain, appName ->
-            filterRepo.checkAppRule(domain, appName)
+            // A game unblocked for a moment from the Game Mode notification
+            // gets every domain, so a rewarded ad can load.
+            if (appName.isNotEmpty() && isGameUnblocked(appName)) 0L
+            else filterRepo.checkAppRule(domain, appName)
         })
     }
 
@@ -184,7 +189,9 @@ class GoTunnelAdapter(
     private fun setupGameAppChecker() {
         engine.setGameAppChecker(GameAppChecker { appName ->
             try {
-                isGameApp(appName)
+                // The engine asks only when it is about to send a blocked
+                // answer, so a game here just had something blocked.
+                isGameApp(appName).also { isGame -> if (isGame) onGameAdBlocked(appName) }
             } catch (e: Exception) {
                 Timber.e(e, "Game app check failed")
                 false

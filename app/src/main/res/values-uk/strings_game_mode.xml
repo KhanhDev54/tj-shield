@@ -9,4 +9,12 @@
     <string name="game_mode_show_all_apps">Показати всі застосунки</string>
     <string name="game_mode_detected_label">Визначено як гру</string>
     <string name="game_mode_empty">Ігор не знайдено. Увімкніть «Показати всі застосунки», щоб вибрати.</string>
+    <string name="game_mode_channel_name">Ігровий режим</string>
+    <string name="game_mode_channel_desc">Пропонує ненадовго розблокувати гру, коли її реклама блокується</string>
+    <string name="game_mode_notification_blocked_title">Рекламу в %1$s заблоковано</string>
+    <string name="game_mode_notification_blocked_text">Потрібна реклама за винагороду? Розблокуйте цю гру на 2 хвилини.</string>
+    <string name="game_mode_action_unblock_2_min">Відкрити на 2 хв</string>
+    <string name="game_mode_notification_unblocked_title">Рекламу в %1$s дозволено</string>
+    <string name="game_mode_notification_unblocked_text">Блокування повернеться о %1$s.</string>
+    <string name="game_mode_action_block_again">Заблокувати знову</string>
 </resources>

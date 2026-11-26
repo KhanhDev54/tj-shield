@@ -9,4 +9,12 @@
     <string name="game_mode_show_all_apps">Tüm uygulamaları göster</string>
     <string name="game_mode_detected_label">Oyun olarak algılandı</string>
     <string name="game_mode_empty">Oyun bulunamadı. Seçmek için \"Tüm uygulamaları göster\"i açın.</string>
+    <string name="game_mode_channel_name">Oyun Modu</string>
+    <string name="game_mode_channel_desc">Bir oyunun reklamları engellendiğinde oyunu kısa süre açmayı önerir</string>
+    <string name="game_mode_notification_blocked_title">%1$s içinde reklamlar engellendi</string>
+    <string name="game_mode_notification_blocked_text">Ödüllü reklam mı lazım? Bu oyunun engelini 2 dakika kaldır.</string>
+    <string name="game_mode_action_unblock_2_min">2 dk aç</string>
+    <string name="game_mode_notification_unblocked_title">%1$s içinde reklamlara izin verildi</string>
+    <string name="game_mode_notification_unblocked_text">Engelleme %1$s itibarıyla geri gelir.</string>
+    <string name="game_mode_action_block_again">Yeniden engelle</string>
 </resources>

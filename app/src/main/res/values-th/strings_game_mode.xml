@@ -9,4 +9,12 @@
     <string name="game_mode_show_all_apps">แสดงแอปทั้งหมด</string>
     <string name="game_mode_detected_label">ตรวจพบว่าเป็นเกม</string>
     <string name="game_mode_empty">ไม่พบเกม เปิด \"แสดงแอปทั้งหมด\" เพื่อเลือก</string>
+    <string name="game_mode_channel_name">โหมดเกม</string>
+    <string name="game_mode_channel_desc">เสนอให้ปลดบล็อกเกมชั่วคราวเมื่อโฆษณาของเกมถูกบล็อก</string>
+    <string name="game_mode_notification_blocked_title">บล็อกโฆษณาใน %1$s แล้ว</string>
+    <string name="game_mode_notification_blocked_text">ต้องการดูโฆษณารับรางวัลไหม ปลดบล็อกเกมนี้ 2 นาที</string>
+    <string name="game_mode_action_unblock_2_min">ปลดบล็อก 2 นาที</string>
+    <string name="game_mode_notification_unblocked_title">อนุญาตโฆษณาใน %1$s อยู่</string>
+    <string name="game_mode_notification_unblocked_text">จะกลับมาบล็อกเวลา %1$s</string>
+    <string name="game_mode_action_block_again">บล็อกอีกครั้ง</string>
 </resources>

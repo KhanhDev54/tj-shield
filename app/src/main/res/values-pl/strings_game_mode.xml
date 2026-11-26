@@ -9,4 +9,12 @@
     <string name="game_mode_show_all_apps">Pokaż wszystkie aplikacje</string>
     <string name="game_mode_detected_label">Wykryto jako grę</string>
     <string name="game_mode_empty">Nie znaleziono gier. Włącz \"Pokaż wszystkie aplikacje\", aby wybrać.</string>
+    <string name="game_mode_channel_name">Tryb gry</string>
+    <string name="game_mode_channel_desc">Proponuje chwilowe odblokowanie gry, gdy jej reklamy są blokowane</string>
+    <string name="game_mode_notification_blocked_title">Zablokowano reklamy w %1$s</string>
+    <string name="game_mode_notification_blocked_text">Potrzebujesz reklamy z nagrodą? Odblokuj tę grę na 2 minuty.</string>
+    <string name="game_mode_action_unblock_2_min">Odblokuj na 2 min</string>
+    <string name="game_mode_notification_unblocked_title">Reklamy w %1$s dozwolone</string>
+    <string name="game_mode_notification_unblocked_text">Blokada wróci o %1$s.</string>
+    <string name="game_mode_action_block_again">Zablokuj ponownie</string>
 </resources>

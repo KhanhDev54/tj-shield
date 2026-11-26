@@ -42,6 +42,26 @@ class GameModeStateTest {
     }
 
     @Test
+    fun `unblock lasts for the given time and relock ends it`() {
+        var now = 1_000L
+        val state = GameModeState(nowMs = { now })
+
+        assertEquals(121_000L, state.unblock("com.game", 120_000L))
+        assertTrue(state.isUnblocked("com.game"))
+        assertFalse(state.isUnblocked("com.other"))
+
+        now = 120_999L
+        assertTrue(state.isUnblocked("com.game"))
+        now = 121_000L
+        assertFalse(state.isUnblocked("com.game"))
+        assertEquals(null, state.unblockedUntil("com.game"))
+
+        state.unblock("com.game", 120_000L)
+        state.relock("com.game")
+        assertFalse(state.isUnblocked("com.game"))
+    }
+
+    @Test
     fun `bind uses detected games until the user picks a list`() = runBlocking {
         val prefs = GameModePreferences(tempFolder.newPreferencesDataStore())
         val detector = GameAppDetector {

@@ -9,4 +9,12 @@
     <string name="game_mode_show_all_apps">Zobrazit všechny aplikace</string>
     <string name="game_mode_detected_label">Rozpoznáno jako hra</string>
     <string name="game_mode_empty">Nebyly nalezeny žádné hry. Zapněte \"Zobrazit všechny aplikace\" a vyberte některou.</string>
+    <string name="game_mode_channel_name">Herní režim</string>
+    <string name="game_mode_channel_desc">Nabídne krátké odblokování hry, když jsou její reklamy blokovány</string>
+    <string name="game_mode_notification_blocked_title">Reklamy v %1$s zablokovány</string>
+    <string name="game_mode_notification_blocked_text">Potřebujete reklamu s odměnou? Odblokujte tuto hru na 2 minuty.</string>
+    <string name="game_mode_action_unblock_2_min">Odblokovat na 2 min</string>
+    <string name="game_mode_notification_unblocked_title">Reklamy v %1$s povoleny</string>
+    <string name="game_mode_notification_unblocked_text">Blokování se obnoví v %1$s.</string>
+    <string name="game_mode_action_block_again">Znovu blokovat</string>
 </resources>

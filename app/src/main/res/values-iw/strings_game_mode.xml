@@ -9,4 +9,12 @@
     <string name="game_mode_show_all_apps">הצגת כל האפליקציות</string>
     <string name="game_mode_detected_label">זוהה כמשחק</string>
     <string name="game_mode_empty">לא נמצאו משחקים. הפעילו את \"הצגת כל האפליקציות\" כדי לבחור.</string>
+    <string name="game_mode_channel_name">מצב משחק</string>
+    <string name="game_mode_channel_desc">מציע לבטל חסימה של משחק לרגע כשהפרסומות שלו נחסמות</string>
+    <string name="game_mode_notification_blocked_title">פרסומות נחסמו ב-%1$s</string>
+    <string name="game_mode_notification_blocked_text">צריכים פרסומת עם פרס? בטלו את החסימה של המשחק ל-2 דקות.</string>
+    <string name="game_mode_action_unblock_2_min">ביטול ל-2 דק\'</string>
+    <string name="game_mode_notification_unblocked_title">פרסומות מותרות ב-%1$s</string>
+    <string name="game_mode_notification_unblocked_text">החסימה תחזור ב-%1$s.</string>
+    <string name="game_mode_action_block_again">לחסום שוב</string>
 </resources>
