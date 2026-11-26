@@ -17,4 +17,6 @@
     <string name="game_mode_notification_unblocked_title">Reklamy v %1$s povoleny</string>
     <string name="game_mode_notification_unblocked_text">Blokování se obnoví v %1$s.</string>
     <string name="game_mode_action_block_again">Znovu blokovat</string>
+    <string name="game_mode_tile_on">Zapnuto</string>
+    <string name="game_mode_tile_off">Vypnuto</string>
 </resources>

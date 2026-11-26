@@ -17,4 +17,6 @@
     <string name="game_mode_notification_unblocked_title">Anúncios permitidos em %1$s</string>
     <string name="game_mode_notification_unblocked_text">O bloqueio volta às %1$s.</string>
     <string name="game_mode_action_block_again">Bloquear de novo</string>
+    <string name="game_mode_tile_on">Ativado</string>
+    <string name="game_mode_tile_off">Desativado</string>
 </resources>

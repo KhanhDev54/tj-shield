@@ -17,4 +17,6 @@
     <string name="game_mode_notification_unblocked_title">Рекламу в %1$s дозволено</string>
     <string name="game_mode_notification_unblocked_text">Блокування повернеться о %1$s.</string>
     <string name="game_mode_action_block_again">Заблокувати знову</string>
+    <string name="game_mode_tile_on">Увімк.</string>
+    <string name="game_mode_tile_off">Вимк.</string>
 </resources>

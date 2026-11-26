@@ -17,4 +17,6 @@
     <string name="game_mode_notification_unblocked_title">正在允许 %1$s 中的广告</string>
     <string name="game_mode_notification_unblocked_text">将于 %1$s 恢复拦截。</string>
     <string name="game_mode_action_block_again">重新拦截</string>
+    <string name="game_mode_tile_on">已开启</string>
+    <string name="game_mode_tile_off">已关闭</string>
 </resources>

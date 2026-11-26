@@ -17,4 +17,6 @@
     <string name="game_mode_notification_unblocked_title">%1$s의 광고 허용 중</string>
     <string name="game_mode_notification_unblocked_text">%1$s에 차단이 다시 시작됩니다.</string>
     <string name="game_mode_action_block_again">다시 차단</string>
+    <string name="game_mode_tile_on">켜짐</string>
+    <string name="game_mode_tile_off">꺼짐</string>
 </resources>

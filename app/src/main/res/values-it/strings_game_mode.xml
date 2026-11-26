@@ -17,4 +17,6 @@
     <string name="game_mode_notification_unblocked_title">Pubblicità consentita in %1$s</string>
     <string name="game_mode_notification_unblocked_text">Il blocco riprende alle %1$s.</string>
     <string name="game_mode_action_block_again">Blocca di nuovo</string>
+    <string name="game_mode_tile_on">Attivo</string>
+    <string name="game_mode_tile_off">Disattivo</string>
 </resources>

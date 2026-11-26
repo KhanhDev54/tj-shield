@@ -17,4 +17,6 @@
     <string name="game_mode_notification_unblocked_title">Đang cho phép quảng cáo trong %1$s</string>
     <string name="game_mode_notification_unblocked_text">Chặn lại lúc %1$s.</string>
     <string name="game_mode_action_block_again">Chặn lại</string>
+    <string name="game_mode_tile_on">Bật</string>
+    <string name="game_mode_tile_off">Tắt</string>
 </resources>

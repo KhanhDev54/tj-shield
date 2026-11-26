@@ -17,4 +17,6 @@
     <string name="game_mode_notification_unblocked_title">Hirdetések engedélyezve: %1$s</string>
     <string name="game_mode_notification_unblocked_text">A tiltás %1$s-kor visszaáll.</string>
     <string name="game_mode_action_block_again">Tiltás újra</string>
+    <string name="game_mode_tile_on">Be</string>
+    <string name="game_mode_tile_off">Ki</string>
 </resources>

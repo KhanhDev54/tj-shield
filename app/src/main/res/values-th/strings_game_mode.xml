@@ -17,4 +17,6 @@
     <string name="game_mode_notification_unblocked_title">อนุญาตโฆษณาใน %1$s อยู่</string>
     <string name="game_mode_notification_unblocked_text">จะกลับมาบล็อกเวลา %1$s</string>
     <string name="game_mode_action_block_again">บล็อกอีกครั้ง</string>
+    <string name="game_mode_tile_on">เปิด</string>
+    <string name="game_mode_tile_off">ปิด</string>
 </resources>

@@ -17,4 +17,6 @@
     <string name="game_mode_notification_unblocked_title">%1$s ішінде жарнамаға рұқсат берілді</string>
     <string name="game_mode_notification_unblocked_text">Бұғаттау %1$s кезінде қайта басталады.</string>
     <string name="game_mode_action_block_again">Қайта бұғаттау</string>
+    <string name="game_mode_tile_on">Қосулы</string>
+    <string name="game_mode_tile_off">Өшірулі</string>
 </resources>

@@ -17,4 +17,6 @@
     <string name="game_mode_notification_unblocked_title">%1$s の広告を許可中</string>
     <string name="game_mode_notification_unblocked_text">%1$s にブロックを再開します。</string>
     <string name="game_mode_action_block_again">再びブロック</string>
+    <string name="game_mode_tile_on">オン</string>
+    <string name="game_mode_tile_off">オフ</string>
 </resources>
