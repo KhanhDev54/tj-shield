@@ -9,4 +9,12 @@
     <string name="game_mode_show_all_apps">عرض كل التطبيقات</string>
     <string name="game_mode_detected_label">تم اكتشافه كلعبة</string>
     <string name="game_mode_empty">لم يتم العثور على ألعاب. فعّل \"عرض كل التطبيقات\" لاختيار لعبة.</string>
+    <string name="game_mode_channel_name">وضع الألعاب</string>
+    <string name="game_mode_channel_desc">يعرض إلغاء حظر اللعبة لفترة قصيرة عند حظر إعلاناتها</string>
+    <string name="game_mode_notification_blocked_title">تم حظر الإعلانات في %1$s</string>
+    <string name="game_mode_notification_blocked_text">تحتاج إعلانًا بمكافأة؟ ألغِ حظر هذه اللعبة لمدة دقيقتين.</string>
+    <string name="game_mode_action_unblock_2_min">إلغاء الحظر دقيقتين</string>
+    <string name="game_mode_notification_unblocked_title">الإعلانات مسموحة في %1$s</string>
+    <string name="game_mode_notification_unblocked_text">يعود الحظر عند %1$s.</string>
+    <string name="game_mode_action_block_again">الحظر مجددًا</string>
 </resources>

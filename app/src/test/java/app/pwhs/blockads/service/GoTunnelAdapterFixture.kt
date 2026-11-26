@@ -18,11 +18,13 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import org.robolectric.Shadows.shadowOf
+import tunnel.AppDomainChecker
 import tunnel.AppResolver
 import tunnel.AppUidResolver
 import tunnel.DomainChecker
 import tunnel.Engine
 import tunnel.FirewallChecker
+import tunnel.GameAppChecker
 import tunnel.LogCallback
 import tunnel.SocketProtector
 import tunnel.Tunnel
@@ -39,6 +41,9 @@ class GoTunnelAdapterFixture {
     val appNameResolver: AppNameResolver = mockk()
     var firewall: FirewallManager? = null
     var recordLogs = true
+    val gameApps = mutableSetOf<String>()
+    val unblockedGames = mutableSetOf<String>()
+    val adBlockedGames: MutableList<String> = Collections.synchronizedList(mutableListOf())
     val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
     val tunFd: ParcelFileDescriptor = mockk { every { fd } returns 42 }
 
@@ -49,6 +54,8 @@ class GoTunnelAdapterFixture {
     val uidResolver = slot<UIDResolver>()
     val logCallback = slot<LogCallback>()
     val protector = slot<SocketProtector>()
+    val appDomainChecker = slot<AppDomainChecker>()
+    val gameAppChecker = slot<GameAppChecker>()
 
     init {
         mockkStatic(Tunnel::class)
@@ -59,6 +66,8 @@ class GoTunnelAdapterFixture {
         every { engine.setAppUidResolver(capture(appUidResolver)) } returns Unit
         every { engine.setUIDResolver(capture(uidResolver)) } returns Unit
         every { engine.setLogCallback(capture(logCallback)) } returns Unit
+        every { engine.setAppDomainChecker(capture(appDomainChecker)) } returns Unit
+        every { engine.setGameAppChecker(capture(gameAppChecker)) } returns Unit
         every { engine.startFull(any(), capture(protector)) } returns Unit
         every { engine.start(any(), capture(protector), any()) } returns Unit
     }
@@ -71,6 +80,9 @@ class GoTunnelAdapterFixture {
         appNameResolver = appNameResolver,
         firewallManagerProvider = { firewall },
         recordLogProvider = { recordLogs },
+        isGameApp = { it in gameApps },
+        isGameUnblocked = { it in unblockedGames },
+        onGameAdBlocked = { adBlockedGames += it },
     )
 
     fun installApp(packageName: String, uid: Int, label: String = packageName) {

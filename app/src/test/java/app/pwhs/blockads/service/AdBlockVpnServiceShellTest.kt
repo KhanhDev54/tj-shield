@@ -106,6 +106,7 @@ class AdBlockVpnServiceShellTest {
                 single<app.pwhs.blockads.data.geoip.GeoIpManager> { mockk(relaxed = true) }
                 single { GameModeState() }
                 single { GameAppDetector { emptyList() } }
+                single<GameModeNotifier> { mockk(relaxed = true) }
             })
         }
         mockkStatic(Tunnel::class)

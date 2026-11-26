@@ -9,4 +9,12 @@
     <string name="game_mode_show_all_apps">Барлық қолданбаларды көрсету</string>
     <string name="game_mode_detected_label">Ойын ретінде анықталды</string>
     <string name="game_mode_empty">Ойындар табылмады. Таңдау үшін «Барлық қолданбаларды көрсету» параметрін қосыңыз.</string>
+    <string name="game_mode_channel_name">Ойын режимі</string>
+    <string name="game_mode_channel_desc">Ойынның жарнамасы бұғатталғанда оны қысқа уақытқа ашуды ұсынады</string>
+    <string name="game_mode_notification_blocked_title">%1$s ішіндегі жарнама бұғатталды</string>
+    <string name="game_mode_notification_blocked_text">Сыйақы жарнамасы керек пе? Бұл ойынды 2 минутқа бұғаттан шығарыңыз.</string>
+    <string name="game_mode_action_unblock_2_min">2 минутқа ашу</string>
+    <string name="game_mode_notification_unblocked_title">%1$s ішінде жарнамаға рұқсат берілді</string>
+    <string name="game_mode_notification_unblocked_text">Бұғаттау %1$s кезінде қайта басталады.</string>
+    <string name="game_mode_action_block_again">Қайта бұғаттау</string>
 </resources>

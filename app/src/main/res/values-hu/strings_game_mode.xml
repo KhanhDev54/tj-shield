@@ -9,4 +9,12 @@
     <string name="game_mode_show_all_apps">Összes alkalmazás mutatása</string>
     <string name="game_mode_detected_label">Játékként felismerve</string>
     <string name="game_mode_empty">Nem található játék. Kapcsold be az \"Összes alkalmazás mutatása\" opciót a választáshoz.</string>
+    <string name="game_mode_channel_name">Játék mód</string>
+    <string name="game_mode_channel_desc">Felajánlja a játék rövid feloldását, ha a hirdetései le vannak tiltva</string>
+    <string name="game_mode_notification_blocked_title">Hirdetések letiltva: %1$s</string>
+    <string name="game_mode_notification_blocked_text">Jutalomhirdetés kell? Oldd fel ezt a játékot 2 percre.</string>
+    <string name="game_mode_action_unblock_2_min">Feloldás 2 percre</string>
+    <string name="game_mode_notification_unblocked_title">Hirdetések engedélyezve: %1$s</string>
+    <string name="game_mode_notification_unblocked_text">A tiltás %1$s-kor visszaáll.</string>
+    <string name="game_mode_action_block_again">Tiltás újra</string>
 </resources>

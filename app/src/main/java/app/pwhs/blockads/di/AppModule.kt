@@ -95,6 +95,7 @@ val appModule = module {
     single { app.pwhs.blockads.data.repository.TemporaryAppAllowManager(get()) }
     single { app.pwhs.blockads.data.repository.GameAppDetector(androidContext().packageManager) }
     single { app.pwhs.blockads.data.repository.GameModeState() }
+    single { app.pwhs.blockads.service.GameModeNotifier(androidContext(), get()) }
     single { app.pwhs.blockads.data.repository.AppBlockedDomainsExporter(get()) }
     single {
         FilterListRepository(

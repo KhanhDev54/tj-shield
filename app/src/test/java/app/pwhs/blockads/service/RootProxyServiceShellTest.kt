@@ -89,6 +89,7 @@ class RootProxyServiceShellTest {
                 single<FirewallRuleDao> { mockk(relaxed = true) }
                 single { GameModeState() }
                 single { GameAppDetector { emptyList() } }
+                single<GameModeNotifier> { mockk(relaxed = true) }
             })
         }
         mockkStatic(Tunnel::class)

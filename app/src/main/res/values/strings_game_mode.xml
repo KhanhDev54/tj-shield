@@ -9,4 +9,12 @@
     <string name="game_mode_show_all_apps">Show all apps</string>
     <string name="game_mode_detected_label">Detected as a game</string>
     <string name="game_mode_empty">No games found. Turn on \"Show all apps\" to pick one.</string>
+    <string name="game_mode_channel_name">Game Mode</string>
+    <string name="game_mode_channel_desc">Offers to unblock a game for a moment when its ads are blocked</string>
+    <string name="game_mode_notification_blocked_title">Ads blocked in %1$s</string>
+    <string name="game_mode_notification_blocked_text">Need a reward ad? Unblock this game for 2 minutes.</string>
+    <string name="game_mode_action_unblock_2_min">Unblock 2 min</string>
+    <string name="game_mode_notification_unblocked_title">Ads allowed in %1$s</string>
+    <string name="game_mode_notification_unblocked_text">Blocking resumes at %1$s.</string>
+    <string name="game_mode_action_block_again">Block again</string>
 </resources>

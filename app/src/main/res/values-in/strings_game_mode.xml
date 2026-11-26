@@ -9,4 +9,12 @@
     <string name="game_mode_show_all_apps">Tampilkan semua aplikasi</string>
     <string name="game_mode_detected_label">Terdeteksi sebagai game</string>
     <string name="game_mode_empty">Tidak ada game. Aktifkan \"Tampilkan semua aplikasi\" untuk memilih.</string>
+    <string name="game_mode_channel_name">Mode Game</string>
+    <string name="game_mode_channel_desc">Menawarkan buka blokir sebentar saat iklan game diblokir</string>
+    <string name="game_mode_notification_blocked_title">Iklan diblokir di %1$s</string>
+    <string name="game_mode_notification_blocked_text">Butuh iklan berhadiah? Buka blokir game ini selama 2 menit.</string>
+    <string name="game_mode_action_unblock_2_min">Buka 2 menit</string>
+    <string name="game_mode_notification_unblocked_title">Iklan diizinkan di %1$s</string>
+    <string name="game_mode_notification_unblocked_text">Blokir aktif lagi pukul %1$s.</string>
+    <string name="game_mode_action_block_again">Blokir lagi</string>
 </resources>

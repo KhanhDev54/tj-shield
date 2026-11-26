@@ -134,6 +134,9 @@
         <receiver
             android:name=".service.FirewallPromptReceiver"
             android:exported="false" />
+        <receiver
+            android:name=".service.GameModeReceiver"
+            android:exported="false" />
 
         <!-- Tasker / Automation integration -->
         <receiver
