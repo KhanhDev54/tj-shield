@@ -346,8 +346,17 @@ object BrowserAdBlocker {
             view.evaluateJavascript(clearJs, null)
             return
         }
-        val combined = selectors.joinToString(",") { it.trim() }
-        val escaped = combined.replace("\\", "\\\\").replace("'", "\\'")
+        // A selector is page-supplied text. Braces would close the hiding rule
+        // and add CSS of the page's choosing, so they are dropped; line
+        // terminators would end the JS string literal, so they are escaped.
+        val combined = selectors.joinToString(",") { it.trim().replace("{", "").replace("}", "") }
+        val escaped = combined
+            .replace("\\", "\\\\")
+            .replace("'", "\\'")
+            .replace("\n", "\\n")
+            .replace("\r", "\\r")
+            .replace("\u2028", "\\u2028")
+            .replace("\u2029", "\\u2029")
         val js = """(function(){
             try {
                 var el = document.getElementById('__blockads_user_css__');
