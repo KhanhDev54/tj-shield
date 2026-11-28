@@ -19,4 +19,5 @@
     <string name="game_mode_action_block_again">Znovu blokovat</string>
     <string name="game_mode_tile_on">Zapnuto</string>
     <string name="game_mode_tile_off">Vypnuto</string>
+    <string name="game_mode_protection_off_hint">Herní režim funguje jen se zapnutou ochranou. Zapněte ji na hlavní obrazovce.</string>
 </resources>

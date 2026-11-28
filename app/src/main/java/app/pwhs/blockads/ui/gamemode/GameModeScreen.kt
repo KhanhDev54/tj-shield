@@ -93,6 +93,14 @@ fun GameModeScreen(
                         onCheckedChange = viewModel::setEnabled
                     )
                 }
+                if (state.enabled && !state.protectionRunning) {
+                    Text(
+                        text = stringResource(R.string.game_mode_protection_off_hint),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.error,
+                        modifier = Modifier.padding(horizontal = 4.dp, vertical = 8.dp)
+                    )
+                }
                 Spacer(modifier = Modifier.height(20.dp))
                 SectionHeader(
                     title = stringResource(R.string.game_mode_games_header),

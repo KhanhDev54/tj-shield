@@ -19,4 +19,5 @@
     <string name="game_mode_action_block_again">Zablokuj ponownie</string>
     <string name="game_mode_tile_on">Wł.</string>
     <string name="game_mode_tile_off">Wył.</string>
+    <string name="game_mode_protection_off_hint">Tryb gry działa tylko przy włączonej ochronie. Włącz ją na ekranie głównym.</string>
 </resources>

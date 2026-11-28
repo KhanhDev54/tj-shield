@@ -37,12 +37,12 @@ class GoTunnelAdapterGameModeTest {
     }
 
     @Test
-    fun `an unblocked game is allowed every domain`() {
+    fun `an unblocked game skips ad lists but keeps security lists`() {
         every { f.filterRepo.checkAppRule(any(), any()) } returns -1L
         f.unblockedGames += "com.game"
         f.adapter.start(f.tunFd)
 
-        assertEquals(0L, f.appDomainChecker.captured.checkAppRule("ads.example", "com.game"))
+        assertEquals(2L, f.appDomainChecker.captured.checkAppRule("ads.example", "com.game"))
         assertEquals(-1L, f.appDomainChecker.captured.checkAppRule("ads.example", "com.other"))
         verify(exactly = 0) { f.filterRepo.checkAppRule("ads.example", "com.game") }
     }

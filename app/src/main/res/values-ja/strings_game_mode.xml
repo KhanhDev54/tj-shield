@@ -19,4 +19,5 @@
     <string name="game_mode_action_block_again">再びブロック</string>
     <string name="game_mode_tile_on">オン</string>
     <string name="game_mode_tile_off">オフ</string>
+    <string name="game_mode_protection_off_hint">ゲームモードは保護がオンのときだけ動作します。ホーム画面でオンにしてください。</string>
 </resources>

@@ -19,4 +19,5 @@
     <string name="game_mode_action_block_again">Заблокировать снова</string>
     <string name="game_mode_tile_on">Вкл.</string>
     <string name="game_mode_tile_off">Выкл.</string>
+    <string name="game_mode_protection_off_hint">Игровой режим работает только при включённой защите. Включите её на главном экране.</string>
 </resources>

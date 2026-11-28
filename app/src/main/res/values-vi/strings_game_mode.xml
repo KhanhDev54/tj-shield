@@ -19,4 +19,5 @@
     <string name="game_mode_action_block_again">Chặn lại</string>
     <string name="game_mode_tile_on">Bật</string>
     <string name="game_mode_tile_off">Tắt</string>
+    <string name="game_mode_protection_off_hint">Chế độ Game chỉ hoạt động khi bảo vệ đang bật. Hãy bật bảo vệ ở màn hình chính.</string>
 </resources>

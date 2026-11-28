@@ -3,7 +3,10 @@ package app.pwhs.blockads.data.repository
 import app.pwhs.blockads.data.datastore.prefs.GameModePreferences
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.emptyFlow
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.concurrent.ConcurrentHashMap
@@ -66,11 +69,22 @@ class GameModeState(
 
     /**
      * Keeps this state in step with [prefs] while [scope] lives. When the user
-     * has not chosen games yet, the apps found by [detector] are used.
+     * has not chosen games yet, the apps found by [detector] are used, and
+     * they are found again each time [packageChanges] emits, so a game
+     * installed while protection runs is covered without a restart.
      */
-    fun bind(scope: CoroutineScope, prefs: GameModePreferences, detector: GameAppDetector) {
+    fun bind(
+        scope: CoroutineScope,
+        prefs: GameModePreferences,
+        detector: GameAppDetector,
+        packageChanges: Flow<Unit> = emptyFlow(),
+    ) {
         scope.launch {
-            combine(prefs.enabled, prefs.selectedPackages) { on, selected -> on to selected }
+            combine(
+                prefs.enabled,
+                prefs.selectedPackages,
+                packageChanges.onStart { emit(Unit) },
+            ) { on, selected, _ -> on to selected }
                 .collect { (on, selected) ->
                     val packages = selected ?: if (on) {
                         withContext(Dispatchers.IO) { detector.installedGamePackages().toSet() }
