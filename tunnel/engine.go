@@ -44,7 +44,8 @@ type DomainChecker interface {
 }
 
 // AppDomainChecker checks per-app custom allow or block domain rules.
-// Returns 1 to block the domain for appName, 0 to allow, or -1 if no per-app rule applies.
+// Returns 1 to block the domain for appName, 0 to allow, AppRuleAllowKeepSecurity
+// to allow unless a security list blocks it, or -1 if no per-app rule applies.
 type AppDomainChecker interface {
 	CheckAppRule(domain string, appName string) int
 }

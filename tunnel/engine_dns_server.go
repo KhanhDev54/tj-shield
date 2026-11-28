@@ -157,6 +157,13 @@ func (e *Engine) serveDNS(w dns.ResponseWriter, r *dns.Msg, appOverride string) 
 		if appOverride == 0 {
 			e.standaloneForward(w, r, appName, startTime)
 			return
+		} else if appOverride == AppRuleAllowKeepSecurity {
+			if ids := e.securityMatches(domain); len(ids) > 0 {
+				e.standaloneBlock(w, r, strings.Join(ids, ","), appName, startTime)
+				return
+			}
+			e.standaloneForward(w, r, appName, startTime)
+			return
 		} else if appOverride == 1 {
 			e.standaloneBlock(w, r, "custom_app_rule", appName, startTime)
 			return
