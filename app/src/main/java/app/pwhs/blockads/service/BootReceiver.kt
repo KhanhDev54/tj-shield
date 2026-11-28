@@ -37,7 +37,17 @@ class BootReceiver : BroadcastReceiver() {
                     Triple(prefs.autoReconnect.first(), prefs.vpnEnabled.first(), prefs.routingMode.first())
                 }
 
-                if (autoReconnect && wasEnabled) {
+                // Root mode reads filters and settings from credential-protected
+                // storage, which is unreadable until the user unlocks. Starting it
+                // on locked boot fails, and that failed start used to leave the
+                // service marked as starting, so the real start on BOOT_COMPLETED
+                // was skipped (#179). Wait for BOOT_COMPLETED instead.
+                val deferRootUntilUnlock = isLocked && routingMode == AppPreferences.ROUTING_MODE_ROOT
+                if (deferRootUntilUnlock) {
+                    Timber.d("Root Proxy waits for the user to unlock before starting")
+                }
+
+                if (autoReconnect && wasEnabled && !deferRootUntilUnlock) {
                     val trigger = when (intentAction) {
                         Intent.ACTION_MY_PACKAGE_REPLACED -> "app update"
                         Intent.ACTION_LOCKED_BOOT_COMPLETED -> "locked direct boot"

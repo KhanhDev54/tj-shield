@@ -20,6 +20,7 @@ import app.pwhs.blockads.data.repository.packageChanges
 import app.pwhs.blockads.data.dao.DnsLogDao
 import app.pwhs.blockads.data.dao.FirewallRuleDao
 import app.pwhs.blockads.utils.AppNameResolver
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -285,9 +286,17 @@ class RootProxyService : Service() {
 
                 // 4. Start watchdog
                 startWatchdog()
+            } catch (e: CancellationException) {
+                throw e
             } catch (e: Exception) {
                 Timber.e(e, "Failed to start Root Proxy mode")
                 IptablesManager.teardownRules()
+                // Leaving the state at STARTING made every later start return
+                // early as "already starting", so protection never came back
+                // until the app was killed (#179).
+                _state.value = VpnState.STOPPED
+                stopForeground(STOP_FOREGROUND_REMOVE)
+                showStartFailedNotification()
                 stopSelf()
             }
         }
