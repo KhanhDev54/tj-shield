@@ -8,6 +8,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withTimeout
 import org.junit.Assert.assertEquals
@@ -86,6 +88,44 @@ class GameModeStateTest {
             awaitUntil { !state.enabled }
             assertEquals(setOf("com.picked.game"), state.gamePackages)
             assertFalse(state.isGameApp("com.picked.game"))
+        } finally {
+            scope.cancel()
+        }
+    }
+
+    @Test
+    fun `a game installed later is picked up when packages change`() = runBlocking {
+        val prefs = GameModePreferences(tempFolder.newPreferencesDataStore())
+        val installed = mutableListOf("com.first.game")
+        val detector = GameAppDetector {
+            installed.toList().map { pkg ->
+                ApplicationInfo().apply {
+                    packageName = pkg
+                    category = ApplicationInfo.CATEGORY_GAME
+                }
+            }
+        }
+        // A counter, so a change is not lost if it lands before collection starts.
+        val changes = MutableStateFlow(0)
+        val state = GameModeState()
+        val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
+        try {
+            state.bind(scope, prefs, detector, changes.map { })
+            prefs.setEnabled(true)
+            awaitUntil { state.isGameApp("com.first.game") }
+            assertFalse(state.isGameApp("com.new.game"))
+
+            installed += "com.new.game"
+            changes.value++
+            awaitUntil { state.isGameApp("com.new.game") }
+
+            // A list the user picked is kept as is.
+            prefs.setSelectedPackages(setOf("com.first.game"))
+            awaitUntil { !state.isGameApp("com.new.game") }
+            installed += "com.third.game"
+            changes.value++
+            delay(200)
+            assertEquals(setOf("com.first.game"), state.gamePackages)
         } finally {
             scope.cancel()
         }

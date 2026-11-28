@@ -19,4 +19,5 @@
     <string name="game_mode_action_block_again">Blokir lagi</string>
     <string name="game_mode_tile_on">Aktif</string>
     <string name="game_mode_tile_off">Nonaktif</string>
+    <string name="game_mode_protection_off_hint">Mode Game hanya berfungsi saat perlindungan aktif. Aktifkan dari layar utama.</string>
 </resources>

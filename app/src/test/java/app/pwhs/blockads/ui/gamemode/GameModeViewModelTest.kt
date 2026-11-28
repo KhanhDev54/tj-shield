@@ -8,14 +8,17 @@ import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.joinAll
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.setMain
+import kotlinx.coroutines.withTimeout
 import org.junit.After
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Before
@@ -30,6 +33,7 @@ class GameModeViewModelTest {
     val tempFolder = TemporaryFolder()
 
     private lateinit var prefs: GameModePreferences
+    private val protectionRunning = MutableStateFlow(true)
 
     private val apps = listOf(
         GameAppCandidate("com.racing", "Racing", isDetectedGame = true),
@@ -49,7 +53,12 @@ class GameModeViewModelTest {
     }
 
     private fun newViewModel() =
-        GameModeViewModel(prefs, mockk<Application>(relaxed = true), loadCandidates = { apps })
+        GameModeViewModel(
+            prefs,
+            mockk<Application>(relaxed = true),
+            loadCandidates = { apps },
+            protectionRunning = protectionRunning,
+        )
 
     // Joins only jobs launched by [action]; stateIn's sharing coroutines never complete.
     private fun GameModeViewModel.runAndSettle(action: GameModeViewModel.() -> Unit) {
@@ -57,6 +66,16 @@ class GameModeViewModelTest {
         val before = job.children.toSet()
         action()
         runBlocking { (job.children.toSet() - before).joinAll() }
+    }
+
+    @Test
+    fun `ui state says when protection is not running`() = runBlocking {
+        val vm = newViewModel()
+        withTimeout(5_000) {
+            assertTrue(vm.uiState.first { !it.isLoading }.protectionRunning)
+            protectionRunning.value = false
+            assertFalse(vm.uiState.first { !it.protectionRunning }.protectionRunning)
+        }
     }
 
     @Test

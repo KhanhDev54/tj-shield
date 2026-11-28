@@ -93,8 +93,9 @@ class GoTunnelAdapter(
         })
         engine.setAppDomainChecker(AppDomainChecker { domain, appName ->
             // A game unblocked for a moment from the Game Mode notification
-            // gets every domain, so a rewarded ad can load.
-            if (appName.isNotEmpty() && isGameUnblocked(appName)) 0L
+            // skips ad lists and custom rules, so a rewarded ad can load, but
+            // security lists still apply.
+            if (appName.isNotEmpty() && isGameUnblocked(appName)) APP_RULE_ALLOW_KEEP_SECURITY
             else filterRepo.checkAppRule(domain, appName)
         })
     }
@@ -545,6 +546,9 @@ class GoTunnelAdapter(
         runCatching { engine.isTailscaleActive }.getOrDefault(false)
 
     companion object {
+        /** tunnel.AppRuleAllowKeepSecurity: skip ad lists and custom rules, keep security lists. */
+        internal const val APP_RULE_ALLOW_KEEP_SECURITY = 2L
+
         private fun dnsQueryTypeToString(type: Int): String = when (type) {
             1 -> "A"; 28 -> "AAAA"; 5 -> "CNAME"; 65 -> "HTTPS"; else -> "OTHER"
         }

@@ -19,4 +19,5 @@
     <string name="game_mode_action_block_again">Yeniden engelle</string>
     <string name="game_mode_tile_on">Açık</string>
     <string name="game_mode_tile_off">Kapalı</string>
+    <string name="game_mode_protection_off_hint">Oyun Modu yalnızca koruma açıkken çalışır. Korumayı ana ekrandan açın.</string>
 </resources>

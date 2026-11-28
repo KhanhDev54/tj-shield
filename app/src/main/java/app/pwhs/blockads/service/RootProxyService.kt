@@ -16,6 +16,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import app.pwhs.blockads.data.datastore.AppPreferences
 import kotlinx.coroutines.flow.first
 import app.pwhs.blockads.data.repository.FilterListRepository
+import app.pwhs.blockads.data.repository.packageChanges
 import app.pwhs.blockads.data.dao.DnsLogDao
 import app.pwhs.blockads.data.dao.FirewallRuleDao
 import app.pwhs.blockads.utils.AppNameResolver
@@ -137,7 +138,7 @@ class RootProxyService : Service() {
         dnsLogDao = koin.get()
         gameModeState = koin.get()
         gameModeNotifier = koin.get()
-        gameModeState.bind(serviceScope, appPrefs.gameMode, koin.get())
+        gameModeState.bind(serviceScope, appPrefs.gameMode, koin.get(), packageChanges(this))
         firewallRuleDao = koin.get()
 
         serviceScope.launch {

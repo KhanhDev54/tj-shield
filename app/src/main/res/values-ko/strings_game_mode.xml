@@ -19,4 +19,5 @@
     <string name="game_mode_action_block_again">다시 차단</string>
     <string name="game_mode_tile_on">켜짐</string>
     <string name="game_mode_tile_off">꺼짐</string>
+    <string name="game_mode_protection_off_hint">게임 모드는 보호가 켜져 있을 때만 작동합니다. 홈 화면에서 켜 주세요.</string>
 </resources>

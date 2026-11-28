@@ -19,4 +19,5 @@
     <string name="game_mode_action_block_again">الحظر مجددًا</string>
     <string name="game_mode_tile_on">مفعّل</string>
     <string name="game_mode_tile_off">متوقف</string>
+    <string name="game_mode_protection_off_hint">يعمل وضع الألعاب فقط عند تشغيل الحماية. شغّلها من الشاشة الرئيسية.</string>
 </resources>

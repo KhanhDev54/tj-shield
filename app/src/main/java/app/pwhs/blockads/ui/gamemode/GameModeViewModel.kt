@@ -6,7 +6,11 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import app.pwhs.blockads.data.datastore.prefs.GameModePreferences
 import app.pwhs.blockads.data.repository.GameAppDetector
+import app.pwhs.blockads.service.AdBlockVpnService
+import app.pwhs.blockads.service.RootProxyService
+import app.pwhs.blockads.service.VpnState
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -36,12 +40,17 @@ data class GameModeUiState(
     val isLoading: Boolean = true,
     val showAllApps: Boolean = false,
     val items: List<GameAppItem> = emptyList(),
+    /** False when neither the VPN nor root mode is running, so Game Mode does nothing yet. */
+    val protectionRunning: Boolean = true,
 )
 
 class GameModeViewModel(
     private val prefs: GameModePreferences,
     application: Application,
     private val loadCandidates: suspend () -> List<GameAppCandidate> = { loadInstalledCandidates(application) },
+    protectionRunning: Flow<Boolean> = combine(AdBlockVpnService.state, RootProxyService.state) { vpn, root ->
+        vpn == VpnState.RUNNING || root == VpnState.RUNNING
+    },
 ) : AndroidViewModel(application) {
 
     private val candidates = MutableStateFlow<List<GameAppCandidate>?>(null)
@@ -52,12 +61,14 @@ class GameModeViewModel(
         prefs.selectedPackages,
         candidates,
         showAllApps,
-    ) { enabled, selected, apps, showAll ->
+        protectionRunning,
+    ) { enabled, selected, apps, showAll, running ->
         GameModeUiState(
             enabled = enabled,
             isLoading = apps == null,
             showAllApps = showAll,
             items = buildGameAppItems(apps.orEmpty(), selected, showAll),
+            protectionRunning = running,
         )
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), GameModeUiState())
 

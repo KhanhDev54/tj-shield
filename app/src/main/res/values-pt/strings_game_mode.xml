@@ -19,4 +19,5 @@
     <string name="game_mode_action_block_again">Bloquear de novo</string>
     <string name="game_mode_tile_on">Ativado</string>
     <string name="game_mode_tile_off">Desativado</string>
+    <string name="game_mode_protection_off_hint">O modo de jogo só funciona com a proteção ativa. Ative-a no ecrã inicial.</string>
 </resources>

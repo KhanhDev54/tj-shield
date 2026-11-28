@@ -14,6 +14,7 @@ import app.pwhs.blockads.data.dao.DnsLogDao
 import app.pwhs.blockads.data.dao.FirewallRuleDao
 import app.pwhs.blockads.data.datastore.AppPreferences
 import app.pwhs.blockads.data.repository.FilterListRepository
+import app.pwhs.blockads.data.repository.packageChanges
 import app.pwhs.blockads.service.vpn.StartupConfig
 import app.pwhs.blockads.service.vpn.TunnelResult
 import app.pwhs.blockads.service.vpn.VpnConnectionSupervisor
@@ -143,7 +144,7 @@ class AdBlockVpnService : VpnService() {
         geoIpManager = koin.get()
         gameModeState = koin.get()
         gameModeNotifier = koin.get()
-        gameModeState.bind(serviceScope, appPrefs.gameMode, koin.get())
+        gameModeState.bind(serviceScope, appPrefs.gameMode, koin.get(), packageChanges(this))
 
         appNameResolver = AppNameResolver(this)
         batteryMonitor = BatteryMonitor(this)

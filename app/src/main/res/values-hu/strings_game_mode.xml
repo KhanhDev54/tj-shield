@@ -19,4 +19,5 @@
     <string name="game_mode_action_block_again">Tiltás újra</string>
     <string name="game_mode_tile_on">Be</string>
     <string name="game_mode_tile_off">Ki</string>
+    <string name="game_mode_protection_off_hint">A játékmód csak bekapcsolt védelemmel működik. Kapcsold be a kezdőképernyőn.</string>
 </resources>

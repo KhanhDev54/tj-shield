@@ -19,4 +19,5 @@
     <string name="game_mode_action_block_again">Қайта бұғаттау</string>
     <string name="game_mode_tile_on">Қосулы</string>
     <string name="game_mode_tile_off">Өшірулі</string>
+    <string name="game_mode_protection_off_hint">Ойын режимі қорғаныс қосулы кезде ғана жұмыс істейді. Оны басты экраннан қосыңыз.</string>
 </resources>

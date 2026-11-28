@@ -19,4 +19,5 @@
     <string name="game_mode_action_block_again">重新拦截</string>
     <string name="game_mode_tile_on">已开启</string>
     <string name="game_mode_tile_off">已关闭</string>
+    <string name="game_mode_protection_off_hint">游戏模式仅在保护开启时生效。请在主屏幕开启保护。</string>
 </resources>
