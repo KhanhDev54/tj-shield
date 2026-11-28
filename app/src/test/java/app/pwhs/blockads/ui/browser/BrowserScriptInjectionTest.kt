@@ -11,7 +11,6 @@ import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
-import org.junit.Ignore
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
@@ -100,7 +99,6 @@ class BrowserScriptInjectionTest {
         )
     }
 
-    @Ignore("injectUserElementRules escapes only backslash and quote, so a newline or U+2028 in a selector breaks the JS string")
     @Test
     fun `line terminators in selectors cannot break the JS string`() {
         BrowserAdBlocker.injectUserElementRules(webView, listOf(".a\n');alert(1);//", ".b\u2028x"))
@@ -109,7 +107,6 @@ class BrowserScriptInjectionTest {
         assertFalse(literal.contains('\u2028'))
     }
 
-    @Ignore("a selector containing '}' closes the hiding rule and injects arbitrary CSS")
     @Test
     fun `selectors cannot inject extra CSS rules`() {
         BrowserAdBlocker.injectUserElementRules(webView, listOf("x} body{display:none"))

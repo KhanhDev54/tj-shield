@@ -6,7 +6,6 @@ import androidx.compose.runtime.MutableState
 import androidx.test.core.app.ApplicationProvider
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
-import org.junit.Ignore
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.Robolectric
@@ -46,7 +45,6 @@ class BrowserActivityIntentTest {
         assertEquals("https://c.test", activity.currentUrl)
     }
 
-    @Ignore("the exported browser loads a javascript: URL from EXTRA_URL or intent data into the open page")
     @Test
     fun `javascript urls from intents are refused`() {
         val activity = launch(browserIntent().putExtra(BrowserActivity.EXTRA_URL, "javascript:alert(document.cookie)"))
@@ -55,5 +53,13 @@ class BrowserActivityIntentTest {
             activity, "onNewIntent", ReflectionHelpers.ClassParameter.from(Intent::class.java, browserIntent().setData(Uri.parse("javascript:alert(1)")))
         )
         assertFalse(activity.currentUrl.startsWith("javascript:"))
+    }
+
+    @Test
+    fun `only http and https urls are accepted`() {
+        assertEquals("https://a.test", BrowserActivity.safeUrl(" https://a.test "))
+        assertEquals("HTTP://b.test", BrowserActivity.safeUrl("HTTP://b.test"))
+        listOf("javascript:alert(1)", "JavaScript:alert(1)", "file:///data/data/x", "intent://x#Intent;end", "content://x", "data:text/html,x", "", " ", null)
+            .forEach { assertEquals(null, BrowserActivity.safeUrl(it)) }
     }
 }

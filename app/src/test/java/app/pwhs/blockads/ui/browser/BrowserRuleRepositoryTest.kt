@@ -132,7 +132,6 @@ class BrowserRuleRepositoryTest {
         assertEquals("window.x=1", saved.captured.scriptletsJs)
     }
 
-    @Ignore("Suspected: an unresolvable remote cosmeticCss URL is saved verbatim and injected as CSS text instead of the bundled CSS")
     @Test
     fun `unresolved remote css URL is not stored as css`() = runTest {
         serve(body = json(BrowserRulePackage(version = 18, cosmeticCss = "https://cdn.test/missing.css")))
@@ -143,7 +142,6 @@ class BrowserRuleRepositoryTest {
         assertFalse(saved.captured.cosmeticCss.orEmpty().startsWith("http"))
     }
 
-    @Ignore("remote scriptlets may come from a plain http:// URL and are injected into every page unsigned")
     @Test
     fun `plain http scriptlet URLs are rejected`() = runTest {
         serve(body = json(BrowserRulePackage(version = 18, scriptletsJs = "http://cdn.test/s.js")))

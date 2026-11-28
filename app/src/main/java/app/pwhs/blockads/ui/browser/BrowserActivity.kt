@@ -39,7 +39,20 @@ class BrowserActivity : ComponentActivity() {
     companion object {
         const val EXTRA_URL = "extra_url"
 
-        fun createIntent(context: Context, url: String = "https://m.youtube.com"): Intent {
+        private const val DEFAULT_URL = "https://m.youtube.com"
+
+        /**
+         * The activity is exported, so any app can hand it a URL. Only http and
+         * https are opened; a javascript:, file:, intent: or other URL would run
+         * in, or read from, the page and its cookies.
+         */
+        internal fun safeUrl(raw: String?): String? {
+            val url = raw?.trim()?.takeIf { it.isNotEmpty() } ?: return null
+            val scheme = android.net.Uri.parse(url).scheme?.lowercase()
+            return url.takeIf { scheme == "http" || scheme == "https" }
+        }
+
+        fun createIntent(context: Context, url: String = DEFAULT_URL): Intent {
             return Intent(context, BrowserActivity::class.java).apply {
                 putExtra(EXTRA_URL, url)
             }
@@ -59,8 +72,8 @@ class BrowserActivity : ComponentActivity() {
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         setIntent(intent)
-        val newUrl = intent.getStringExtra(EXTRA_URL) ?: intent.dataString
-        if (!newUrl.isNullOrBlank()) {
+        val newUrl = safeUrl(intent.getStringExtra(EXTRA_URL)) ?: safeUrl(intent.dataString)
+        if (newUrl != null) {
             _currentUrl.value = newUrl
         }
     }
@@ -73,12 +86,12 @@ class BrowserActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        android.webkit.WebView.setWebContentsDebuggingEnabled(true)
+        android.webkit.WebView.setWebContentsDebuggingEnabled(app.pwhs.blockads.BuildConfig.DEBUG)
 
         checkNotificationPermission()
         requestMediaAudioFocus()
 
-        val targetUrl = intent.getStringExtra(EXTRA_URL) ?: intent.dataString ?: "https://m.youtube.com"
+        val targetUrl = safeUrl(intent.getStringExtra(EXTRA_URL)) ?: safeUrl(intent.dataString) ?: DEFAULT_URL
         _currentUrl.value = targetUrl
 
         isAutoPipEnabled = getSharedPreferences("browser_settings", Context.MODE_PRIVATE)

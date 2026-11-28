@@ -88,28 +88,14 @@ class BrowserRuleRepositoryImpl(
                 return@withContext Result.success(false)
             }
 
-            var finalPackage = remotePackage
-
-            // Support remote URL resolution for CSS and JS if provided as HTTP/HTTPS URLs
-            val remoteCss = remotePackage.cosmeticCss?.trim()
-            if (remoteCss != null && (remoteCss.startsWith("http://") || remoteCss.startsWith("https://"))) {
-                runCatching {
-                    val cssRes = client.get(remoteCss)
-                    if (cssRes.status.value in 200..299) {
-                        finalPackage = finalPackage.copy(cosmeticCss = cssRes.bodyAsText())
-                    }
-                }.onFailure { Timber.w(it, "Failed to resolve remote cosmeticCss URL: %s", remoteCss) }
-            }
-
-            val remoteJs = remotePackage.scriptletsJs?.trim()
-            if (remoteJs != null && (remoteJs.startsWith("http://") || remoteJs.startsWith("https://"))) {
-                runCatching {
-                    val jsRes = client.get(remoteJs)
-                    if (jsRes.status.value in 200..299) {
-                        finalPackage = finalPackage.copy(scriptletsJs = jsRes.bodyAsText())
-                    }
-                }.onFailure { Timber.w(it, "Failed to resolve remote scriptletsJs URL: %s", remoteJs) }
-            }
+            // cosmeticCss and scriptletsJs may be given as URLs. Only HTTPS URLs are
+            // fetched: the result is injected into every page, so it must not come
+            // over plain HTTP. A URL that is refused or cannot be fetched keeps the
+            // text that is active now instead of being stored as CSS or JS itself.
+            val finalPackage = remotePackage.copy(
+                cosmeticCss = resolveRemoteText(remotePackage.cosmeticCss, active.cosmeticCss, "cosmeticCss"),
+                scriptletsJs = resolveRemoteText(remotePackage.scriptletsJs, active.scriptletsJs, "scriptletsJs"),
+            )
 
             // Save and hot-reload in-memory rules
             val saved = storage.savePackage(finalPackage)
@@ -164,5 +150,19 @@ class BrowserRuleRepositoryImpl(
         BrowserAdBlocker.applyRulePackage(defaults)
         _updateStatus.value = BrowserRuleUpdateStatus.Idle
         Timber.i("Reset browser rules to baseline defaults (v%d)", defaults.version)
+    }
+
+    private suspend fun resolveRemoteText(value: String?, current: String?, field: String): String? {
+        val trimmed = value?.trim() ?: return value
+        if (trimmed.startsWith("http://", ignoreCase = true)) {
+            Timber.w("Refusing plain HTTP %s URL: %s", field, trimmed)
+            return current
+        }
+        if (!trimmed.startsWith("https://", ignoreCase = true)) return value
+        return runCatching {
+            val res = client.get(trimmed)
+            if (res.status.value in 200..299) res.bodyAsText() else current
+        }.onFailure { Timber.w(it, "Failed to resolve remote %s URL: %s", field, trimmed) }
+            .getOrDefault(current)
     }
 }
