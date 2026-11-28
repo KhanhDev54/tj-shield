@@ -124,6 +124,13 @@ func (e *Engine) handleDNSQuery(queryInfo *DNSQueryInfo) {
 		if appOverride == 0 {
 			e.handleForward(queryInfo, appName, startTime)
 			return
+		} else if appOverride == AppRuleAllowKeepSecurity {
+			if ids := e.securityMatches(domain); len(ids) > 0 {
+				e.handleBlockedDomain(queryInfo, strings.Join(ids, ","), appName, startTime)
+				return
+			}
+			e.handleForward(queryInfo, appName, startTime)
+			return
 		} else if appOverride == 1 {
 			e.handleBlockedDomain(queryInfo, "custom_app_rule", appName, startTime)
 			return

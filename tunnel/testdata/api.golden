@@ -4,6 +4,7 @@ type AppDomainChecker interface
 	method AppDomainChecker.CheckAppRule(domain string, appName string) int
 type AppResolver interface
 	method AppResolver.ResolveApp(sourcePort int, sourceIP []byte, destIP []byte, destPort int) string
+const AppRuleAllowKeepSecurity untyped int = 2
 type AppUidResolver interface
 	method AppUidResolver.PackageForUid(uid int) string
 type BlockResult struct
