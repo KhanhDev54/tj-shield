@@ -84,10 +84,28 @@ class BootReceiverTest {
         DirectBootPreferences(app).apply {
             wasVpnEnabled = true
             autoReconnect = true
-            routingMode = AppPreferences.ROUTING_MODE_ROOT
+            routingMode = AppPreferences.ROUTING_MODE_DIRECT
         }
 
         val started = deliver(Intent.ACTION_LOCKED_BOOT_COMPLETED)!!
+        assertEquals(AdBlockVpnService::class.java.name, started.component!!.className)
+    }
+
+    @Test
+    fun `root mode waits for unlock, then starts on boot completed`() {
+        val userManager = app.getSystemService(Context.USER_SERVICE) as UserManager
+        shadowOf(userManager).setUserUnlocked(false)
+        DirectBootPreferences(app).apply {
+            wasVpnEnabled = true
+            autoReconnect = true
+            routingMode = AppPreferences.ROUTING_MODE_ROOT
+        }
+        assertNull(deliver(Intent.ACTION_LOCKED_BOOT_COMPLETED))
+
+        shadowOf(userManager).setUserUnlocked(true)
+        prefs(enabled = true, mode = AppPreferences.ROUTING_MODE_ROOT)
+        val started = deliver(Intent.ACTION_BOOT_COMPLETED)!!
         assertEquals(RootProxyService::class.java.name, started.component!!.className)
+        assertTrue(started.getBooleanExtra(RootProxyService.EXTRA_STARTED_FROM_BOOT, false))
     }
 }
