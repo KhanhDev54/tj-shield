@@ -150,10 +150,17 @@ class LogViewModel(
         .flatMapLatest { (status, range) ->
             val since = if (range == TimeRange.ALL) 0L
             else clock() - range.millis
-            when (status) {
+            val rows = when (status) {
                 LogFilterStatus.ALL -> if (since > 0) dnsLogDao.getAllSince(since) else dnsLogDao.getAll()
                 LogFilterStatus.BLOCKED -> if (since > 0) dnsLogDao.getBlockedOnlySince(since) else dnsLogDao.getBlockedOnly()
                 LogFilterStatus.ALLOWED -> if (since > 0) dnsLogDao.getAllowedOnlySince(since) else dnsLogDao.getAllowedOnly()
+            }
+            // The query keeps the cutoff it started with; cut again on every update so
+            // "last hour" keeps meaning the last hour while the screen stays open.
+            if (range == TimeRange.ALL) rows
+            else rows.map { list ->
+                val cutoff = clock() - range.millis
+                list.filter { it.timestamp >= cutoff }
             }
         }
         .combine(_searchQuery) { logs, query ->

@@ -15,6 +15,10 @@ import app.pwhs.blockads.data.entities.TopBlockedDomain
 import app.pwhs.blockads.data.entities.WeeklyStat
 import app.pwhs.blockads.data.repository.FilterListRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -31,13 +35,18 @@ class StatisticsViewModel(
     clock: () -> Long = System::currentTimeMillis,
 ) : ViewModel() {
 
-    private val todayStart: Long = Calendar.getInstance().apply {
-        timeInMillis = clock()
-        set(Calendar.HOUR_OF_DAY, 0)
-        set(Calendar.MINUTE, 0)
-        set(Calendar.SECOND, 0)
-        set(Calendar.MILLISECOND, 0)
-    }.timeInMillis
+    /** Local midnight of today; emits again when the day changes while collected. */
+    private val todayStart: Flow<Long> = flow {
+        while (true) {
+            val start = startOfDay(clock())
+            emit(start)
+            val nextMidnight = Calendar.getInstance().apply {
+                timeInMillis = start
+                add(Calendar.DAY_OF_YEAR, 1)
+            }.timeInMillis
+            delay((nextMidnight - clock()).coerceAtLeast(1_000L))
+        }
+    }.distinctUntilChanged()
 
     private val _destinationTimeRange = MutableStateFlow(DestinationTimeRange.HOURS_24)
     val destinationTimeRange: StateFlow<DestinationTimeRange> = _destinationTimeRange.asStateFlow()
@@ -148,10 +157,12 @@ class StatisticsViewModel(
     val blockedCount: StateFlow<Int> = dnsLogDao.getBlockedCount()
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
 
-    val todayTotal: StateFlow<Int> = dnsLogDao.getTotalCountSince(todayStart)
+    @OptIn(ExperimentalCoroutinesApi::class)
+    val todayTotal: StateFlow<Int> = todayStart.flatMapLatest { dnsLogDao.getTotalCountSince(it) }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
 
-    val todayBlocked: StateFlow<Int> = dnsLogDao.getBlockedCountSince(todayStart)
+    @OptIn(ExperimentalCoroutinesApi::class)
+    val todayBlocked: StateFlow<Int> = todayStart.flatMapLatest { dnsLogDao.getBlockedCountSince(it) }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
 
     val hourlyStats: StateFlow<List<HourlyStat>> = dnsLogDao.getHourlyStats()
@@ -171,4 +182,14 @@ class StatisticsViewModel(
 
     val topApps: StateFlow<List<AppStat>> = dnsLogDao.getTopApps()
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+
+    private companion object {
+        fun startOfDay(timeMs: Long): Long = Calendar.getInstance().apply {
+            timeInMillis = timeMs
+            set(Calendar.HOUR_OF_DAY, 0)
+            set(Calendar.MINUTE, 0)
+            set(Calendar.SECOND, 0)
+            set(Calendar.MILLISECOND, 0)
+        }.timeInMillis
+    }
 }

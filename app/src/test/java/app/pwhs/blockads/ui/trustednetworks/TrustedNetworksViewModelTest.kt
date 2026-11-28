@@ -22,7 +22,6 @@ import kotlinx.coroutines.test.setMain
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Before
-import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.TemporaryFolder
@@ -71,7 +70,6 @@ class TrustedNetworksViewModelTest {
         runBlocking { (job.children.toSet() - before).joinAll() }
     }
 
-    @Ignore("known bug: addCurrentNetwork toggles, so re-adding a trusted SSID removes it")
     @Test
     fun `adding the current network keeps an already trusted SSID`() {
         runBlocking { security.setTrustedSsids(setOf("Home")) }
