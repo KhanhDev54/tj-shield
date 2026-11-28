@@ -17,7 +17,6 @@ import kotlinx.coroutines.test.runTest
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Before
-import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
 import java.util.TimeZone
@@ -41,8 +40,9 @@ class StatisticsViewModelTest {
     fun tearDown() = TimeZone.setDefault(originalZone)
 
     @Test
-    fun `today counters query from local midnight`() {
-        StatisticsViewModel(dao, filterListDao) { now }
+    fun `today counters query from local midnight`() = runTest {
+        val vm = StatisticsViewModel(dao, filterListDao) { now }
+        keepHot(vm.todayTotal, vm.todayBlocked)
         verify { dao.getTotalCountSince(midnight) }
         verify { dao.getBlockedCountSince(midnight) }
     }
@@ -121,13 +121,14 @@ class StatisticsViewModelTest {
         assertEquals(10, firewallReason.count)
     }
 
-    @Ignore("known bug: todayStart is computed once, so 'today' counters keep counting from yesterday after midnight")
     @Test
     fun `today counters roll over at midnight`() = runTest {
         val vm = StatisticsViewModel(dao, filterListDao) { now }
         keepHot(vm.todayTotal)
         now += 120_000
-        keepHot(vm.todayTotal)
+        // The day ticker sleeps until the next midnight on the main dispatcher.
+        mainRule.dispatcher.scheduler.advanceTimeBy(120_000)
+        mainRule.dispatcher.scheduler.runCurrent()
         verify { dao.getTotalCountSince(midnight + day) }
     }
 }

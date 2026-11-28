@@ -161,7 +161,6 @@ class LogViewModelTest {
         assertEquals("chrome", vm.appFilter.value)
     }
 
-    @Ignore("known bug: the time-range cutoff is computed once, so 'last hour' never slides")
     @Test
     fun `the last-hour window slides as time passes`() = runTest {
         table.value = listOf(entry(1, "old.com", false, at = now - 30 * 60_000))
